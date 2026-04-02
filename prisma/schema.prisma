@@ -3,6 +3,7 @@
 
 // Get a free hosted Postgres database in seconds: `npx create-db`
 
+
 generator client {
   provider = "prisma-client"
   output   = "../src/generated/prisma"
@@ -10,4 +11,533 @@ generator client {
 
 datasource db {
   provider = "postgresql"
+}
+
+
+// ENUMS
+
+
+enum MediaType {
+  IMAGE
+  VIDEO
+}
+
+enum ReportStatus {
+  PENDING
+  RESOLVED
+  DISMISSED
+}
+
+enum NotificationType {
+  REPLY
+  MENTION
+  DIRECT_MESSAGE
+  COMMUNITY_INVITE
+}
+
+enum PostStatus {
+  DRAFT
+  PUBLISHED
+  REMOVED
+}
+
+enum RestrictionType {
+  BAN
+  MUTE
+}
+
+enum ModActionType {
+  REMOVE_POST
+  REMOVE_COMMENT
+  BAN_USER
+  MUTE_USER
+  UPDATE_SETTINGS
+}
+
+enum InviteStatus {
+  PENDING
+  ACCEPTED
+  REJECTED
+}
+
+
+//AUTH.JS & CORE USER PROFILES
+
+
+model User {
+  id             String    @id @default(uuid()) @db.Uuid
+  name           String?
+  username       String?   @unique
+  email          String?   @unique
+  emailVerified  DateTime?
+  image          String?
+  passwordHash   String?
+  karmaScore     Int       @default(0) // Requires Postgres Trigger or $transaction to sync
+  bannerImageUrl String?
+  createdAt      DateTime  @default(now())
+
+  // Auth.js Relations
+  accounts       Account[]
+  sessions       Session[]
+
+  // One-to-One Profiles
+  preferences    UserPreference?
+  globalMod      GlobalModerator?
+
+  // Content Relations
+  posts          Post[]
+  comments       Comment[]
+  media          Media[]
+
+  // Community and Ownership Relations
+  ownedCommunities Community[]          @relation("CommunityOwner")
+  linkedCommunity  Community?           @relation("UserLinkedCommunity")
+  memberships      CommunityMember[]
+  moderations      CommunityModerator[]
+  
+  // Invites
+  invitesSent      CommunityInvite[]    @relation("Inviter")
+  invitesReceived  CommunityInvite[]    @relation("Invitee")
+
+  // Voting, Saves, Reports
+  postVotes        PostVote[]
+  commentVotes     CommentVote[]
+  savedPosts       SavedPost[]
+  savedComments    SavedComment[]
+  reportsMade      Report[]             @relation("Reporter")
+  reportsTargeted  Report[]             @relation("ReportedUser")
+
+  // Moderation Relations
+  issuedRestrictions CommunityRestriction[] @relation("ModWhoRestricted")
+  receivedRestrictions CommunityRestriction[] @relation("RestrictedUser")
+  modLogsActed         ModLog[]               @relation("ModWhoActed")
+  modLogsTargeted      ModLog[]               @relation("TargetedUser")
+  
+  // Interactions
+  blocksInitiated  UserBlock[]            @relation("Blocker")
+  blocksReceived   UserBlock[]            @relation("Blocked")
+  messagesSent     DirectMessage[]        @relation("MessageSender")
+  messagesReceived DirectMessage[]        @relation("MessageReceiver")
+  notifications    Notification[]         @relation("UserNotification")
+  triggeredNotifs  Notification[]         @relation("NotificationActor")
+}
+
+model Account {
+  id                 String  @id @default(uuid()) @db.Uuid
+  userId             String  @db.Uuid
+  type               String
+  provider           String
+  providerAccountId  String
+  refresh_token      String? @db.Text
+  access_token       String? @db.Text
+  expires_at         Int?
+  token_type         String?
+  scope              String?
+  id_token           String? @db.Text
+  session_state      String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(uuid()) @db.Uuid
+  sessionToken String   @unique
+  userId       String   @db.Uuid
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+model UserPreference {
+  userId            String   @id @db.Uuid
+  interfaceLanguage String   @default("en")
+  doNotTranslate    Json?    // Maps to Postgres JSONB automatically
+  theme             String   @default("system")
+  updatedAt         DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model GlobalModerator {
+  userId      String   @id @db.Uuid
+  permissions Json     // Maps to Postgres JSONB automatically
+  promotedAt  DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+
+// COMMUNITIES, RULES, INVITES
+
+
+model Community {
+  id            String   @id @default(uuid()) @db.Uuid
+  name          String   @unique
+  description   String?
+  ownerId       String   @db.Uuid
+  isUserProfile Boolean  @default(false)
+  linkedUserId  String?  @unique @db.Uuid
+  isNsfw        Boolean  @default(false)
+  createdAt     DateTime @default(now())
+
+  owner      User  @relation("CommunityOwner", fields: [ownerId], references: [id])
+  linkedUser User? @relation("UserLinkedCommunity", fields: [linkedUserId], references: [id], onDelete: Cascade)
+
+  rules        CommunityRule[]
+  invites      CommunityInvite[]
+  members      CommunityMember[]
+  moderators   CommunityModerator[]
+  restrictions CommunityRestriction[]
+  modLogs      ModLog[]
+  flairs       PostFlair[]
+  posts        Post[]
+  reports      Report[]
+  events       Event[]
+}
+
+model CommunityRule {
+  id           String   @id @default(uuid()) @db.Uuid
+  communityId  String   @db.Uuid
+  title        String
+  description  String?
+  displayOrder Int      @default(0)
+  createdAt    DateTime @default(now())
+
+  community Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  reports   Report[]
+}
+
+model CommunityInvite {
+  id          String       @id @default(uuid()) @db.Uuid
+  communityId String       @db.Uuid
+  inviterId   String       @db.Uuid
+  inviteeId   String       @db.Uuid
+  status      InviteStatus @default(PENDING)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  community     Community      @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  inviter       User           @relation("Inviter", fields: [inviterId], references: [id])
+  invitee       User           @relation("Invitee", fields: [inviteeId], references: [id], onDelete: Cascade)
+  notifications Notification[]
+}
+
+
+// MEMBERSHIPS, MODERATION, RESTRICTIONS
+
+
+model CommunityMember {
+  userId      String   @db.Uuid
+  communityId String   @db.Uuid
+  joinedAt    DateTime @default(now())
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  community Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+
+  @@id([userId, communityId])
+}
+
+model CommunityModerator {
+  userId           String   @db.Uuid
+  communityId      String   @db.Uuid
+  canManageSettings Boolean  @default(false)
+  canManagePosts   Boolean  @default(false)
+  canRestrictUsers Boolean  @default(false)
+  assignedAt       DateTime @default(now())
+
+  user          User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  community     Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  eventsCreated Event[]
+
+  @@id([userId, communityId]) // Allows the composite reference for Events
+}
+
+model CommunityRestriction {
+  id          String          @id @default(uuid()) @db.Uuid
+  communityId String          @db.Uuid
+  userId      String          @db.Uuid
+  moderatorId String          @db.Uuid
+  type        RestrictionType
+  reason      String?
+  expiresAt   DateTime?
+  createdAt   DateTime        @default(now())
+
+  community Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  user      User      @relation("RestrictedUser", fields: [userId], references: [id], onDelete: Cascade)
+  moderator User      @relation("ModWhoRestricted", fields: [moderatorId], references: [id])
+}
+
+model ModLog {
+  id              String        @id @default(uuid()) @db.Uuid
+  communityId     String        @db.Uuid
+  moderatorId     String        @db.Uuid
+  action          ModActionType
+  targetUserId    String?       @db.Uuid
+  targetPostId    String?       @db.Uuid
+  targetCommentId String?       @db.Uuid
+  details         Json?         // Maps to Postgres JSONB automatically
+  createdAt       DateTime      @default(now())
+
+  community     Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  moderator     User      @relation("ModWhoActed", fields: [moderatorId], references: [id])
+  targetUser    User?     @relation("TargetedUser", fields: [targetUserId], references: [id])
+  targetPost    Post?     @relation(fields: [targetPostId], references: [id])
+  targetComment Comment?  @relation(fields: [targetCommentId], references: [id])
+}
+
+model UserBlock {
+  blockerId String   @db.Uuid
+  blockedId String   @db.Uuid
+  createdAt DateTime @default(now())
+
+  blocker User @relation("Blocker", fields: [blockerId], references: [id], onDelete: Cascade)
+  blocked User @relation("Blocked", fields: [blockedId], references: [id], onDelete: Cascade)
+
+  @@id([blockerId, blockedId])
+}
+
+
+// POSTS, COMMENTS, FLAIRS & HISTORY
+
+
+model PostFlair {
+  id          String   @id @default(uuid()) @db.Uuid
+  communityId String   @db.Uuid
+  name        String
+  colorHex    String?
+
+  community Community @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  posts     Post[]
+}
+
+model Post {
+  id          String     @id @default(uuid()) @db.Uuid
+  communityId String     @db.Uuid
+  userId      String     @db.Uuid
+  flairId     String?    @db.Uuid
+  title       String
+  body        String?
+  linkUrl     String?
+  status      PostStatus @default(DRAFT)
+  isNsfw      Boolean    @default(false)
+  isSpoiler   Boolean    @default(false)
+  isPinned    Boolean    @default(false)
+  upvotes     Int        @default(0)
+  downvotes   Int        @default(0)
+  isDeleted   Boolean    @default(false)
+  
+  // Requires raw SQL migration to actually index this column
+  searchVector Unsupported("tsvector")? 
+  
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  community   Community  @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  user        User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  flair       PostFlair? @relation(fields: [flairId], references: [id])
+  
+  comments    Comment[]
+  editHistory PostEditHistory[]
+  votes       PostVote[]
+  saves       SavedPost[]
+  reports     Report[]
+  notifications Notification[]
+  media       Media[]
+  modLogs     ModLog[]
+}
+
+model Comment {
+  id              String   @id @default(uuid()) @db.Uuid
+  postId          String   @db.Uuid
+  userId          String   @db.Uuid
+  parentCommentId String?  @db.Uuid
+  body            String
+  isPinned        Boolean  @default(false)
+  upvotes         Int      @default(0)
+  downvotes       Int      @default(0)
+  isDeleted       Boolean  @default(false)
+  
+  searchVector    Unsupported("tsvector")?
+
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  post          Post     @relation(fields: [postId], references: [id], onDelete: Cascade)
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  // Self-referencing thread logic
+  parentComment Comment?  @relation("CommentReplies", fields: [parentCommentId], references: [id])
+  replies       Comment[] @relation("CommentReplies")
+
+  editHistory   CommentEditHistory[]
+  votes         CommentVote[]
+  saves         SavedComment[]
+  reports       Report[]
+  notifications Notification[]
+  media         Media[]
+  modLogs       ModLog[]
+}
+
+model PostEditHistory {
+  id            String   @id @default(uuid()) @db.Uuid
+  postId        String   @db.Uuid
+  previousTitle String
+  previousBody  String?
+  changedAt     DateTime @default(now())
+
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+}
+
+model CommentEditHistory {
+  id           String   @id @default(uuid()) @db.Uuid
+  commentId    String   @db.Uuid
+  previousBody String
+  changedAt    DateTime @default(now())
+
+  comment Comment @relation(fields: [commentId], references: [id], onDelete: Cascade)
+}
+
+
+// VOTES, SAVES, REPORTS
+
+
+model PostVote {
+  userId    String @db.Uuid
+  postId    String @db.Uuid
+  voteValue Int    
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@id([userId, postId])
+}
+
+model CommentVote {
+  userId    String @db.Uuid
+  commentId String @db.Uuid
+  voteValue Int    
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  comment Comment @relation(fields: [commentId], references: [id], onDelete: Cascade)
+
+  @@id([userId, commentId])
+}
+
+model SavedPost {
+  userId  String   @db.Uuid
+  postId  String   @db.Uuid
+  savedAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post Post @relation(fields: [postId], references: [id], onDelete: Cascade)
+
+  @@id([userId, postId])
+}
+
+model SavedComment {
+  userId    String   @db.Uuid
+  commentId String   @db.Uuid
+  savedAt   DateTime @default(now())
+
+  user    User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+  comment Comment @relation(fields: [commentId], references: [id], onDelete: Cascade)
+
+  @@id([userId, commentId])
+}
+
+model Report {
+  id             String       @id @default(uuid()) @db.Uuid
+  reporterId     String       @db.Uuid
+  communityId    String       @db.Uuid
+  reportedUserId String?      @db.Uuid
+  postId         String?      @db.Uuid
+  commentId      String?      @db.Uuid
+  ruleId         String?      @db.Uuid
+  customReason   String?
+  status         ReportStatus @default(PENDING)
+  createdAt      DateTime     @default(now())
+
+  reporter     User           @relation("Reporter", fields: [reporterId], references: [id])
+  community    Community      @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  reportedUser User?          @relation("ReportedUser", fields: [reportedUserId], references: [id])
+  post         Post?          @relation(fields: [postId], references: [id])
+  comment      Comment?       @relation(fields: [commentId], references: [id])
+  rule         CommunityRule? @relation(fields: [ruleId], references: [id])
+
+  // Note: Enforce CHECK (num_nonnulls(reportedUserId, postId, commentId) = 1) via raw SQL migration
+}
+
+// -----------------------------------------------------------------------------
+// LEVEL 7: MEDIA, MESSAGING, EVENTS & NOTIFICATIONS
+// -----------------------------------------------------------------------------
+
+model Notification {
+  id        String           @id @default(uuid()) @db.Uuid
+  userId    String           @db.Uuid
+  actorId   String?          @db.Uuid
+  type      NotificationType
+  postId    String?          @db.Uuid
+  commentId String?          @db.Uuid
+  inviteId  String?          @db.Uuid
+  isRead    Boolean          @default(false)
+  createdAt DateTime         @default(now())
+
+  user    User             @relation("UserNotification", fields: [userId], references: [id], onDelete: Cascade)
+  actor   User?            @relation("NotificationActor", fields: [actorId], references: [id])
+  post    Post?            @relation(fields: [postId], references: [id], onDelete: Cascade)
+  comment Comment?         @relation(fields: [commentId], references: [id], onDelete: Cascade)
+  invite  CommunityInvite? @relation(fields: [inviteId], references: [id], onDelete: Cascade)
+}
+
+model Media {
+  id         String    @id @default(uuid()) @db.Uuid
+  userId     String    @db.Uuid
+  postId     String?   @db.Uuid
+  commentId  String?   @db.Uuid
+  mediaUrl   String
+  type       MediaType
+  uploadedAt DateTime  @default(now())
+
+  user    User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  post    Post?    @relation(fields: [postId], references: [id], onDelete: Cascade)
+  comment Comment? @relation(fields: [commentId], references: [id], onDelete: Cascade)
+
+  // Note: Enforce CHECK (num_nonnulls(postId, commentId) = 1) via raw SQL migration
+}
+
+model DirectMessage {
+  id                String   @id @default(uuid()) @db.Uuid
+  senderId          String   @db.Uuid
+  receiverId        String   @db.Uuid
+  content           String
+  deletedBySender   Boolean  @default(false)
+  deletedByReceiver Boolean  @default(false)
+  isRead            Boolean  @default(false)
+  sentAt            DateTime @default(now())
+
+  sender   User @relation("MessageSender", fields: [senderId], references: [id], onDelete: Cascade)
+  receiver User @relation("MessageReceiver", fields: [receiverId], references: [id], onDelete: Cascade)
+}
+
+model Event {
+  id          String   @id @default(uuid()) @db.Uuid
+  communityId String   @db.Uuid
+  creatorId   String   @db.Uuid
+  title       String
+  description String?
+  startTime   DateTime
+  endTime     DateTime
+
+  community  Community          @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  creatorMod CommunityModerator @relation(fields: [creatorId, communityId], references: [userId, communityId])
 }
