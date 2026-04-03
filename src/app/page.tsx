@@ -16,6 +16,14 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 
+import { useSession, signOut } from "next-auth/react";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuSeparator,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 
 const SidebarNavLinks = () => (
   <nav className="flex flex-col space-y-2 p-4">
@@ -46,6 +54,8 @@ const SidebarNavLinks = () => (
 export default function HomePage() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const [isMobileSearchActive, setIsMobileSearchActive] = useState(false);
+  const { data: session, status } = useSession();
+  const isLoading = status === "loading";
 
   return (
     <div className="flex h-screen w-full flex-col overflow-hidden bg-background">
@@ -123,12 +133,36 @@ export default function HomePage() {
 
             <ModeToggle />
             
-            <Link href="/login">
-              <Button size="sm" className="md:px-4 md:py-2">
-                <User className="mr-2 hidden h-4 w-4 md:block" />
-                Login
-              </Button>
-            </Link>
+            {isLoading ? (
+              <Button size="sm" variant="ghost" disabled className="w-10 rounded-full">...</Button>
+            ) : session?.user ? (
+               <DropdownMenu>
+                 <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" className="relative h-8 w-8 rounded-full">
+                       <div className="flex h-full w-full items-center justify-center rounded-full bg-primary/20 text-sm font-semibold">
+                          {(session.user.username?.[0] || session.user.email?.[0] || session.user.name?.[0] || "U").toUpperCase()}
+                       </div>
+                    </Button>
+                 </DropdownMenuTrigger>
+                 <DropdownMenuContent className="w-56" align="end" forceMount>
+                   <div className="flex flex-col space-y-1 p-2">
+                      <p className="text-sm font-medium leading-none">{session.user.username || session.user.name || "User"}</p>
+                     <p className="text-xs leading-none text-muted-foreground">{session.user.email}</p>
+                   </div>
+                   <DropdownMenuSeparator />
+                   <DropdownMenuItem className="cursor-pointer" onClick={() => signOut()}>
+                     Log out
+                   </DropdownMenuItem>
+                 </DropdownMenuContent>
+               </DropdownMenu>
+            ) : (
+              <Link href="/login">
+                <Button size="sm" className="md:px-4 md:py-2">
+                  <User className="mr-2 hidden h-4 w-4 md:block" />
+                  Login
+                </Button>
+              </Link>
+            )}
           </div>
         </header>
       )}
