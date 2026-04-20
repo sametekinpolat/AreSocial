@@ -122,7 +122,7 @@ export default function OnboardingPage() {
                   id="username" 
                   name="username"
                   type="text" 
-                  placeholder="universityhacker" 
+                  placeholder="john_doe" 
                   required 
                   disabled={isPending}
                   maxLength={30}
