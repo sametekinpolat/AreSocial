@@ -165,7 +165,7 @@ export default function HomePage() {
                     <div className="text-sm font-semibold">User {i + 1}</div>
                   </div>
                   <p className="mt-2 text-sm text-muted-foreground">
-                    Try making your browser window small to test the mobile view. You will see the new mobile Sheet sidebar and the expanding search bar!
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vel sapien augue. Sed at nunc nec ipsum convallis tincidunt.
                   </p>
                 </div>
               ))}
