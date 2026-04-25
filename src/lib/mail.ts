@@ -2,6 +2,12 @@ import nodemailer from "nodemailer";
 
 export const sendVerificationEmail = async (email: string, token: string) => {
   const confirmLink = `${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/verify?token=${token}`;
+  const hasSmtpConfig = Boolean(
+    process.env.SMTP_HOST &&
+    process.env.SMTP_PORT &&
+    process.env.SMTP_USER &&
+    process.env.SMTP_PASSWORD
+  );
 
   // Log link to terminal for easy local testing
   console.log(`\n\n-------------------------`);
@@ -9,10 +15,14 @@ export const sendVerificationEmail = async (email: string, token: string) => {
   console.log(` Verification Link: ${confirmLink}`);
   console.log(`-------------------------\n\n`);
 
+  if (!hasSmtpConfig) {
+    return;
+  }
+
   try {
     const transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || "",
-      port: Number(process.env.SMTP_PORT) || 587,
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
       secure: false,
       auth: {
         user: process.env.SMTP_USER,

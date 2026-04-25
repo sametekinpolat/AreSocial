@@ -35,6 +35,18 @@ export async function loginAction(formData: FormData) {
   }
 
   const { identifier, password } = validated.data;
+  const existingUser = await prisma.user.findFirst({
+    where: {
+      OR: [
+        { email: identifier },
+        { username: identifier }
+      ]
+    },
+    select: {
+      email: true,
+      emailVerified: true,
+    }
+  });
 
   try {
     await signIn("credentials", {
@@ -49,10 +61,28 @@ export async function loginAction(formData: FormData) {
         return { error: "Invalid credentials" };
       }
       if (error.type === "AccessDenied") {
-        return { error: "Please verify your email to log in.", requiresVerification: true };
+        return {
+          error: "Please verify your email to log in.",
+          requiresVerification: true,
+          email: existingUser?.email ?? identifier,
+        };
       }
       return { error: "Something went wrong during login" };
     }
+
+    if (
+      error instanceof Error &&
+      error.message.includes("AccessDenied") &&
+      existingUser?.email &&
+      !existingUser.emailVerified
+    ) {
+      return {
+        error: "Please verify your email to log in.",
+        requiresVerification: true,
+        email: existingUser.email,
+      };
+    }
+
     throw error;
   }
 }

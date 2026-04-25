@@ -29,7 +29,7 @@ export default function LoginPage() {
       try {
         const result = await loginAction(formData);
         if (result?.requiresVerification) {
-           window.location.href = `/verify-email?email=${encodeURIComponent(formData.get("identifier") as string)}`;
+           window.location.href = `/verify-email?email=${encodeURIComponent(result.email ?? (formData.get("identifier") as string))}`;
         } else if (result?.error) {
           setError(result.error);
         } else if (result?.success) {
