@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter, IBM_Plex_Sans } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
+import { SessionProvider } from "@/components/session-provider";
 
 const ibmPlexSansHeading = IBM_Plex_Sans({
   subsets: ['latin'],
@@ -36,7 +37,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cn(
-        "h-full antialiased font-sans",
+        "h-full antialiased font-sans flex flex-col",
         geistSans.variable,
         geistMono.variable,
         inter.variable,
@@ -44,15 +45,17 @@ export default function RootLayout({
       )}
       suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col" suppressHydrationWarning>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+      <body className="min-h-full flex flex-col flex-1" suppressHydrationWarning>
+        <SessionProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+        </SessionProvider>
       </body>
     </html>
   );
