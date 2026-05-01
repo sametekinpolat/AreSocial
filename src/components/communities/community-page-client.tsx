@@ -198,7 +198,9 @@ function CommunityPostCard({ post }: { post: CommunityPost }) {
 
         {/* Title */}
         <h3 className="text-sm font-semibold leading-snug text-foreground">
-          {post.title}
+          <Link href={`/posts/${post.id}`} className="hover:underline">
+            {post.title}
+          </Link>
         </h3>
 
         {/* Body preview */}
@@ -210,10 +212,14 @@ function CommunityPostCard({ post }: { post: CommunityPost }) {
 
         {/* Footer */}
         <div className="mt-1 flex items-center gap-3 text-xs text-muted-foreground">
-          <span className="flex items-center gap-1">
+          <Link
+            href={`/posts/${post.id}`}
+            className="flex items-center gap-1 transition-colors hover:text-foreground"
+          >
             <MessageSquare className="h-3.5 w-3.5" />
-            {post.commentCount} {post.commentCount === 1 ? "comment" : "comments"}
-          </span>
+            {post.commentCount}{" "}
+            {post.commentCount === 1 ? "comment" : "comments"}
+          </Link>
         </div>
       </div>
     </article>

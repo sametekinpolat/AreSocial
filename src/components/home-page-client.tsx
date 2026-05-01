@@ -1,6 +1,7 @@
 "use client";
 
 import { startTransition, useEffect, useRef, useState, useTransition } from "react";
+import Link from "next/link";
 import { useSession } from "next-auth/react";
 import {
   ChevronDown,
@@ -416,7 +417,14 @@ function FeedPostCard({ post }: { post: FeedPost }) {
               </div>
             ) : (
               <div className="space-y-2">
-                <CardTitle className="text-lg">{post.title}</CardTitle>
+                <CardTitle className="text-lg">
+                  <Link
+                    href={`/posts/${post.id}`}
+                    className="hover:underline"
+                  >
+                    {post.title}
+                  </Link>
+                </CardTitle>
                 {post.body && (
                   <p className="text-sm leading-6 text-muted-foreground">
                     {post.body}
@@ -472,10 +480,13 @@ function FeedPostCard({ post }: { post: FeedPost }) {
       <CardFooter className="justify-between">
         <div className="flex items-center gap-3 text-sm text-muted-foreground">
           <span>{post.upvotes - post.downvotes} score</span>
-          <span className="flex items-center gap-1">
+          <Link
+            href={`/posts/${post.id}`}
+            className="flex items-center gap-1 transition-colors hover:text-foreground"
+          >
             <MessageSquare className="h-4 w-4" />
             {post.commentCount} comments
-          </span>
+          </Link>
         </div>
         <p className="text-xs text-muted-foreground">Saved in PostgreSQL</p>
       </CardFooter>
