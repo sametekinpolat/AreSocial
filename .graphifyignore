@@ -1,0 +1,15 @@
+# Next.js specific
+.next/
+out/
+build/
+
+# Dependencies
+node_modules/
+
+# Environment and static
+.env*
+public/
+*.log
+
+*.min.js
+next-env.d.ts

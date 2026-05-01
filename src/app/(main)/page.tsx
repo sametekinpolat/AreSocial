@@ -2,6 +2,8 @@ import { PostStatus } from "@/generated/prisma/client";
 import { HomePageClient } from "@/components/home-page-client";
 import { prisma } from "@/lib/prisma";
 
+export const dynamic = "force-dynamic";
+
 export default async function HomePage() {
   const posts = await prisma.post.findMany({
     where: {
@@ -40,8 +42,10 @@ export default async function HomePage() {
     downvotes: post.downvotes,
     commentCount: post._count.comments,
     communityName: post.community.name,
-    authorName: post.user.name || post.user.username || post.user.email || "Anonymous",
-    authorHandle: post.user.username || post.user.email?.split("@")[0] || "anonymous",
+    authorName:
+      post.user.name || post.user.username || post.user.email || "Anonymous",
+    authorHandle:
+      post.user.username || post.user.email?.split("@")[0] || "anonymous",
     authorId: post.userId,
   }));
 
