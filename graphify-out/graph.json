@@ -99,17 +99,8 @@
       "source_file": "eslint.config.mjs",
       "source_location": "L1",
       "id": "eslint_config_mjs",
-      "community": 20,
+      "community": 28,
       "norm_label": "eslint.config.mjs"
-    },
-    {
-      "label": "next-env.d.ts",
-      "file_type": "code",
-      "source_file": "next-env.d.ts",
-      "source_location": "L1",
-      "id": "next_env_d_ts",
-      "community": 21,
-      "norm_label": "next-env.d.ts"
     },
     {
       "label": "next.config.ts",
@@ -117,7 +108,7 @@
       "source_file": "next.config.ts",
       "source_location": "L1",
       "id": "next_config_ts",
-      "community": 22,
+      "community": 29,
       "norm_label": "next.config.ts"
     },
     {
@@ -126,7 +117,7 @@
       "source_file": "postcss.config.mjs",
       "source_location": "L1",
       "id": "postcss_config_mjs",
-      "community": 23,
+      "community": 30,
       "norm_label": "postcss.config.mjs"
     },
     {
@@ -135,7 +126,7 @@
       "source_file": "prisma.config.ts",
       "source_location": "L1",
       "id": "prisma_config_ts",
-      "community": 24,
+      "community": 31,
       "norm_label": "prisma.config.ts"
     },
     {
@@ -144,7 +135,7 @@
       "source_file": "src\\auth.config.ts",
       "source_location": "L1",
       "id": "src_auth_config_ts",
-      "community": 25,
+      "community": 32,
       "norm_label": "auth.config.ts"
     },
     {
@@ -153,7 +144,7 @@
       "source_file": "src\\auth.ts",
       "source_location": "L1",
       "id": "src_auth_ts",
-      "community": 7,
+      "community": 8,
       "norm_label": "auth.ts"
     },
     {
@@ -162,7 +153,7 @@
       "source_file": "src\\auth.ts",
       "source_location": "L14",
       "id": "auth_githubipv4fetch",
-      "community": 7,
+      "community": 8,
       "norm_label": "githubipv4fetch()"
     },
     {
@@ -171,7 +162,7 @@
       "source_file": "src\\auth.ts",
       "source_location": "L83",
       "id": "auth_installgithubfetchpatch",
-      "community": 7,
+      "community": 8,
       "norm_label": "installgithubfetchpatch()"
     },
     {
@@ -180,7 +171,7 @@
       "source_file": "src\\proxy.ts",
       "source_location": "L1",
       "id": "src_proxy_ts",
-      "community": 26,
+      "community": 33,
       "norm_label": "proxy.ts"
     },
     {
@@ -265,49 +256,193 @@
       "norm_label": "completeonboardingaction()"
     },
     {
+      "label": "comments.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "community": 2,
+      "norm_label": "comments.ts"
+    },
+    {
+      "label": "createCommentAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L23",
+      "id": "comments_createcommentaction",
+      "community": 2,
+      "norm_label": "createcommentaction()"
+    },
+    {
+      "label": "editCommentAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L83",
+      "id": "comments_editcommentaction",
+      "community": 2,
+      "norm_label": "editcommentaction()"
+    },
+    {
+      "label": "deleteCommentAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L129",
+      "id": "comments_deletecommentaction",
+      "community": 2,
+      "norm_label": "deletecommentaction()"
+    },
+    {
+      "label": "voteCommentAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L163",
+      "id": "comments_votecommentaction",
+      "community": 2,
+      "norm_label": "votecommentaction()"
+    },
+    {
+      "label": "saveCommentAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L319",
+      "id": "comments_savecommentaction",
+      "community": 2,
+      "norm_label": "savecommentaction()"
+    },
+    {
+      "label": "reportCommentAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L352",
+      "id": "comments_reportcommentaction",
+      "community": 2,
+      "norm_label": "reportcommentaction()"
+    },
+    {
+      "label": "communities.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "community": 4,
+      "norm_label": "communities.ts"
+    },
+    {
+      "label": "createCommunityAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L16",
+      "id": "communities_createcommunityaction",
+      "community": 4,
+      "norm_label": "createcommunityaction()"
+    },
+    {
+      "label": "joinCommunityAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L75",
+      "id": "communities_joincommunityaction",
+      "community": 4,
+      "norm_label": "joincommunityaction()"
+    },
+    {
+      "label": "leaveCommunityAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L105",
+      "id": "communities_leavecommunityaction",
+      "community": 4,
+      "norm_label": "leavecommunityaction()"
+    },
+    {
+      "label": "addRuleAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L146",
+      "id": "communities_addruleaction",
+      "community": 4,
+      "norm_label": "addruleaction()"
+    },
+    {
+      "label": "reorderRulesAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L200",
+      "id": "communities_reorderrulesaction",
+      "community": 4,
+      "norm_label": "reorderrulesaction()"
+    },
+    {
+      "label": "sendInviteAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L240",
+      "id": "communities_sendinviteaction",
+      "community": 4,
+      "norm_label": "sendinviteaction()"
+    },
+    {
+      "label": "respondToInviteAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L333",
+      "id": "communities_respondtoinviteaction",
+      "community": 4,
+      "norm_label": "respondtoinviteaction()"
+    },
+    {
       "label": "posts.ts",
       "file_type": "code",
-      "source_file": "src\\actions\\posts.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
       "source_location": "L1",
-      "id": "src_actions_posts_ts",
-      "community": 4,
+      "id": "c_users_samet_projects_arel_social_src_actions_posts_ts",
+      "community": 2,
       "norm_label": "posts.ts"
     },
     {
       "label": "getOrCreateDemoCommunity()",
       "file_type": "code",
-      "source_file": "src\\actions\\posts.ts",
-      "source_location": "L29",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L30",
       "id": "posts_getorcreatedemocommunity",
-      "community": 4,
+      "community": 2,
       "norm_label": "getorcreatedemocommunity()"
     },
     {
       "label": "createPostAction()",
       "file_type": "code",
-      "source_file": "src\\actions\\posts.ts",
-      "source_location": "L50",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L51",
       "id": "posts_createpostaction",
-      "community": 4,
+      "community": 2,
       "norm_label": "createpostaction()"
     },
     {
       "label": "updatePostAction()",
       "file_type": "code",
-      "source_file": "src\\actions\\posts.ts",
-      "source_location": "L108",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L122",
       "id": "posts_updatepostaction",
-      "community": 4,
+      "community": 2,
       "norm_label": "updatepostaction()"
     },
     {
       "label": "deletePostAction()",
       "file_type": "code",
-      "source_file": "src\\actions\\posts.ts",
-      "source_location": "L162",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L176",
       "id": "posts_deletepostaction",
-      "community": 4,
+      "community": 2,
       "norm_label": "deletepostaction()"
+    },
+    {
+      "label": "votePostAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L220",
+      "id": "posts_votepostaction",
+      "community": 2,
+      "norm_label": "votepostaction()"
     },
     {
       "label": "layout.tsx",
@@ -315,7 +450,7 @@
       "source_file": "src\\app\\layout.tsx",
       "source_location": "L1",
       "id": "src_app_layout_tsx",
-      "community": 12,
+      "community": 16,
       "norm_label": "layout.tsx"
     },
     {
@@ -324,26 +459,8 @@
       "source_file": "src\\app\\layout.tsx",
       "source_location": "L31",
       "id": "layout_rootlayout",
-      "community": 12,
+      "community": 16,
       "norm_label": "rootlayout()"
-    },
-    {
-      "label": "page.tsx",
-      "file_type": "code",
-      "source_file": "src\\app\\page.tsx",
-      "source_location": "L1",
-      "id": "src_app_page_tsx",
-      "community": 13,
-      "norm_label": "page.tsx"
-    },
-    {
-      "label": "HomePage()",
-      "file_type": "code",
-      "source_file": "src\\app\\page.tsx",
-      "source_location": "L5",
-      "id": "page_homepage",
-      "community": 13,
-      "norm_label": "homepage()"
     },
     {
       "label": "page.tsx",
@@ -396,7 +513,7 @@
       "source_file": "src\\app\\(auth)\\verify\\page.tsx",
       "source_location": "L1",
       "id": "src_app_auth_verify_page_tsx",
-      "community": 8,
+      "community": 9,
       "norm_label": "page.tsx"
     },
     {
@@ -405,7 +522,7 @@
       "source_file": "src\\app\\(auth)\\verify\\page.tsx",
       "source_location": "L13",
       "id": "page_verifypage",
-      "community": 8,
+      "community": 9,
       "norm_label": "verifypage()"
     },
     {
@@ -414,7 +531,7 @@
       "source_file": "src\\app\\(auth)\\verify\\page.tsx",
       "source_location": "L61",
       "id": "page_statuscard",
-      "community": 8,
+      "community": 9,
       "norm_label": "statuscard()"
     },
     {
@@ -436,67 +553,337 @@
       "norm_label": "handleresend()"
     },
     {
+      "label": "layout.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\layout.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_app_main_layout_tsx",
+      "community": 17,
+      "norm_label": "layout.tsx"
+    },
+    {
+      "label": "MainLayout()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\layout.tsx",
+      "source_location": "L5",
+      "id": "layout_mainlayout",
+      "community": 17,
+      "norm_label": "mainlayout()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\page.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_app_main_page_tsx",
+      "community": 18,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "HomePage()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\page.tsx",
+      "source_location": "L7",
+      "id": "page_homepage",
+      "community": 18,
+      "norm_label": "homepage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\page.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_app_main_communities_page_tsx",
+      "community": 19,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "CommunitiesPage()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\page.tsx",
+      "source_location": "L6",
+      "id": "page_communitiespage",
+      "community": 19,
+      "norm_label": "communitiespage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\page.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_app_main_communities_name_page_tsx",
+      "community": 10,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "getPostOrderBy()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\page.tsx",
+      "source_location": "L12",
+      "id": "page_getpostorderby",
+      "community": 10,
+      "norm_label": "getpostorderby()"
+    },
+    {
+      "label": "CommunityPage()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\page.tsx",
+      "source_location": "L22",
+      "id": "page_communitypage",
+      "community": 10,
+      "norm_label": "communitypage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\comments\\[id]\\[slug]\\page.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_app_main_communities_name_comments_id_slug_page_tsx",
+      "community": 20,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "PostPage()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\comments\\[id]\\[slug]\\page.tsx",
+      "source_location": "L11",
+      "id": "page_postpage",
+      "community": 20,
+      "norm_label": "postpage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\settings\\page.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_app_main_communities_name_settings_page_tsx",
+      "community": 34,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\posts\\[id]\\page.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_app_main_posts_id_page_tsx",
+      "community": 2,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "PostRedirectPage()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\posts\\[id]\\page.tsx",
+      "source_location": "L12",
+      "id": "page_postredirectpage",
+      "community": 2,
+      "norm_label": "postredirectpage()"
+    },
+    {
+      "label": "page.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\u\\[username]\\page.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_app_main_u_username_page_tsx",
+      "community": 11,
+      "norm_label": "page.tsx"
+    },
+    {
+      "label": "generateMetadata()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\u\\[username]\\page.tsx",
+      "source_location": "L9",
+      "id": "page_generatemetadata",
+      "community": 11,
+      "norm_label": "generatemetadata()"
+    },
+    {
+      "label": "UserProfilePage()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\u\\[username]\\page.tsx",
+      "source_location": "L14",
+      "id": "page_userprofilepage",
+      "community": 11,
+      "norm_label": "userprofilepage()"
+    },
+    {
       "label": "route.ts",
       "file_type": "code",
       "source_file": "src\\app\\api\\auth\\[...nextauth]\\route.ts",
       "source_location": "L1",
       "id": "src_app_api_auth_nextauth_route_ts",
-      "community": 27,
+      "community": 35,
       "norm_label": "route.ts"
+    },
+    {
+      "label": "app-shell.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\app-shell.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_components_app_shell_tsx",
+      "community": 36,
+      "norm_label": "app-shell.tsx"
     },
     {
       "label": "home-page-client.tsx",
       "file_type": "code",
-      "source_file": "src\\components\\home-page-client.tsx",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
       "source_location": "L1",
-      "id": "src_components_home_page_client_tsx",
-      "community": 3,
+      "id": "c_users_samet_projects_arel_social_src_components_home_page_client_tsx",
+      "community": 6,
       "norm_label": "home-page-client.tsx"
-    },
-    {
-      "label": "SidebarNavLinks()",
-      "file_type": "code",
-      "source_file": "src\\components\\home-page-client.tsx",
-      "source_location": "L54",
-      "id": "home_page_client_sidebarnavlinks",
-      "community": 3,
-      "norm_label": "sidebarnavlinks()"
     },
     {
       "label": "formatRelativeDate()",
       "file_type": "code",
-      "source_file": "src\\components\\home-page-client.tsx",
-      "source_location": "L79",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
+      "source_location": "L43",
       "id": "home_page_client_formatrelativedate",
-      "community": 3,
+      "community": 6,
       "norm_label": "formatrelativedate()"
     },
     {
       "label": "syncViewport()",
       "file_type": "code",
-      "source_file": "src\\components\\home-page-client.tsx",
-      "source_location": "L113",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
+      "source_location": "L80",
       "id": "home_page_client_syncviewport",
-      "community": 3,
+      "community": 6,
       "norm_label": "syncviewport()"
     },
     {
       "label": "handlePointerDown()",
       "file_type": "code",
-      "source_file": "src\\components\\home-page-client.tsx",
-      "source_location": "L134",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
+      "source_location": "L95",
       "id": "home_page_client_handlepointerdown",
-      "community": 3,
+      "community": 6,
       "norm_label": "handlepointerdown()"
     },
     {
       "label": "submitPost()",
       "file_type": "code",
-      "source_file": "src\\components\\home-page-client.tsx",
-      "source_location": "L145",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
+      "source_location": "L105",
       "id": "home_page_client_submitpost",
-      "community": 3,
+      "community": 6,
       "norm_label": "submitpost()"
+    },
+    {
+      "label": "post-page-client.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "community": 3,
+      "norm_label": "post-page-client.tsx"
+    },
+    {
+      "label": "formatRelativeDate()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L74",
+      "id": "post_page_client_formatrelativedate",
+      "community": 3,
+      "norm_label": "formatrelativedate()"
+    },
+    {
+      "label": "buildTree()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L90",
+      "id": "post_page_client_buildtree",
+      "community": 3,
+      "norm_label": "buildtree()"
+    },
+    {
+      "label": "AuthModal()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L110",
+      "id": "post_page_client_authmodal",
+      "community": 3,
+      "norm_label": "authmodal()"
+    },
+    {
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L171",
+      "id": "post_page_client_handlesubmit",
+      "community": 3,
+      "norm_label": "handlesubmit()"
+    },
+    {
+      "label": "handleVote()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L262",
+      "id": "post_page_client_handlevote",
+      "community": 3,
+      "norm_label": "handlevote()"
+    },
+    {
+      "label": "handleSave()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L306",
+      "id": "post_page_client_handlesave",
+      "community": 3,
+      "norm_label": "handlesave()"
+    },
+    {
+      "label": "handleEditSubmit()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L322",
+      "id": "post_page_client_handleeditsubmit",
+      "community": 3,
+      "norm_label": "handleeditsubmit()"
+    },
+    {
+      "label": "handleDelete()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L333",
+      "id": "post_page_client_handledelete",
+      "community": 3,
+      "norm_label": "handledelete()"
+    },
+    {
+      "label": "handleReport()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L340",
+      "id": "post_page_client_handlereport",
+      "community": 3,
+      "norm_label": "handlereport()"
+    },
+    {
+      "label": "handleReportSubmit()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L348",
+      "id": "post_page_client_handlereportsubmit",
+      "community": 3,
+      "norm_label": "handlereportsubmit()"
+    },
+    {
+      "label": "onGuestAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L642",
+      "id": "post_page_client_onguestaction",
+      "community": 3,
+      "norm_label": "onguestaction()"
+    },
+    {
+      "label": "handlePostVote()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L646",
+      "id": "post_page_client_handlepostvote",
+      "community": 3,
+      "norm_label": "handlepostvote()"
     },
     {
       "label": "session-provider.tsx",
@@ -504,7 +891,7 @@
       "source_file": "src\\components\\session-provider.tsx",
       "source_location": "L1",
       "id": "src_components_session_provider_tsx",
-      "community": 14,
+      "community": 21,
       "norm_label": "session-provider.tsx"
     },
     {
@@ -513,7 +900,7 @@
       "source_file": "src\\components\\session-provider.tsx",
       "source_location": "L5",
       "id": "session_provider_sessionprovider",
-      "community": 14,
+      "community": 21,
       "norm_label": "sessionprovider()"
     },
     {
@@ -522,7 +909,7 @@
       "source_file": "src\\components\\theme-provider.tsx",
       "source_location": "L1",
       "id": "src_components_theme_provider_tsx",
-      "community": 15,
+      "community": 22,
       "norm_label": "theme-provider.tsx"
     },
     {
@@ -531,8 +918,143 @@
       "source_file": "src\\components\\theme-provider.tsx",
       "source_location": "L6",
       "id": "theme_provider_themeprovider",
-      "community": 15,
+      "community": 22,
       "norm_label": "themeprovider()"
+    },
+    {
+      "label": "user-profile-client.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\user-profile-client.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_components_user_profile_client_tsx",
+      "community": 37,
+      "norm_label": "user-profile-client.tsx"
+    },
+    {
+      "label": "communities-page-client.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\communities-page-client.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_components_communities_communities_page_client_tsx",
+      "community": 38,
+      "norm_label": "communities-page-client.tsx"
+    },
+    {
+      "label": "community-page-client.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "community": 3,
+      "norm_label": "community-page-client.tsx"
+    },
+    {
+      "label": "formatRelativeDate()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L76",
+      "id": "community_page_client_formatrelativedate",
+      "community": 3,
+      "norm_label": "formatrelativedate()"
+    },
+    {
+      "label": "AuthModal()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L94",
+      "id": "community_page_client_authmodal",
+      "community": 3,
+      "norm_label": "authmodal()"
+    },
+    {
+      "label": "SortTabs()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L131",
+      "id": "community_page_client_sorttabs",
+      "community": 3,
+      "norm_label": "sorttabs()"
+    },
+    {
+      "label": "handleVote()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L185",
+      "id": "community_page_client_handlevote",
+      "community": 3,
+      "norm_label": "handlevote()"
+    },
+    {
+      "label": "handleJoinLeave()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L465",
+      "id": "community_page_client_handlejoinleave",
+      "community": 3,
+      "norm_label": "handlejoinleave()"
+    },
+    {
+      "label": "create-community-form.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\create-community-form.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_components_communities_create_community_form_tsx",
+      "community": 23,
+      "norm_label": "create-community-form.tsx"
+    },
+    {
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\create-community-form.tsx",
+      "source_location": "L18",
+      "id": "create_community_form_handlesubmit",
+      "community": 23,
+      "norm_label": "handlesubmit()"
+    },
+    {
+      "label": "invite-user-form.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\invite-user-form.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_components_communities_invite_user_form_tsx",
+      "community": 24,
+      "norm_label": "invite-user-form.tsx"
+    },
+    {
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\invite-user-form.tsx",
+      "source_location": "L18",
+      "id": "invite_user_form_handlesubmit",
+      "community": 24,
+      "norm_label": "handlesubmit()"
+    },
+    {
+      "label": "rules-settings-client.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\rules-settings-client.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_components_communities_rules_settings_client_tsx",
+      "community": 12,
+      "norm_label": "rules-settings-client.tsx"
+    },
+    {
+      "label": "handleAddRule()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\rules-settings-client.tsx",
+      "source_location": "L30",
+      "id": "rules_settings_client_handleaddrule",
+      "community": 12,
+      "norm_label": "handleaddrule()"
+    },
+    {
+      "label": "moveRule()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\rules-settings-client.tsx",
+      "source_location": "L52",
+      "id": "rules_settings_client_moverule",
+      "community": 12,
+      "norm_label": "moverule()"
     },
     {
       "label": "button.tsx",
@@ -540,7 +1062,7 @@
       "source_file": "src\\components\\ui\\button.tsx",
       "source_location": "L1",
       "id": "src_components_ui_button_tsx",
-      "community": 16,
+      "community": 25,
       "norm_label": "button.tsx"
     },
     {
@@ -549,7 +1071,7 @@
       "source_file": "src\\components\\ui\\button.tsx",
       "source_location": "L61",
       "id": "button_cn",
-      "community": 16,
+      "community": 25,
       "norm_label": "cn()"
     },
     {
@@ -558,7 +1080,7 @@
       "source_file": "src\\components\\ui\\card.tsx",
       "source_location": "L1",
       "id": "src_components_ui_card_tsx",
-      "community": 9,
+      "community": 13,
       "norm_label": "card.tsx"
     },
     {
@@ -567,7 +1089,7 @@
       "source_file": "src\\components\\ui\\card.tsx",
       "source_location": "L14",
       "id": "card_cn",
-      "community": 9,
+      "community": 13,
       "norm_label": "cn()"
     },
     {
@@ -576,7 +1098,7 @@
       "source_file": "src\\components\\ui\\card.tsx",
       "source_location": "L59",
       "id": "card_cardaction",
-      "community": 9,
+      "community": 13,
       "norm_label": "cardaction()"
     },
     {
@@ -585,7 +1107,7 @@
       "source_file": "src\\components\\ui\\dropdown-menu.tsx",
       "source_location": "L1",
       "id": "src_components_ui_dropdown_menu_tsx",
-      "community": 6,
+      "community": 7,
       "norm_label": "dropdown-menu.tsx"
     },
     {
@@ -594,7 +1116,7 @@
       "source_file": "src\\components\\ui\\dropdown-menu.tsx",
       "source_location": "L15",
       "id": "dropdown_menu_dropdownmenuportal",
-      "community": 6,
+      "community": 7,
       "norm_label": "dropdownmenuportal()"
     },
     {
@@ -603,7 +1125,7 @@
       "source_file": "src\\components\\ui\\dropdown-menu.tsx",
       "source_location": "L23",
       "id": "dropdown_menu_dropdownmenutrigger",
-      "community": 6,
+      "community": 7,
       "norm_label": "dropdownmenutrigger()"
     },
     {
@@ -612,7 +1134,7 @@
       "source_file": "src\\components\\ui\\dropdown-menu.tsx",
       "source_location": "L201",
       "id": "dropdown_menu_cn",
-      "community": 6,
+      "community": 7,
       "norm_label": "cn()"
     },
     {
@@ -621,7 +1143,7 @@
       "source_file": "src\\components\\ui\\input.tsx",
       "source_location": "L1",
       "id": "src_components_ui_input_tsx",
-      "community": 28,
+      "community": 39,
       "norm_label": "input.tsx"
     },
     {
@@ -630,7 +1152,7 @@
       "source_file": "src\\components\\ui\\label.tsx",
       "source_location": "L1",
       "id": "src_components_ui_label_tsx",
-      "community": 17,
+      "community": 26,
       "norm_label": "label.tsx"
     },
     {
@@ -639,7 +1161,7 @@
       "source_file": "src\\components\\ui\\label.tsx",
       "source_location": "L8",
       "id": "label_label",
-      "community": 17,
+      "community": 26,
       "norm_label": "label()"
     },
     {
@@ -648,7 +1170,7 @@
       "source_file": "src\\components\\ui\\mode-toggle.tsx",
       "source_location": "L1",
       "id": "src_components_ui_mode_toggle_tsx",
-      "community": 18,
+      "community": 27,
       "norm_label": "mode-toggle.tsx"
     },
     {
@@ -657,7 +1179,7 @@
       "source_file": "src\\components\\ui\\mode-toggle.tsx",
       "source_location": "L15",
       "id": "mode_toggle_modetoggle",
-      "community": 18,
+      "community": 27,
       "norm_label": "modetoggle()"
     },
     {
@@ -666,7 +1188,7 @@
       "source_file": "src\\components\\ui\\scroll-area.tsx",
       "source_location": "L1",
       "id": "src_components_ui_scroll_area_tsx",
-      "community": 10,
+      "community": 14,
       "norm_label": "scroll-area.tsx"
     },
     {
@@ -675,7 +1197,7 @@
       "source_file": "src\\components\\ui\\scroll-area.tsx",
       "source_location": "L8",
       "id": "scroll_area_scrollarea",
-      "community": 10,
+      "community": 14,
       "norm_label": "scrollarea()"
     },
     {
@@ -684,7 +1206,7 @@
       "source_file": "src\\components\\ui\\scroll-area.tsx",
       "source_location": "L31",
       "id": "scroll_area_scrollbar",
-      "community": 10,
+      "community": 14,
       "norm_label": "scrollbar()"
     },
     {
@@ -693,7 +1215,7 @@
       "source_file": "src\\components\\ui\\sheet.tsx",
       "source_location": "L1",
       "id": "src_components_ui_sheet_tsx",
-      "community": 29,
+      "community": 40,
       "norm_label": "sheet.tsx"
     },
     {
@@ -702,7 +1224,7 @@
       "source_file": "src\\generated\\prisma\\browser.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_browser_ts",
-      "community": 30,
+      "community": 41,
       "norm_label": "browser.ts"
     },
     {
@@ -711,7 +1233,7 @@
       "source_file": "src\\generated\\prisma\\client.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_client_ts",
-      "community": 31,
+      "community": 42,
       "norm_label": "client.ts"
     },
     {
@@ -720,7 +1242,7 @@
       "source_file": "src\\generated\\prisma\\commonInputTypes.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_commoninputtypes_ts",
-      "community": 32,
+      "community": 43,
       "norm_label": "commoninputtypes.ts"
     },
     {
@@ -729,7 +1251,7 @@
       "source_file": "src\\generated\\prisma\\enums.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_enums_ts",
-      "community": 33,
+      "community": 44,
       "norm_label": "enums.ts"
     },
     {
@@ -738,52 +1260,52 @@
       "source_file": "src\\generated\\prisma\\models.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_ts",
-      "community": 34,
+      "community": 45,
       "norm_label": "models.ts"
     },
     {
       "label": "class.ts",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\internal\\class.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\class.ts",
       "source_location": "L1",
-      "id": "src_generated_prisma_internal_class_ts",
-      "community": 11,
+      "id": "c_users_samet_projects_arel_social_src_generated_prisma_internal_class_ts",
+      "community": 15,
       "norm_label": "class.ts"
     },
     {
       "label": "decodeBase64AsWasm()",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\internal\\class.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\class.ts",
       "source_location": "L41",
       "id": "class_decodebase64aswasm",
-      "community": 11,
+      "community": 15,
       "norm_label": "decodebase64aswasm()"
     },
     {
       "label": "getPrismaClientClass()",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\internal\\class.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\class.ts",
       "source_location": "L472",
       "id": "class_getprismaclientclass",
-      "community": 11,
+      "community": 15,
       "norm_label": "getprismaclientclass()"
     },
     {
       "label": "prismaNamespace.ts",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\internal\\prismaNamespace.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\prismaNamespace.ts",
       "source_location": "L1",
-      "id": "src_generated_prisma_internal_prismanamespace_ts",
-      "community": 35,
+      "id": "c_users_samet_projects_arel_social_src_generated_prisma_internal_prismanamespace_ts",
+      "community": 46,
       "norm_label": "prismanamespace.ts"
     },
     {
       "label": "prismaNamespaceBrowser.ts",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\internal\\prismaNamespaceBrowser.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\prismaNamespaceBrowser.ts",
       "source_location": "L1",
-      "id": "src_generated_prisma_internal_prismanamespacebrowser_ts",
-      "community": 36,
+      "id": "c_users_samet_projects_arel_social_src_generated_prisma_internal_prismanamespacebrowser_ts",
+      "community": 47,
       "norm_label": "prismanamespacebrowser.ts"
     },
     {
@@ -792,7 +1314,7 @@
       "source_file": "src\\generated\\prisma\\models\\Account.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_account_ts",
-      "community": 37,
+      "community": 48,
       "norm_label": "account.ts"
     },
     {
@@ -801,7 +1323,7 @@
       "source_file": "src\\generated\\prisma\\models\\Comment.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_comment_ts",
-      "community": 38,
+      "community": 49,
       "norm_label": "comment.ts"
     },
     {
@@ -810,7 +1332,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommentEditHistory.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_commentedithistory_ts",
-      "community": 39,
+      "community": 50,
       "norm_label": "commentedithistory.ts"
     },
     {
@@ -819,7 +1341,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommentVote.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_commentvote_ts",
-      "community": 40,
+      "community": 51,
       "norm_label": "commentvote.ts"
     },
     {
@@ -828,7 +1350,7 @@
       "source_file": "src\\generated\\prisma\\models\\Community.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_community_ts",
-      "community": 41,
+      "community": 52,
       "norm_label": "community.ts"
     },
     {
@@ -837,7 +1359,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommunityInvite.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_communityinvite_ts",
-      "community": 42,
+      "community": 53,
       "norm_label": "communityinvite.ts"
     },
     {
@@ -846,7 +1368,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommunityMember.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_communitymember_ts",
-      "community": 43,
+      "community": 54,
       "norm_label": "communitymember.ts"
     },
     {
@@ -855,7 +1377,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommunityModerator.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_communitymoderator_ts",
-      "community": 44,
+      "community": 55,
       "norm_label": "communitymoderator.ts"
     },
     {
@@ -864,7 +1386,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommunityRestriction.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_communityrestriction_ts",
-      "community": 45,
+      "community": 56,
       "norm_label": "communityrestriction.ts"
     },
     {
@@ -873,7 +1395,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommunityRule.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_communityrule_ts",
-      "community": 46,
+      "community": 57,
       "norm_label": "communityrule.ts"
     },
     {
@@ -882,7 +1404,7 @@
       "source_file": "src\\generated\\prisma\\models\\DirectMessage.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_directmessage_ts",
-      "community": 47,
+      "community": 58,
       "norm_label": "directmessage.ts"
     },
     {
@@ -891,7 +1413,7 @@
       "source_file": "src\\generated\\prisma\\models\\Event.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_event_ts",
-      "community": 48,
+      "community": 59,
       "norm_label": "event.ts"
     },
     {
@@ -900,7 +1422,7 @@
       "source_file": "src\\generated\\prisma\\models\\GlobalModerator.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_globalmoderator_ts",
-      "community": 49,
+      "community": 60,
       "norm_label": "globalmoderator.ts"
     },
     {
@@ -909,7 +1431,7 @@
       "source_file": "src\\generated\\prisma\\models\\Media.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_media_ts",
-      "community": 50,
+      "community": 61,
       "norm_label": "media.ts"
     },
     {
@@ -918,7 +1440,7 @@
       "source_file": "src\\generated\\prisma\\models\\ModLog.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_modlog_ts",
-      "community": 51,
+      "community": 62,
       "norm_label": "modlog.ts"
     },
     {
@@ -927,7 +1449,7 @@
       "source_file": "src\\generated\\prisma\\models\\Notification.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_notification_ts",
-      "community": 52,
+      "community": 63,
       "norm_label": "notification.ts"
     },
     {
@@ -936,7 +1458,7 @@
       "source_file": "src\\generated\\prisma\\models\\Post.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_post_ts",
-      "community": 53,
+      "community": 64,
       "norm_label": "post.ts"
     },
     {
@@ -945,7 +1467,7 @@
       "source_file": "src\\generated\\prisma\\models\\PostEditHistory.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_postedithistory_ts",
-      "community": 54,
+      "community": 65,
       "norm_label": "postedithistory.ts"
     },
     {
@@ -954,7 +1476,7 @@
       "source_file": "src\\generated\\prisma\\models\\PostFlair.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_postflair_ts",
-      "community": 55,
+      "community": 66,
       "norm_label": "postflair.ts"
     },
     {
@@ -963,7 +1485,7 @@
       "source_file": "src\\generated\\prisma\\models\\PostVote.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_postvote_ts",
-      "community": 56,
+      "community": 67,
       "norm_label": "postvote.ts"
     },
     {
@@ -972,7 +1494,7 @@
       "source_file": "src\\generated\\prisma\\models\\Report.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_report_ts",
-      "community": 57,
+      "community": 68,
       "norm_label": "report.ts"
     },
     {
@@ -981,7 +1503,7 @@
       "source_file": "src\\generated\\prisma\\models\\SavedComment.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_savedcomment_ts",
-      "community": 58,
+      "community": 69,
       "norm_label": "savedcomment.ts"
     },
     {
@@ -990,7 +1512,7 @@
       "source_file": "src\\generated\\prisma\\models\\SavedPost.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_savedpost_ts",
-      "community": 59,
+      "community": 70,
       "norm_label": "savedpost.ts"
     },
     {
@@ -999,16 +1521,16 @@
       "source_file": "src\\generated\\prisma\\models\\Session.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_session_ts",
-      "community": 60,
+      "community": 71,
       "norm_label": "session.ts"
     },
     {
       "label": "User.ts",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\models\\User.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\models\\User.ts",
       "source_location": "L1",
-      "id": "src_generated_prisma_models_user_ts",
-      "community": 61,
+      "id": "c_users_samet_projects_arel_social_src_generated_prisma_models_user_ts",
+      "community": 72,
       "norm_label": "user.ts"
     },
     {
@@ -1017,7 +1539,7 @@
       "source_file": "src\\generated\\prisma\\models\\UserBlock.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_userblock_ts",
-      "community": 62,
+      "community": 73,
       "norm_label": "userblock.ts"
     },
     {
@@ -1026,7 +1548,7 @@
       "source_file": "src\\generated\\prisma\\models\\UserPreference.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_userpreference_ts",
-      "community": 63,
+      "community": 74,
       "norm_label": "userpreference.ts"
     },
     {
@@ -1053,7 +1575,7 @@
       "source_file": "src\\lib\\prisma.ts",
       "source_location": "L1",
       "id": "src_lib_prisma_ts",
-      "community": 64,
+      "community": 75,
       "norm_label": "prisma.ts"
     },
     {
@@ -1113,20 +1635,38 @@
     {
       "label": "utils.ts",
       "file_type": "code",
-      "source_file": "src\\lib\\utils.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\utils.ts",
       "source_location": "L1",
-      "id": "src_lib_utils_ts",
-      "community": 19,
+      "id": "c_users_samet_projects_arel_social_src_lib_utils_ts",
+      "community": 2,
       "norm_label": "utils.ts"
     },
     {
       "label": "cn()",
       "file_type": "code",
-      "source_file": "src\\lib\\utils.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\utils.ts",
       "source_location": "L4",
       "id": "utils_cn",
-      "community": 19,
+      "community": 2,
       "norm_label": "cn()"
+    },
+    {
+      "label": "formatKarma()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\utils.ts",
+      "source_location": "L12",
+      "id": "utils_formatkarma",
+      "community": 2,
+      "norm_label": "formatkarma()"
+    },
+    {
+      "label": "slugify()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\utils.ts",
+      "source_location": "L20",
+      "id": "utils_slugify",
+      "community": 2,
+      "norm_label": "slugify()"
     },
     {
       "label": "auth.ts",
@@ -1134,8 +1674,17 @@
       "source_file": "src\\lib\\validations\\auth.ts",
       "source_location": "L1",
       "id": "src_lib_validations_auth_ts",
-      "community": 65,
+      "community": 76,
       "norm_label": "auth.ts"
+    },
+    {
+      "label": "community.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\validations\\community.ts",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_lib_validations_community_ts",
+      "community": 77,
+      "norm_label": "community.ts"
     },
     {
       "label": "next-auth.d.ts",
@@ -1143,7 +1692,7 @@
       "source_file": "src\\types\\next-auth.d.ts",
       "source_location": "L1",
       "id": "src_types_next_auth_d_ts",
-      "community": 66,
+      "community": 78,
       "norm_label": "next-auth.d.ts"
     },
     {
@@ -1155,9 +1704,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "readme_arel_social",
-      "community": 67,
-      "norm_label": "arel social (readme)"
+      "community": 79,
+      "norm_label": "arel social (readme)",
+      "id": "readme_arel_social"
     },
     {
       "label": "users (table)",
@@ -1168,9 +1717,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "auth_users",
       "community": 0,
-      "norm_label": "users (table)"
+      "norm_label": "users (table)",
+      "id": "auth_users"
     },
     {
       "label": "accounts (table)",
@@ -1181,9 +1730,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "auth_accounts",
       "community": 0,
-      "norm_label": "accounts (table)"
+      "norm_label": "accounts (table)",
+      "id": "auth_accounts"
     },
     {
       "label": "sessions (table)",
@@ -1194,9 +1743,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "auth_sessions",
       "community": 0,
-      "norm_label": "sessions (table)"
+      "norm_label": "sessions (table)",
+      "id": "auth_sessions"
     },
     {
       "label": "verification_tokens (table)",
@@ -1207,9 +1756,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "auth_verification_tokens",
       "community": 0,
-      "norm_label": "verification_tokens (table)"
+      "norm_label": "verification_tokens (table)",
+      "id": "auth_verification_tokens"
     },
     {
       "label": "user_preferences (table)",
@@ -1220,9 +1769,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "auth_user_preferences",
       "community": 0,
-      "norm_label": "user_preferences (table)"
+      "norm_label": "user_preferences (table)",
+      "id": "auth_user_preferences"
     },
     {
       "label": "global_moderators (table)",
@@ -1233,9 +1782,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "auth_global_moderators",
       "community": 0,
-      "norm_label": "global_moderators (table)"
+      "norm_label": "global_moderators (table)",
+      "id": "auth_global_moderators"
     },
     {
       "label": "Auth & User Profiles ER Diagram",
@@ -1246,9 +1795,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "auth_er_diagram",
       "community": 0,
-      "norm_label": "auth & user profiles er diagram"
+      "norm_label": "auth & user profiles er diagram",
+      "id": "auth_er_diagram"
     },
     {
       "label": "communities (table)",
@@ -1259,9 +1808,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "comm_communities",
       "community": 0,
-      "norm_label": "communities (table)"
+      "norm_label": "communities (table)",
+      "id": "comm_communities"
     },
     {
       "label": "community_rules (table)",
@@ -1272,9 +1821,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "comm_community_rules",
       "community": 0,
-      "norm_label": "community_rules (table)"
+      "norm_label": "community_rules (table)",
+      "id": "comm_community_rules"
     },
     {
       "label": "community_invites (table)",
@@ -1285,9 +1834,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "comm_community_invites",
       "community": 0,
-      "norm_label": "community_invites (table)"
+      "norm_label": "community_invites (table)",
+      "id": "comm_community_invites"
     },
     {
       "label": "community_members (table)",
@@ -1298,9 +1847,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "comm_community_members",
       "community": 0,
-      "norm_label": "community_members (table)"
+      "norm_label": "community_members (table)",
+      "id": "comm_community_members"
     },
     {
       "label": "community_moderators (table)",
@@ -1311,9 +1860,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "comm_community_moderators",
       "community": 0,
-      "norm_label": "community_moderators (table)"
+      "norm_label": "community_moderators (table)",
+      "id": "comm_community_moderators"
     },
     {
       "label": "community_restrictions (table)",
@@ -1324,9 +1873,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "comm_community_restrictions",
       "community": 0,
-      "norm_label": "community_restrictions (table)"
+      "norm_label": "community_restrictions (table)",
+      "id": "comm_community_restrictions"
     },
     {
       "label": "mod_logs (table)",
@@ -1337,9 +1886,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "comm_mod_logs",
       "community": 0,
-      "norm_label": "mod_logs (table)"
+      "norm_label": "mod_logs (table)",
+      "id": "comm_mod_logs"
     },
     {
       "label": "user_blocks (table)",
@@ -1350,9 +1899,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "comm_user_blocks",
       "community": 0,
-      "norm_label": "user_blocks (table)"
+      "norm_label": "user_blocks (table)",
+      "id": "comm_user_blocks"
     },
     {
       "label": "reports (table)",
@@ -1363,9 +1912,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "comm_reports",
       "community": 0,
-      "norm_label": "reports (table)"
+      "norm_label": "reports (table)",
+      "id": "comm_reports"
     },
     {
       "label": "Communities & Moderation ER Diagram",
@@ -1376,9 +1925,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "comm_er_diagram",
       "community": 0,
-      "norm_label": "communities & moderation er diagram"
+      "norm_label": "communities & moderation er diagram",
+      "id": "comm_er_diagram"
     },
     {
       "label": "posts (table)",
@@ -1389,9 +1938,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_posts",
-      "community": 2,
-      "norm_label": "posts (table)"
+      "community": 0,
+      "norm_label": "posts (table)",
+      "id": "content_posts"
     },
     {
       "label": "comments (table)",
@@ -1402,9 +1951,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_comments",
-      "community": 2,
-      "norm_label": "comments (table)"
+      "community": 0,
+      "norm_label": "comments (table)",
+      "id": "content_comments"
     },
     {
       "label": "post_flairs (table)",
@@ -1415,9 +1964,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_post_flairs",
-      "community": 2,
-      "norm_label": "post_flairs (table)"
+      "community": 0,
+      "norm_label": "post_flairs (table)",
+      "id": "content_post_flairs"
     },
     {
       "label": "post_edit_history (table)",
@@ -1428,9 +1977,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_post_edit_history",
-      "community": 2,
-      "norm_label": "post_edit_history (table)"
+      "community": 0,
+      "norm_label": "post_edit_history (table)",
+      "id": "content_post_edit_history"
     },
     {
       "label": "comment_edit_history (table)",
@@ -1441,9 +1990,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_comment_edit_history",
-      "community": 2,
-      "norm_label": "comment_edit_history (table)"
+      "community": 0,
+      "norm_label": "comment_edit_history (table)",
+      "id": "content_comment_edit_history"
     },
     {
       "label": "media (table)",
@@ -1454,9 +2003,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_media",
-      "community": 2,
-      "norm_label": "media (table)"
+      "community": 0,
+      "norm_label": "media (table)",
+      "id": "content_media"
     },
     {
       "label": "post_votes (table)",
@@ -1467,9 +2016,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_post_votes",
-      "community": 2,
-      "norm_label": "post_votes (table)"
+      "community": 0,
+      "norm_label": "post_votes (table)",
+      "id": "content_post_votes"
     },
     {
       "label": "comment_votes (table)",
@@ -1480,9 +2029,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_comment_votes",
-      "community": 2,
-      "norm_label": "comment_votes (table)"
+      "community": 0,
+      "norm_label": "comment_votes (table)",
+      "id": "content_comment_votes"
     },
     {
       "label": "saved_posts (table)",
@@ -1493,9 +2042,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_saved_posts",
-      "community": 2,
-      "norm_label": "saved_posts (table)"
+      "community": 0,
+      "norm_label": "saved_posts (table)",
+      "id": "content_saved_posts"
     },
     {
       "label": "saved_comments (table)",
@@ -1506,9 +2055,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_saved_comments",
-      "community": 2,
-      "norm_label": "saved_comments (table)"
+      "community": 0,
+      "norm_label": "saved_comments (table)",
+      "id": "content_saved_comments"
     },
     {
       "label": "notifications (table)",
@@ -1519,9 +2068,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_notifications",
       "community": 0,
-      "norm_label": "notifications (table)"
+      "norm_label": "notifications (table)",
+      "id": "content_notifications"
     },
     {
       "label": "direct_messages (table)",
@@ -1532,9 +2081,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_direct_messages",
       "community": 0,
-      "norm_label": "direct_messages (table)"
+      "norm_label": "direct_messages (table)",
+      "id": "content_direct_messages"
     },
     {
       "label": "events (table)",
@@ -1545,9 +2094,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_events",
       "community": 0,
-      "norm_label": "events (table)"
+      "norm_label": "events (table)",
+      "id": "content_events"
     },
     {
       "label": "Content & Interactions ER Diagram",
@@ -1558,9 +2107,9 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "id": "content_er_diagram",
-      "community": 2,
-      "norm_label": "content & interactions er diagram"
+      "community": 0,
+      "norm_label": "content & interactions er diagram",
+      "id": "content_er_diagram"
     }
   ],
   "links": [
@@ -1775,8 +2324,8 @@
       "source_file": "src\\app\\(auth)\\verify-email\\page.tsx",
       "source_location": "L42",
       "weight": 1.0,
-      "_src": "page_handleresend",
-      "_tgt": "auth_resendverificationemailaction",
+      "_src": "auth_resendverificationemailaction",
+      "_tgt": "page_handleresend",
       "source": "auth_resendverificationemailaction",
       "target": "page_handleresend"
     },
@@ -1831,62 +2380,290 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\actions\\posts.ts",
-      "source_location": "L29",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L23",
       "weight": 1.0,
-      "_src": "src_actions_posts_ts",
+      "_src": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "_tgt": "comments_createcommentaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "target": "comments_createcommentaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "_tgt": "comments_editcommentaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "target": "comments_editcommentaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "_tgt": "comments_deletecommentaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "target": "comments_deletecommentaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L163",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "_tgt": "comments_votecommentaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "target": "comments_votecommentaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L319",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "_tgt": "comments_savecommentaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "target": "comments_savecommentaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L352",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "_tgt": "comments_reportcommentaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_comments_ts",
+      "target": "comments_reportcommentaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "comments_createcommentaction",
+      "_tgt": "utils_slugify",
+      "source": "comments_createcommentaction",
+      "target": "utils_slugify"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_src": "comments_editcommentaction",
+      "_tgt": "utils_slugify",
+      "source": "comments_editcommentaction",
+      "target": "utils_slugify"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L141",
+      "weight": 1.0,
+      "_src": "comments_deletecommentaction",
+      "_tgt": "utils_slugify",
+      "source": "comments_deletecommentaction",
+      "target": "utils_slugify"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
+      "source_location": "L224",
+      "weight": 1.0,
+      "_src": "comments_votecommentaction",
+      "_tgt": "utils_slugify",
+      "source": "comments_votecommentaction",
+      "target": "utils_slugify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L16",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "_tgt": "communities_createcommunityaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "target": "communities_createcommunityaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L75",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "_tgt": "communities_joincommunityaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "target": "communities_joincommunityaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L105",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "_tgt": "communities_leavecommunityaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "target": "communities_leavecommunityaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "_tgt": "communities_addruleaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "target": "communities_addruleaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L200",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "_tgt": "communities_reorderrulesaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "target": "communities_reorderrulesaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L240",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "_tgt": "communities_sendinviteaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "target": "communities_sendinviteaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\communities.ts",
+      "source_location": "L333",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "_tgt": "communities_respondtoinviteaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_communities_ts",
+      "target": "communities_respondtoinviteaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_posts_ts",
       "_tgt": "posts_getorcreatedemocommunity",
-      "source": "src_actions_posts_ts",
+      "source": "c_users_samet_projects_arel_social_src_actions_posts_ts",
       "target": "posts_getorcreatedemocommunity",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\actions\\posts.ts",
-      "source_location": "L50",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L51",
       "weight": 1.0,
-      "_src": "src_actions_posts_ts",
+      "_src": "c_users_samet_projects_arel_social_src_actions_posts_ts",
       "_tgt": "posts_createpostaction",
-      "source": "src_actions_posts_ts",
+      "source": "c_users_samet_projects_arel_social_src_actions_posts_ts",
       "target": "posts_createpostaction",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\actions\\posts.ts",
-      "source_location": "L108",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L122",
       "weight": 1.0,
-      "_src": "src_actions_posts_ts",
+      "_src": "c_users_samet_projects_arel_social_src_actions_posts_ts",
       "_tgt": "posts_updatepostaction",
-      "source": "src_actions_posts_ts",
+      "source": "c_users_samet_projects_arel_social_src_actions_posts_ts",
       "target": "posts_updatepostaction",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\actions\\posts.ts",
-      "source_location": "L162",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L176",
       "weight": 1.0,
-      "_src": "src_actions_posts_ts",
+      "_src": "c_users_samet_projects_arel_social_src_actions_posts_ts",
       "_tgt": "posts_deletepostaction",
-      "source": "src_actions_posts_ts",
+      "source": "c_users_samet_projects_arel_social_src_actions_posts_ts",
       "target": "posts_deletepostaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L220",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_posts_ts",
+      "_tgt": "posts_votepostaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_posts_ts",
+      "target": "posts_votepostaction",
       "confidence_score": 1.0
     },
     {
       "relation": "calls",
       "confidence": "EXTRACTED",
-      "source_file": "src\\actions\\posts.ts",
-      "source_location": "L72",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L73",
       "weight": 1.0,
       "_src": "posts_createpostaction",
       "_tgt": "posts_getorcreatedemocommunity",
       "source": "posts_getorcreatedemocommunity",
       "target": "posts_createpostaction",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
+      "source_location": "L361",
+      "weight": 1.0,
+      "_src": "posts_votepostaction",
+      "_tgt": "utils_slugify",
+      "source": "posts_votepostaction",
+      "target": "utils_slugify"
     },
     {
       "relation": "contains",
@@ -1898,18 +2675,6 @@
       "_tgt": "layout_rootlayout",
       "source": "src_app_layout_tsx",
       "target": "layout_rootlayout",
-      "confidence_score": 1.0
-    },
-    {
-      "relation": "contains",
-      "confidence": "EXTRACTED",
-      "source_file": "src\\app\\page.tsx",
-      "source_location": "L5",
-      "weight": 1.0,
-      "_src": "src_app_page_tsx",
-      "_tgt": "page_homepage",
-      "source": "src_app_page_tsx",
-      "target": "page_homepage",
       "confidence_score": 1.0
     },
     {
@@ -2011,62 +2776,386 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\components\\home-page-client.tsx",
-      "source_location": "L54",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\layout.tsx",
+      "source_location": "L5",
       "weight": 1.0,
-      "_src": "src_components_home_page_client_tsx",
-      "_tgt": "home_page_client_sidebarnavlinks",
-      "source": "src_components_home_page_client_tsx",
-      "target": "home_page_client_sidebarnavlinks",
+      "_src": "c_users_samet_projects_arel_social_src_app_main_layout_tsx",
+      "_tgt": "layout_mainlayout",
+      "source": "c_users_samet_projects_arel_social_src_app_main_layout_tsx",
+      "target": "layout_mainlayout",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\components\\home-page-client.tsx",
-      "source_location": "L79",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\page.tsx",
+      "source_location": "L7",
       "weight": 1.0,
-      "_src": "src_components_home_page_client_tsx",
+      "_src": "c_users_samet_projects_arel_social_src_app_main_page_tsx",
+      "_tgt": "page_homepage",
+      "source": "c_users_samet_projects_arel_social_src_app_main_page_tsx",
+      "target": "page_homepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\page.tsx",
+      "source_location": "L6",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_app_main_communities_page_tsx",
+      "_tgt": "page_communitiespage",
+      "source": "c_users_samet_projects_arel_social_src_app_main_communities_page_tsx",
+      "target": "page_communitiespage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_app_main_communities_name_page_tsx",
+      "_tgt": "page_getpostorderby",
+      "source": "c_users_samet_projects_arel_social_src_app_main_communities_name_page_tsx",
+      "target": "page_getpostorderby",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\page.tsx",
+      "source_location": "L22",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_app_main_communities_name_page_tsx",
+      "_tgt": "page_communitypage",
+      "source": "c_users_samet_projects_arel_social_src_app_main_communities_name_page_tsx",
+      "target": "page_communitypage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\page.tsx",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_src": "page_communitypage",
+      "_tgt": "page_getpostorderby",
+      "source": "page_getpostorderby",
+      "target": "page_communitypage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\comments\\[id]\\[slug]\\page.tsx",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_app_main_communities_name_comments_id_slug_page_tsx",
+      "_tgt": "page_postpage",
+      "source": "c_users_samet_projects_arel_social_src_app_main_communities_name_comments_id_slug_page_tsx",
+      "target": "page_postpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\posts\\[id]\\page.tsx",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_app_main_posts_id_page_tsx",
+      "_tgt": "page_postredirectpage",
+      "source": "c_users_samet_projects_arel_social_src_app_main_posts_id_page_tsx",
+      "target": "page_postredirectpage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\posts\\[id]\\page.tsx",
+      "source_location": "L26",
+      "weight": 1.0,
+      "_src": "page_postredirectpage",
+      "_tgt": "utils_slugify",
+      "source": "page_postredirectpage",
+      "target": "utils_slugify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\u\\[username]\\page.tsx",
+      "source_location": "L9",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_app_main_u_username_page_tsx",
+      "_tgt": "page_generatemetadata",
+      "source": "c_users_samet_projects_arel_social_src_app_main_u_username_page_tsx",
+      "target": "page_generatemetadata",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\u\\[username]\\page.tsx",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_app_main_u_username_page_tsx",
+      "_tgt": "page_userprofilepage",
+      "source": "c_users_samet_projects_arel_social_src_app_main_u_username_page_tsx",
+      "target": "page_userprofilepage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
+      "source_location": "L43",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_home_page_client_tsx",
       "_tgt": "home_page_client_formatrelativedate",
-      "source": "src_components_home_page_client_tsx",
+      "source": "c_users_samet_projects_arel_social_src_components_home_page_client_tsx",
       "target": "home_page_client_formatrelativedate",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\components\\home-page-client.tsx",
-      "source_location": "L113",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
+      "source_location": "L80",
       "weight": 1.0,
-      "_src": "src_components_home_page_client_tsx",
+      "_src": "c_users_samet_projects_arel_social_src_components_home_page_client_tsx",
       "_tgt": "home_page_client_syncviewport",
-      "source": "src_components_home_page_client_tsx",
+      "source": "c_users_samet_projects_arel_social_src_components_home_page_client_tsx",
       "target": "home_page_client_syncviewport",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\components\\home-page-client.tsx",
-      "source_location": "L134",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
+      "source_location": "L95",
       "weight": 1.0,
-      "_src": "src_components_home_page_client_tsx",
+      "_src": "c_users_samet_projects_arel_social_src_components_home_page_client_tsx",
       "_tgt": "home_page_client_handlepointerdown",
-      "source": "src_components_home_page_client_tsx",
+      "source": "c_users_samet_projects_arel_social_src_components_home_page_client_tsx",
       "target": "home_page_client_handlepointerdown",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\components\\home-page-client.tsx",
-      "source_location": "L145",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
+      "source_location": "L105",
       "weight": 1.0,
-      "_src": "src_components_home_page_client_tsx",
+      "_src": "c_users_samet_projects_arel_social_src_components_home_page_client_tsx",
       "_tgt": "home_page_client_submitpost",
-      "source": "src_components_home_page_client_tsx",
+      "source": "c_users_samet_projects_arel_social_src_components_home_page_client_tsx",
       "target": "home_page_client_submitpost",
       "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L74",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_formatrelativedate",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_formatrelativedate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_buildtree",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_buildtree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L110",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_authmodal",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_authmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L171",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_handlesubmit",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L262",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_handlevote",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_handlevote",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L306",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_handlesave",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_handlesave",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L322",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_handleeditsubmit",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_handleeditsubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L333",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_handledelete",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_handledelete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L340",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_handlereport",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_handlereport",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L348",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_handlereportsubmit",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_handlereportsubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L642",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_onguestaction",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_onguestaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L646",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "_tgt": "post_page_client_handlepostvote",
+      "source": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
+      "target": "post_page_client_handlepostvote",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L264",
+      "weight": 1.0,
+      "_src": "post_page_client_handlevote",
+      "_tgt": "post_page_client_onguestaction",
+      "source": "post_page_client_handlevote",
+      "target": "post_page_client_onguestaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L308",
+      "weight": 1.0,
+      "_src": "post_page_client_handlesave",
+      "_tgt": "post_page_client_onguestaction",
+      "source": "post_page_client_handlesave",
+      "target": "post_page_client_onguestaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L342",
+      "weight": 1.0,
+      "_src": "post_page_client_handlereport",
+      "_tgt": "post_page_client_onguestaction",
+      "source": "post_page_client_handlereport",
+      "target": "post_page_client_onguestaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
+      "source_location": "L648",
+      "weight": 1.0,
+      "_src": "post_page_client_handlepostvote",
+      "_tgt": "post_page_client_onguestaction",
+      "source": "post_page_client_onguestaction",
+      "target": "post_page_client_handlepostvote",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L187",
+      "weight": 1.0,
+      "_src": "post_page_client_onguestaction",
+      "_tgt": "community_page_client_handlevote",
+      "source": "post_page_client_onguestaction",
+      "target": "community_page_client_handlevote"
     },
     {
       "relation": "contains",
@@ -2090,6 +3179,114 @@
       "_tgt": "theme_provider_themeprovider",
       "source": "src_components_theme_provider_tsx",
       "target": "theme_provider_themeprovider",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "_tgt": "community_page_client_formatrelativedate",
+      "source": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "target": "community_page_client_formatrelativedate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L94",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "_tgt": "community_page_client_authmodal",
+      "source": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "target": "community_page_client_authmodal",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L131",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "_tgt": "community_page_client_sorttabs",
+      "source": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "target": "community_page_client_sorttabs",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L185",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "_tgt": "community_page_client_handlevote",
+      "source": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "target": "community_page_client_handlevote",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L465",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "_tgt": "community_page_client_handlejoinleave",
+      "source": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "target": "community_page_client_handlejoinleave",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\create-community-form.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_communities_create_community_form_tsx",
+      "_tgt": "create_community_form_handlesubmit",
+      "source": "c_users_samet_projects_arel_social_src_components_communities_create_community_form_tsx",
+      "target": "create_community_form_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\invite-user-form.tsx",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_communities_invite_user_form_tsx",
+      "_tgt": "invite_user_form_handlesubmit",
+      "source": "c_users_samet_projects_arel_social_src_components_communities_invite_user_form_tsx",
+      "target": "invite_user_form_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\rules-settings-client.tsx",
+      "source_location": "L30",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_communities_rules_settings_client_tsx",
+      "_tgt": "rules_settings_client_handleaddrule",
+      "source": "c_users_samet_projects_arel_social_src_components_communities_rules_settings_client_tsx",
+      "target": "rules_settings_client_handleaddrule",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\rules-settings-client.tsx",
+      "source_location": "L52",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_communities_rules_settings_client_tsx",
+      "_tgt": "rules_settings_client_moverule",
+      "source": "c_users_samet_projects_arel_social_src_components_communities_rules_settings_client_tsx",
+      "target": "rules_settings_client_moverule",
       "confidence_score": 1.0
     },
     {
@@ -2215,24 +3412,24 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\generated\\prisma\\internal\\class.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\class.ts",
       "source_location": "L41",
       "weight": 1.0,
-      "_src": "src_generated_prisma_internal_class_ts",
+      "_src": "c_users_samet_projects_arel_social_src_generated_prisma_internal_class_ts",
       "_tgt": "class_decodebase64aswasm",
-      "source": "src_generated_prisma_internal_class_ts",
+      "source": "c_users_samet_projects_arel_social_src_generated_prisma_internal_class_ts",
       "target": "class_decodebase64aswasm",
       "confidence_score": 1.0
     },
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\generated\\prisma\\internal\\class.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\class.ts",
       "source_location": "L472",
       "weight": 1.0,
-      "_src": "src_generated_prisma_internal_class_ts",
+      "_src": "c_users_samet_projects_arel_social_src_generated_prisma_internal_class_ts",
       "_tgt": "class_getprismaclientclass",
-      "source": "src_generated_prisma_internal_class_ts",
+      "source": "c_users_samet_projects_arel_social_src_generated_prisma_internal_class_ts",
       "target": "class_getprismaclientclass",
       "confidence_score": 1.0
     },
@@ -2359,13 +3556,37 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
-      "source_file": "src\\lib\\utils.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\utils.ts",
       "source_location": "L4",
       "weight": 1.0,
-      "_src": "src_lib_utils_ts",
+      "_src": "c_users_samet_projects_arel_social_src_lib_utils_ts",
       "_tgt": "utils_cn",
-      "source": "src_lib_utils_ts",
+      "source": "c_users_samet_projects_arel_social_src_lib_utils_ts",
       "target": "utils_cn",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\utils.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_lib_utils_ts",
+      "_tgt": "utils_formatkarma",
+      "source": "c_users_samet_projects_arel_social_src_lib_utils_ts",
+      "target": "utils_formatkarma",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\utils.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_lib_utils_ts",
+      "_tgt": "utils_slugify",
+      "source": "c_users_samet_projects_arel_social_src_lib_utils_ts",
+      "target": "utils_slugify",
       "confidence_score": 1.0
     },
     {
@@ -2375,8 +3596,8 @@
       "source_file": "docs/database/er diagram/AUTH & USER PROFILES.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "auth_accounts",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "auth_accounts",
       "source": "auth_users",
       "target": "auth_accounts"
     },
@@ -2387,8 +3608,8 @@
       "source_file": "docs/database/er diagram/AUTH & USER PROFILES.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "auth_sessions",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "auth_sessions",
       "source": "auth_users",
       "target": "auth_sessions"
     },
@@ -2399,8 +3620,8 @@
       "source_file": "docs/database/er diagram/AUTH & USER PROFILES.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "auth_user_preferences",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "auth_user_preferences",
       "source": "auth_users",
       "target": "auth_user_preferences"
     },
@@ -2411,8 +3632,8 @@
       "source_file": "docs/database/er diagram/AUTH & USER PROFILES.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "auth_global_moderators",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "auth_global_moderators",
       "source": "auth_users",
       "target": "auth_global_moderators"
     },
@@ -2423,8 +3644,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "owner_id FK",
       "weight": 1.0,
-      "_src": "comm_communities",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "comm_communities",
       "source": "auth_users",
       "target": "comm_communities"
     },
@@ -2435,8 +3656,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "inviter_id, invitee_id FKs",
       "weight": 1.0,
-      "_src": "comm_community_invites",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "comm_community_invites",
       "source": "auth_users",
       "target": "comm_community_invites"
     },
@@ -2447,8 +3668,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "comm_community_members",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "comm_community_members",
       "source": "auth_users",
       "target": "comm_community_members"
     },
@@ -2459,8 +3680,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "comm_community_moderators",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "comm_community_moderators",
       "source": "auth_users",
       "target": "comm_community_moderators"
     },
@@ -2471,8 +3692,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "moderator_id, target_user_id FKs",
       "weight": 1.0,
-      "_src": "comm_community_restrictions",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "comm_community_restrictions",
       "source": "auth_users",
       "target": "comm_community_restrictions"
     },
@@ -2483,8 +3704,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "moderator_id, target_user_id FKs",
       "weight": 1.0,
-      "_src": "comm_mod_logs",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "comm_mod_logs",
       "source": "auth_users",
       "target": "comm_mod_logs"
     },
@@ -2495,8 +3716,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "blocker_id, blocked_id FKs",
       "weight": 1.0,
-      "_src": "comm_user_blocks",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "comm_user_blocks",
       "source": "auth_users",
       "target": "comm_user_blocks"
     },
@@ -2507,8 +3728,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "reporter_id, reported_user_id FKs",
       "weight": 1.0,
-      "_src": "comm_reports",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "comm_reports",
       "source": "auth_users",
       "target": "comm_reports"
     },
@@ -2519,8 +3740,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "content_posts",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "content_posts",
       "source": "auth_users",
       "target": "content_posts"
     },
@@ -2531,8 +3752,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "content_comments",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "content_comments",
       "source": "auth_users",
       "target": "content_comments"
     },
@@ -2543,8 +3764,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "content_post_votes",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "content_post_votes",
       "source": "auth_users",
       "target": "content_post_votes"
     },
@@ -2555,8 +3776,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "content_comment_votes",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "content_comment_votes",
       "source": "auth_users",
       "target": "content_comment_votes"
     },
@@ -2567,8 +3788,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "content_saved_posts",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "content_saved_posts",
       "source": "auth_users",
       "target": "content_saved_posts"
     },
@@ -2579,8 +3800,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "user_id FK",
       "weight": 1.0,
-      "_src": "content_saved_comments",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "content_saved_comments",
       "source": "auth_users",
       "target": "content_saved_comments"
     },
@@ -2591,8 +3812,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "user_id, actor_id FKs",
       "weight": 1.0,
-      "_src": "content_notifications",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "content_notifications",
       "source": "auth_users",
       "target": "content_notifications"
     },
@@ -2603,8 +3824,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "sender_id, receiver_id FKs",
       "weight": 1.0,
-      "_src": "content_direct_messages",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "content_direct_messages",
       "source": "auth_users",
       "target": "content_direct_messages"
     },
@@ -2615,8 +3836,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "creator_id FK",
       "weight": 1.0,
-      "_src": "content_events",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "content_events",
       "source": "auth_users",
       "target": "content_events"
     },
@@ -2627,8 +3848,8 @@
       "source_file": "docs/database/er diagram/AUTH & USER PROFILES.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "auth_er_diagram",
-      "_tgt": "auth_users",
+      "_src": "auth_users",
+      "_tgt": "auth_er_diagram",
       "source": "auth_users",
       "target": "auth_er_diagram"
     },
@@ -2639,8 +3860,8 @@
       "source_file": "docs/database/er diagram/AUTH & USER PROFILES.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "auth_er_diagram",
-      "_tgt": "auth_accounts",
+      "_src": "auth_accounts",
+      "_tgt": "auth_er_diagram",
       "source": "auth_accounts",
       "target": "auth_er_diagram"
     },
@@ -2651,8 +3872,8 @@
       "source_file": "docs/database/er diagram/AUTH & USER PROFILES.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "auth_er_diagram",
-      "_tgt": "auth_sessions",
+      "_src": "auth_sessions",
+      "_tgt": "auth_er_diagram",
       "source": "auth_sessions",
       "target": "auth_er_diagram"
     },
@@ -2675,8 +3896,8 @@
       "source_file": "docs/database/er diagram/AUTH & USER PROFILES.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "auth_er_diagram",
-      "_tgt": "auth_verification_tokens",
+      "_src": "auth_verification_tokens",
+      "_tgt": "auth_er_diagram",
       "source": "auth_verification_tokens",
       "target": "auth_er_diagram"
     },
@@ -2687,8 +3908,8 @@
       "source_file": "docs/database/er diagram/AUTH & USER PROFILES.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "auth_er_diagram",
-      "_tgt": "auth_user_preferences",
+      "_src": "auth_user_preferences",
+      "_tgt": "auth_er_diagram",
       "source": "auth_user_preferences",
       "target": "auth_er_diagram"
     },
@@ -2699,8 +3920,8 @@
       "source_file": "docs/database/er diagram/AUTH & USER PROFILES.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "auth_er_diagram",
-      "_tgt": "auth_global_moderators",
+      "_src": "auth_global_moderators",
+      "_tgt": "auth_er_diagram",
       "source": "auth_global_moderators",
       "target": "auth_er_diagram"
     },
@@ -2723,8 +3944,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "community_id FK",
       "weight": 1.0,
-      "_src": "comm_community_rules",
-      "_tgt": "comm_communities",
+      "_src": "comm_communities",
+      "_tgt": "comm_community_rules",
       "source": "comm_communities",
       "target": "comm_community_rules"
     },
@@ -2735,8 +3956,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "community_id FK",
       "weight": 1.0,
-      "_src": "comm_community_invites",
-      "_tgt": "comm_communities",
+      "_src": "comm_communities",
+      "_tgt": "comm_community_invites",
       "source": "comm_communities",
       "target": "comm_community_invites"
     },
@@ -2747,8 +3968,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "community_id FK",
       "weight": 1.0,
-      "_src": "comm_community_members",
-      "_tgt": "comm_communities",
+      "_src": "comm_communities",
+      "_tgt": "comm_community_members",
       "source": "comm_communities",
       "target": "comm_community_members"
     },
@@ -2759,8 +3980,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "community_id FK",
       "weight": 1.0,
-      "_src": "comm_community_moderators",
-      "_tgt": "comm_communities",
+      "_src": "comm_communities",
+      "_tgt": "comm_community_moderators",
       "source": "comm_communities",
       "target": "comm_community_moderators"
     },
@@ -2771,8 +3992,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "community_id FK",
       "weight": 1.0,
-      "_src": "comm_community_restrictions",
-      "_tgt": "comm_communities",
+      "_src": "comm_communities",
+      "_tgt": "comm_community_restrictions",
       "source": "comm_communities",
       "target": "comm_community_restrictions"
     },
@@ -2783,8 +4004,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "community_id FK",
       "weight": 1.0,
-      "_src": "comm_mod_logs",
-      "_tgt": "comm_communities",
+      "_src": "comm_communities",
+      "_tgt": "comm_mod_logs",
       "source": "comm_communities",
       "target": "comm_mod_logs"
     },
@@ -2795,8 +4016,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "community_id FK",
       "weight": 1.0,
-      "_src": "content_post_flairs",
-      "_tgt": "comm_communities",
+      "_src": "comm_communities",
+      "_tgt": "content_post_flairs",
       "source": "comm_communities",
       "target": "content_post_flairs"
     },
@@ -2807,8 +4028,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "community_id FK",
       "weight": 1.0,
-      "_src": "content_posts",
-      "_tgt": "comm_communities",
+      "_src": "comm_communities",
+      "_tgt": "content_posts",
       "source": "comm_communities",
       "target": "content_posts"
     },
@@ -2819,8 +4040,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "community_id FK inferred from community context",
       "weight": 0.8,
-      "_src": "content_events",
-      "_tgt": "comm_communities",
+      "_src": "comm_communities",
+      "_tgt": "content_events",
       "source": "comm_communities",
       "target": "content_events"
     },
@@ -2831,8 +4052,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "comm_er_diagram",
-      "_tgt": "comm_communities",
+      "_src": "comm_communities",
+      "_tgt": "comm_er_diagram",
       "source": "comm_communities",
       "target": "comm_er_diagram"
     },
@@ -2843,8 +4064,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": "rule_id FK",
       "weight": 1.0,
-      "_src": "comm_reports",
-      "_tgt": "comm_community_rules",
+      "_src": "comm_community_rules",
+      "_tgt": "comm_reports",
       "source": "comm_community_rules",
       "target": "comm_reports"
     },
@@ -2855,8 +4076,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "comm_er_diagram",
-      "_tgt": "comm_community_rules",
+      "_src": "comm_community_rules",
+      "_tgt": "comm_er_diagram",
       "source": "comm_community_rules",
       "target": "comm_er_diagram"
     },
@@ -2867,8 +4088,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "invite_id FK",
       "weight": 1.0,
-      "_src": "content_notifications",
-      "_tgt": "comm_community_invites",
+      "_src": "comm_community_invites",
+      "_tgt": "content_notifications",
       "source": "comm_community_invites",
       "target": "content_notifications"
     },
@@ -2879,8 +4100,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "comm_er_diagram",
-      "_tgt": "comm_community_invites",
+      "_src": "comm_community_invites",
+      "_tgt": "comm_er_diagram",
       "source": "comm_community_invites",
       "target": "comm_er_diagram"
     },
@@ -2891,8 +4112,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "comm_er_diagram",
-      "_tgt": "comm_community_members",
+      "_src": "comm_community_members",
+      "_tgt": "comm_er_diagram",
       "source": "comm_community_members",
       "target": "comm_er_diagram"
     },
@@ -2903,8 +4124,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "comm_er_diagram",
-      "_tgt": "comm_community_moderators",
+      "_src": "comm_community_moderators",
+      "_tgt": "comm_er_diagram",
       "source": "comm_community_moderators",
       "target": "comm_er_diagram"
     },
@@ -2927,8 +4148,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "comm_er_diagram",
-      "_tgt": "comm_community_restrictions",
+      "_src": "comm_community_restrictions",
+      "_tgt": "comm_er_diagram",
       "source": "comm_community_restrictions",
       "target": "comm_er_diagram"
     },
@@ -2963,8 +4184,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "comm_er_diagram",
-      "_tgt": "comm_mod_logs",
+      "_src": "comm_mod_logs",
+      "_tgt": "comm_er_diagram",
       "source": "comm_mod_logs",
       "target": "comm_er_diagram"
     },
@@ -2975,8 +4196,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "comm_er_diagram",
-      "_tgt": "comm_user_blocks",
+      "_src": "comm_user_blocks",
+      "_tgt": "comm_er_diagram",
       "source": "comm_user_blocks",
       "target": "comm_er_diagram"
     },
@@ -3023,8 +4244,8 @@
       "source_file": "docs/database/er diagram/COMMUNITIES & MODERATION.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "comm_er_diagram",
-      "_tgt": "comm_reports",
+      "_src": "comm_reports",
+      "_tgt": "comm_er_diagram",
       "source": "comm_reports",
       "target": "comm_er_diagram"
     },
@@ -3047,8 +4268,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "post_id FK",
       "weight": 1.0,
-      "_src": "content_comments",
-      "_tgt": "content_posts",
+      "_src": "content_posts",
+      "_tgt": "content_comments",
       "source": "content_posts",
       "target": "content_comments"
     },
@@ -3059,8 +4280,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "post_id FK",
       "weight": 1.0,
-      "_src": "content_post_edit_history",
-      "_tgt": "content_posts",
+      "_src": "content_posts",
+      "_tgt": "content_post_edit_history",
       "source": "content_posts",
       "target": "content_post_edit_history"
     },
@@ -3071,8 +4292,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "post_id FK",
       "weight": 1.0,
-      "_src": "content_media",
-      "_tgt": "content_posts",
+      "_src": "content_posts",
+      "_tgt": "content_media",
       "source": "content_posts",
       "target": "content_media"
     },
@@ -3083,8 +4304,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "post_id FK",
       "weight": 1.0,
-      "_src": "content_post_votes",
-      "_tgt": "content_posts",
+      "_src": "content_posts",
+      "_tgt": "content_post_votes",
       "source": "content_posts",
       "target": "content_post_votes"
     },
@@ -3095,8 +4316,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "post_id FK",
       "weight": 1.0,
-      "_src": "content_saved_posts",
-      "_tgt": "content_posts",
+      "_src": "content_posts",
+      "_tgt": "content_saved_posts",
       "source": "content_posts",
       "target": "content_saved_posts"
     },
@@ -3107,8 +4328,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_posts",
+      "_src": "content_posts",
+      "_tgt": "content_er_diagram",
       "source": "content_posts",
       "target": "content_er_diagram"
     },
@@ -3131,8 +4352,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "comment_id FK",
       "weight": 1.0,
-      "_src": "content_comment_edit_history",
-      "_tgt": "content_comments",
+      "_src": "content_comments",
+      "_tgt": "content_comment_edit_history",
       "source": "content_comments",
       "target": "content_comment_edit_history"
     },
@@ -3143,8 +4364,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "comment_id FK",
       "weight": 1.0,
-      "_src": "content_comment_votes",
-      "_tgt": "content_comments",
+      "_src": "content_comments",
+      "_tgt": "content_comment_votes",
       "source": "content_comments",
       "target": "content_comment_votes"
     },
@@ -3155,8 +4376,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": "comment_id FK",
       "weight": 1.0,
-      "_src": "content_saved_comments",
-      "_tgt": "content_comments",
+      "_src": "content_comments",
+      "_tgt": "content_saved_comments",
       "source": "content_comments",
       "target": "content_saved_comments"
     },
@@ -3167,8 +4388,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_comments",
+      "_src": "content_comments",
+      "_tgt": "content_er_diagram",
       "source": "content_comments",
       "target": "content_er_diagram"
     },
@@ -3179,8 +4400,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_post_flairs",
+      "_src": "content_post_flairs",
+      "_tgt": "content_er_diagram",
       "source": "content_post_flairs",
       "target": "content_er_diagram"
     },
@@ -3191,8 +4412,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_post_edit_history",
+      "_src": "content_post_edit_history",
+      "_tgt": "content_er_diagram",
       "source": "content_post_edit_history",
       "target": "content_er_diagram"
     },
@@ -3215,8 +4436,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_comment_edit_history",
+      "_src": "content_comment_edit_history",
+      "_tgt": "content_er_diagram",
       "source": "content_comment_edit_history",
       "target": "content_er_diagram"
     },
@@ -3227,8 +4448,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_media",
+      "_src": "content_media",
+      "_tgt": "content_er_diagram",
       "source": "content_media",
       "target": "content_er_diagram"
     },
@@ -3239,8 +4460,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_post_votes",
+      "_src": "content_post_votes",
+      "_tgt": "content_er_diagram",
       "source": "content_post_votes",
       "target": "content_er_diagram"
     },
@@ -3263,8 +4484,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_comment_votes",
+      "_src": "content_comment_votes",
+      "_tgt": "content_er_diagram",
       "source": "content_comment_votes",
       "target": "content_er_diagram"
     },
@@ -3275,8 +4496,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_saved_posts",
+      "_src": "content_saved_posts",
+      "_tgt": "content_er_diagram",
       "source": "content_saved_posts",
       "target": "content_er_diagram"
     },
@@ -3299,8 +4520,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_saved_comments",
+      "_src": "content_saved_comments",
+      "_tgt": "content_er_diagram",
       "source": "content_saved_comments",
       "target": "content_er_diagram"
     },
@@ -3311,8 +4532,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_notifications",
+      "_src": "content_notifications",
+      "_tgt": "content_er_diagram",
       "source": "content_notifications",
       "target": "content_er_diagram"
     },
@@ -3323,8 +4544,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_direct_messages",
+      "_src": "content_direct_messages",
+      "_tgt": "content_er_diagram",
       "source": "content_direct_messages",
       "target": "content_er_diagram"
     },
@@ -3335,8 +4556,8 @@
       "source_file": "docs/database/er diagram/CONTENT & INTERACTIONS.svg",
       "source_location": null,
       "weight": 1.0,
-      "_src": "content_er_diagram",
-      "_tgt": "content_events",
+      "_src": "content_events",
+      "_tgt": "content_er_diagram",
       "source": "content_events",
       "target": "content_er_diagram"
     }
