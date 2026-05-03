@@ -5,6 +5,7 @@ import { z } from "zod";
 import { auth } from "@/auth";
 import { prisma } from "@/lib/prisma";
 import { PostStatus } from "@/generated/prisma/client";
+import { slugify } from "@/lib/utils";
 
 const CommentBodySchema = z.object({
   body: z
@@ -34,7 +35,7 @@ export async function createCommentAction(
 
   const post = await prisma.post.findUnique({
     where: { id: postId, isDeleted: false, status: PostStatus.PUBLISHED },
-    select: { id: true },
+    select: { id: true, title: true, community: { select: { name: true } } },
   });
   if (!post) return { error: "Post not found." };
 
@@ -56,7 +57,9 @@ export async function createCommentAction(
       },
     });
 
-    revalidatePath(`/posts/${postId}`);
+    revalidatePath(
+      `/communities/${post.community.name}/comments/${postId}/${slugify(post.title)}`
+    );
     return { success: "Comment posted." };
   } catch {
     return { error: "Something went wrong." };
@@ -77,7 +80,12 @@ export async function editCommentAction(
 
   const comment = await prisma.comment.findUnique({
     where: { id: commentId, isDeleted: false },
-    select: { userId: true, body: true, postId: true },
+    select: {
+      userId: true,
+      body: true,
+      postId: true,
+      post: { select: { title: true, community: { select: { name: true } } } },
+    },
   });
 
   if (!comment) return { error: "Comment not found." };
@@ -95,7 +103,9 @@ export async function editCommentAction(
       }),
     ]);
 
-    revalidatePath(`/posts/${comment.postId}`);
+    revalidatePath(
+      `/communities/${comment.post.community.name}/comments/${comment.postId}/${slugify(comment.post.title)}`
+    );
     return { success: "Comment updated." };
   } catch {
     return { error: "Something went wrong." };
@@ -110,7 +120,11 @@ export async function deleteCommentAction(
 
   const comment = await prisma.comment.findUnique({
     where: { id: commentId, isDeleted: false },
-    select: { userId: true, postId: true },
+    select: {
+      userId: true,
+      postId: true,
+      post: { select: { title: true, community: { select: { name: true } } } },
+    },
   });
 
   if (!comment) return { error: "Comment not found." };
@@ -123,7 +137,9 @@ export async function deleteCommentAction(
       data: { isDeleted: true },
     });
 
-    revalidatePath(`/posts/${comment.postId}`);
+    revalidatePath(
+      `/communities/${comment.post.community.name}/comments/${comment.postId}/${slugify(comment.post.title)}`
+    );
     return { success: "Comment deleted." };
   } catch {
     return { error: "Something went wrong." };
@@ -139,7 +155,11 @@ export async function voteCommentAction(
 
   const comment = await prisma.comment.findUnique({
     where: { id: commentId, isDeleted: false },
-    select: { id: true, postId: true },
+    select: {
+      id: true,
+      postId: true,
+      post: { select: { title: true, community: { select: { name: true } } } },
+    },
   });
   if (!comment) return { error: "Comment not found." };
 
@@ -200,7 +220,9 @@ export async function voteCommentAction(
       ]);
     }
 
-    revalidatePath(`/posts/${comment.postId}`);
+    revalidatePath(
+      `/communities/${comment.post.community.name}/comments/${comment.postId}/${slugify(comment.post.title)}`
+    );
     return { success: "Vote recorded." };
   } catch {
     return { error: "Something went wrong." };
