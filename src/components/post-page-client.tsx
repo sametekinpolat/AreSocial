@@ -21,7 +21,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { cn } from "@/lib/utils";
+import { cn, formatKarma } from "@/lib/utils";
 import {
   createCommentAction,
   deleteCommentAction,
@@ -30,6 +30,7 @@ import {
   saveCommentAction,
   voteCommentAction,
 } from "@/actions/comments";
+import { votePostAction } from "@/actions/posts";
 
 // ─── Types ─────────────────────────────────────────────────────────────────────
 
@@ -40,9 +41,11 @@ type PostData = {
   isPinned: boolean;
   upvotes: number;
   downvotes: number;
+  myVote: 1 | -1 | null;
   createdAt: string;
   authorId: string;
   authorHandle: string;
+  authorKarma: number;
   communityName: string;
   commentCount: number;
 };
@@ -58,6 +61,7 @@ type CommentData = {
   parentCommentId: string | null;
   authorId: string;
   authorHandle: string;
+  authorKarma: number;
   myVote: number | null;
   isSaved: boolean;
   isHidden: boolean;
@@ -412,9 +416,13 @@ function CommentThread({
                 </span>
               )}
               {!node.isDeleted && (
-                <span className="text-xs font-semibold text-foreground">
+                <Link
+                  href={`/u/${node.authorHandle}`}
+                  title={`${formatKarma(node.authorKarma)} karma`}
+                  className="text-xs font-semibold text-foreground hover:underline"
+                >
                   u/{node.authorHandle}
-                </span>
+                </Link>
               )}
               <span className="text-xs text-muted-foreground">
                 {formatRelativeDate(node.createdAt)}
@@ -623,11 +631,57 @@ export function PostPageClient({
   currentUserId: string | null;
 }) {
   const [showAuthModal, setShowAuthModal] = useState(false);
+  const [postMyVote, setPostMyVote] = useState<1 | -1 | null>(post.myVote);
+  const [postUpvotes, setPostUpvotes] = useState(post.upvotes);
+  const [postDownvotes, setPostDownvotes] = useState(post.downvotes);
+  const [isPostVoting, startPostVoteTransition] = useTransition();
+
   const commentTree = buildTree(comments);
-  const score = post.upvotes - post.downvotes;
+  const postScore = postUpvotes - postDownvotes;
 
   function onGuestAction() {
     setShowAuthModal(true);
+  }
+
+  function handlePostVote(val: 1 | -1) {
+    if (!currentUserId) {
+      onGuestAction();
+      return;
+    }
+
+    const prevVote = postMyVote;
+    const prevUp = postUpvotes;
+    const prevDown = postDownvotes;
+
+    // Optimistic update
+    if (postMyVote === val) {
+      setPostMyVote(null);
+      if (val === 1) setPostUpvotes((v) => v - 1);
+      else setPostDownvotes((v) => v - 1);
+    } else {
+      if (postMyVote !== null) {
+        if (val === 1) {
+          setPostUpvotes((v) => v + 1);
+          setPostDownvotes((v) => v - 1);
+        } else {
+          setPostDownvotes((v) => v + 1);
+          setPostUpvotes((v) => v - 1);
+        }
+      } else {
+        if (val === 1) setPostUpvotes((v) => v + 1);
+        else setPostDownvotes((v) => v + 1);
+      }
+      setPostMyVote(val);
+    }
+
+    startPostVoteTransition(async () => {
+      const result = await votePostAction(post.id, val);
+      if (result.error) {
+        setPostMyVote(prevVote);
+        setPostUpvotes(prevUp);
+        setPostDownvotes(prevDown);
+      }
+    });
   }
 
   return (
@@ -654,29 +708,45 @@ export function PostPageClient({
           {/* Post card */}
           <article className="overflow-hidden rounded-xl border border-border bg-card shadow-sm">
             <div className="flex">
-              {/* Vote column — decorative, post voting not in scope */}
+              {/* Vote column */}
               <div className="flex w-10 shrink-0 flex-col items-center gap-0.5 bg-muted/30 py-3 px-1">
                 <button
-                  className="rounded p-0.5 text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
-                  aria-label="Upvote"
+                  onClick={() => handlePostVote(1)}
+                  disabled={isPostVoting}
+                  aria-label="Upvote post"
+                  className={cn(
+                    "rounded p-0.5 transition-colors",
+                    postMyVote === 1
+                      ? "text-primary"
+                      : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
+                    isPostVoting && "pointer-events-none opacity-40"
+                  )}
                 >
                   <ChevronUp className="h-4 w-4" />
                 </button>
                 <span
                   className={cn(
                     "text-xs font-semibold tabular-nums",
-                    score > 0
+                    postScore > 0
                       ? "text-primary"
-                      : score < 0
+                      : postScore < 0
                       ? "text-destructive"
                       : "text-muted-foreground"
                   )}
                 >
-                  {score}
+                  {postScore}
                 </span>
                 <button
-                  className="rounded p-0.5 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
-                  aria-label="Downvote"
+                  onClick={() => handlePostVote(-1)}
+                  disabled={isPostVoting}
+                  aria-label="Downvote post"
+                  className={cn(
+                    "rounded p-0.5 transition-colors",
+                    postMyVote === -1
+                      ? "text-destructive"
+                      : "text-muted-foreground hover:bg-destructive/10 hover:text-destructive",
+                    isPostVoting && "pointer-events-none opacity-40"
+                  )}
                 >
                   <ChevronDown className="h-4 w-4" />
                 </button>
@@ -694,7 +764,13 @@ export function PostPageClient({
                   <span className="rounded-full bg-primary/10 px-2.5 py-0.5 font-medium text-primary">
                     c/{post.communityName}
                   </span>
-                  <span>u/{post.authorHandle}</span>
+                  <Link
+                    href={`/u/${post.authorHandle}`}
+                    title={`${formatKarma(post.authorKarma)} karma`}
+                    className="hover:underline"
+                  >
+                    u/{post.authorHandle}
+                  </Link>
                   <span>{formatRelativeDate(post.createdAt)}</span>
                 </div>
 
