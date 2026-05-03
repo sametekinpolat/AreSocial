@@ -85,6 +85,7 @@ type CommunityPageClientProps = {
   isMember: boolean;
   canManageSettings: boolean;
   canManagePosts: boolean;
+  hasModerationAccess: boolean;
   currentSort: string;
   currentUserId: string | null;
 };
@@ -503,6 +504,7 @@ function InfoPanel({
   events,
   canManageSettings,
   canManagePosts,
+  hasModerationAccess,
   currentUserId,
   onGuestAction,
 }: {
@@ -511,6 +513,7 @@ function InfoPanel({
   events: CommunityEvent[];
   canManageSettings: boolean;
   canManagePosts: boolean;
+  hasModerationAccess: boolean;
   currentUserId: string | null;
   onGuestAction: () => void;
 }) {
@@ -547,6 +550,14 @@ function InfoPanel({
               <Link href={`/communities/${community.name}/settings`}>
                 <Settings className="h-3.5 w-3.5 mr-2" />
                 Manage Community
+              </Link>
+            </Button>
+          )}
+          {hasModerationAccess && (
+            <Button variant="outline" size="sm" className="w-full mt-1" asChild>
+              <Link href={`/communities/${community.name}/moderation`}>
+                <ShieldAlert className="h-3.5 w-3.5 mr-2" />
+                Moderation Panel
               </Link>
             </Button>
           )}
@@ -632,6 +643,7 @@ export function CommunityPageClient({
   isMember,
   canManageSettings,
   canManagePosts,
+  hasModerationAccess,
   currentSort,
   currentUserId,
 }: CommunityPageClientProps) {
@@ -784,6 +796,7 @@ export function CommunityPageClient({
                   onGuestAction={() => setShowAuthModal(true)}
                   moderators={moderators}
                   canManageSettings={canManageSettings}
+                  hasModerationAccess={hasModerationAccess}
                 />
               </div>
             </aside>
@@ -796,6 +809,7 @@ export function CommunityPageClient({
                 events={events}
                 canManageSettings={canManageSettings}
                 canManagePosts={canManagePosts}
+                hasModerationAccess={hasModerationAccess}
                 currentUserId={currentUserId}
                 onGuestAction={() => setShowAuthModal(true)}
               />
