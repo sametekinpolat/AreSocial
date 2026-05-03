@@ -33,6 +33,7 @@ enum NotificationType {
   MENTION
   DIRECT_MESSAGE
   COMMUNITY_INVITE
+  COMMUNITY_EVENT
 }
 
 enum PostStatus {
@@ -122,6 +123,8 @@ model User {
   messagesReceived DirectMessage[]        @relation("MessageReceiver")
   notifications    Notification[]         @relation("UserNotification")
   triggeredNotifs  Notification[]         @relation("NotificationActor")
+
+  eventParticipations EventParticipant[]
 }
 
 model Account {
@@ -356,6 +359,7 @@ model Post {
   notifications Notification[]
   media       Media[]
   modLogs     ModLog[]
+  event       Event?
 }
 
 model Comment {
@@ -535,11 +539,26 @@ model Event {
   id          String   @id @default(uuid()) @db.Uuid
   communityId String   @db.Uuid
   creatorId   String   @db.Uuid
+  postId      String?  @unique @db.Uuid
   title       String
   description String?
   startTime   DateTime
   endTime     DateTime
+  createdAt   DateTime @default(now())
 
-  community  Community          @relation(fields: [communityId], references: [id], onDelete: Cascade)
-  creatorMod CommunityModerator @relation(fields: [creatorId, communityId], references: [userId, communityId])
+  community    Community          @relation(fields: [communityId], references: [id], onDelete: Cascade)
+  creatorMod   CommunityModerator @relation(fields: [creatorId, communityId], references: [userId, communityId])
+  post         Post?              @relation(fields: [postId], references: [id])
+  participants EventParticipant[]
+}
+
+model EventParticipant {
+  eventId  String   @db.Uuid
+  userId   String   @db.Uuid
+  joinedAt DateTime @default(now())
+
+  event Event @relation(fields: [eventId], references: [id], onDelete: Cascade)
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@id([eventId, userId])
 }
