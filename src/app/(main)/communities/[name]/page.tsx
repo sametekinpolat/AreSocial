@@ -45,6 +45,7 @@ export default async function CommunityPage({
 
   let isMember = false;
   let canManageSettings = false;
+  let canManagePosts = false;
 
   if (session?.user?.id) {
     const [membership, modRecord] = await Promise.all([
@@ -64,15 +65,16 @@ export default async function CommunityPage({
             communityId: community.id,
           },
         },
-        select: { canManageSettings: true },
+        select: { canManageSettings: true, canManagePosts: true },
       }),
     ]);
 
     isMember = !!membership;
     canManageSettings = modRecord?.canManageSettings ?? false;
+    canManagePosts = modRecord?.canManagePosts ?? false;
   }
 
-  const [posts, moderators] = await Promise.all([
+  const [posts, moderators, upcomingEvents] = await Promise.all([
     prisma.post.findMany({
       where: {
         communityId: community.id,
@@ -98,6 +100,23 @@ export default async function CommunityPage({
       include: {
         user: { select: { id: true, username: true, name: true, image: true } },
       },
+    }),
+    prisma.event.findMany({
+      where: {
+        communityId: community.id,
+        endTime: { gt: new Date() },
+      },
+      orderBy: { startTime: "asc" },
+      include: {
+        _count: { select: { participants: true } },
+        participants: {
+          where: {
+            userId: currentUserId || "00000000-0000-0000-0000-000000000000",
+          },
+          select: { userId: true },
+        },
+      },
+      take: 5,
     }),
   ]);
 
@@ -139,8 +158,19 @@ export default async function CommunityPage({
         handle: m.user.username || m.user.name || "moderator",
         image: m.user.image,
       }))}
+      events={upcomingEvents.map((e) => ({
+        id: e.id,
+        title: e.title,
+        description: e.description,
+        startTime: e.startTime.toISOString(),
+        endTime: e.endTime.toISOString(),
+        postId: e.postId,
+        participantCount: e._count.participants,
+        isParticipating: e.participants.length > 0,
+      }))}
       isMember={isMember}
       canManageSettings={canManageSettings}
+      canManagePosts={canManagePosts}
       currentSort={currentSort}
       currentUserId={currentUserId || null}
     />
