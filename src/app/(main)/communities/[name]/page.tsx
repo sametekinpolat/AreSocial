@@ -41,6 +41,7 @@ export default async function CommunityPage({
   if (!community) notFound();
 
   const session = await auth();
+  const currentUserId = session?.user?.id ?? "";
 
   let isMember = false;
   let canManageSettings = false;
@@ -80,8 +81,14 @@ export default async function CommunityPage({
       },
       orderBy: getPostOrderBy(currentSort),
       include: {
-        user: { select: { username: true, name: true } },
+        user: { select: { id: true, username: true, name: true } },
         flair: { select: { name: true, colorHex: true } },
+        votes: {
+          where: {
+            userId: currentUserId || "00000000-0000-0000-0000-000000000000",
+          },
+          select: { voteValue: true },
+        },
         _count: { select: { comments: true } },
       },
       take: 25,
@@ -118,8 +125,10 @@ export default async function CommunityPage({
         isPinned: p.isPinned,
         upvotes: p.upvotes,
         downvotes: p.downvotes,
+        myVote: (p.votes[0]?.voteValue ?? null) as 1 | -1 | null,
         commentCount: p._count.comments,
         createdAt: p.createdAt.toISOString(),
+        authorId: p.user.id,
         authorHandle: p.user.username || p.user.name || "anonymous",
         flair: p.flair
           ? { name: p.flair.name, colorHex: p.flair.colorHex }
@@ -133,6 +142,7 @@ export default async function CommunityPage({
       isMember={isMember}
       canManageSettings={canManageSettings}
       currentSort={currentSort}
+      currentUserId={currentUserId || null}
     />
   );
 }

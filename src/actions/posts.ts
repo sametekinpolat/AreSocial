@@ -5,6 +5,7 @@ import { z } from "zod";
 import { auth } from "@/auth";
 import { prisma } from "@/lib/prisma";
 import { PostStatus } from "@/generated/prisma/client";
+import { slugify } from "@/lib/utils";
 
 const CreatePostSchema = z.object({
   title: z.string().trim().min(3, "Title must be at least 3 characters.").max(120, "Title is too long."),
@@ -71,8 +72,10 @@ export async function createPostAction(
   try {
     const community = await getOrCreateDemoCommunity(session.user.id);
 
-    await prisma.$transaction([
-      prisma.communityMember.upsert({
+    // Use interactive transaction so we can reference the new post's id for self-vote.
+    // Self-vote does NOT count toward post karma (see AC #58).
+    await prisma.$transaction(async (tx) => {
+      await tx.communityMember.upsert({
         where: {
           userId_communityId: {
             userId: session.user.id,
@@ -84,17 +87,28 @@ export async function createPostAction(
           userId: session.user.id,
           communityId: community.id,
         },
-      }),
-      prisma.post.create({
+      });
+
+      const post = await tx.post.create({
         data: {
           title,
           body: body || null,
           status: PostStatus.PUBLISHED,
           communityId: community.id,
           userId: session.user.id,
+          upvotes: 1, // author self-vote
         },
-      }),
-    ]);
+        select: { id: true },
+      });
+
+      await tx.postVote.create({
+        data: {
+          userId: session.user.id,
+          postId: post.id,
+          voteValue: 1,
+        },
+      });
+    });
 
     revalidatePath("/");
 
@@ -200,5 +214,155 @@ export async function deletePostAction(formData: FormData): Promise<PostActionRe
   } catch (error) {
     console.error("deletePostAction failed", error);
     return { error: "Something went wrong while deleting the post." };
+  }
+}
+
+export async function votePostAction(
+  postId: string,
+  voteValue: 1 | -1
+): Promise<PostActionResult> {
+  const session = await auth();
+  if (!session?.user?.id) return { error: "You must be logged in to vote." };
+
+  const post = await prisma.post.findUnique({
+    where: { id: postId, isDeleted: false, status: PostStatus.PUBLISHED },
+    select: {
+      id: true,
+      userId: true,
+      title: true,
+      community: { select: { name: true } },
+    },
+  });
+  if (!post) return { error: "Post not found." };
+
+  // Self-votes never affect karma (AC #58)
+  const isSelfVote = post.userId === session.user.id;
+
+  const existing = await prisma.postVote.findUnique({
+    where: { userId_postId: { userId: session.user.id, postId } },
+  });
+
+  try {
+    if (existing) {
+      if (existing.voteValue === voteValue) {
+        // Toggle off — remove vote
+        if (isSelfVote) {
+          await prisma.$transaction([
+            prisma.postVote.delete({
+              where: { userId_postId: { userId: session.user.id, postId } },
+            }),
+            prisma.post.update({
+              where: { id: postId },
+              data: {
+                upvotes: voteValue === 1 ? { decrement: 1 } : undefined,
+                downvotes: voteValue === -1 ? { decrement: 1 } : undefined,
+              },
+            }),
+          ]);
+        } else {
+          await prisma.$transaction([
+            prisma.postVote.delete({
+              where: { userId_postId: { userId: session.user.id, postId } },
+            }),
+            prisma.post.update({
+              where: { id: postId },
+              data: {
+                upvotes: voteValue === 1 ? { decrement: 1 } : undefined,
+                downvotes: voteValue === -1 ? { decrement: 1 } : undefined,
+              },
+            }),
+            prisma.user.update({
+              where: { id: post.userId },
+              data: {
+                postKarma: voteValue === 1 ? { decrement: 1 } : { increment: 1 },
+              },
+            }),
+          ]);
+        }
+      } else {
+        // Change direction (e.g. upvote → downvote)
+        // Net karma delta = newValue - oldValue (±2)
+        if (isSelfVote) {
+          await prisma.$transaction([
+            prisma.postVote.update({
+              where: { userId_postId: { userId: session.user.id, postId } },
+              data: { voteValue },
+            }),
+            prisma.post.update({
+              where: { id: postId },
+              data: {
+                upvotes: voteValue === 1 ? { increment: 1 } : { decrement: 1 },
+                downvotes: voteValue === -1 ? { increment: 1 } : { decrement: 1 },
+              },
+            }),
+          ]);
+        } else {
+          await prisma.$transaction([
+            prisma.postVote.update({
+              where: { userId_postId: { userId: session.user.id, postId } },
+              data: { voteValue },
+            }),
+            prisma.post.update({
+              where: { id: postId },
+              data: {
+                upvotes: voteValue === 1 ? { increment: 1 } : { decrement: 1 },
+                downvotes: voteValue === -1 ? { increment: 1 } : { decrement: 1 },
+              },
+            }),
+            prisma.user.update({
+              where: { id: post.userId },
+              data: {
+                // Was -1 → now +1: delta +2  |  Was +1 → now -1: delta -2
+                postKarma: voteValue === 1 ? { increment: 2 } : { decrement: 2 },
+              },
+            }),
+          ]);
+        }
+      }
+    } else {
+      // New vote
+      if (isSelfVote) {
+        await prisma.$transaction([
+          prisma.postVote.create({
+            data: { userId: session.user.id, postId, voteValue },
+          }),
+          prisma.post.update({
+            where: { id: postId },
+            data: {
+              upvotes: voteValue === 1 ? { increment: 1 } : undefined,
+              downvotes: voteValue === -1 ? { increment: 1 } : undefined,
+            },
+          }),
+        ]);
+      } else {
+        await prisma.$transaction([
+          prisma.postVote.create({
+            data: { userId: session.user.id, postId, voteValue },
+          }),
+          prisma.post.update({
+            where: { id: postId },
+            data: {
+              upvotes: voteValue === 1 ? { increment: 1 } : undefined,
+              downvotes: voteValue === -1 ? { increment: 1 } : undefined,
+            },
+          }),
+          prisma.user.update({
+            where: { id: post.userId },
+            data: {
+              postKarma: voteValue === 1 ? { increment: 1 } : { decrement: 1 },
+            },
+          }),
+        ]);
+      }
+    }
+
+    revalidatePath(`/communities/${post.community.name}`);
+    revalidatePath(
+      `/communities/${post.community.name}/comments/${postId}/${slugify(post.title)}`
+    );
+    return { success: "Vote recorded." };
+  } catch (error) {
+    console.error("votePostAction failed", error);
+    return { error: "Something went wrong." };
   }
 }

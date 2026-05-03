@@ -19,6 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { InviteUserForm } from "@/components/communities/invite-user-form";
 import { joinCommunityAction, leaveCommunityAction } from "@/actions/communities";
+import { votePostAction } from "@/actions/posts";
 import { cn, slugify } from "@/lib/utils";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -37,8 +38,10 @@ type CommunityPost = {
   isPinned: boolean;
   upvotes: number;
   downvotes: number;
+  myVote: 1 | -1 | null;
   commentCount: number;
   createdAt: string;
+  authorId: string;
   authorHandle: string;
   flair: { name: string; colorHex: string | null } | null;
 };
@@ -65,6 +68,7 @@ type CommunityPageClientProps = {
   isMember: boolean;
   canManageSettings: boolean;
   currentSort: string;
+  currentUserId: string | null;
 };
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
@@ -83,6 +87,37 @@ function formatRelativeDate(dateString: string) {
     month: "short",
     year: "numeric",
   }).format(date);
+}
+
+// ─── Auth Modal ────────────────────────────────────────────────────────────────
+
+function AuthModal({ onClose }: { onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-background/80 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <div
+        className="mx-4 w-full max-w-sm rounded-xl border bg-card p-6 shadow-xl"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <h3 className="font-heading text-lg font-semibold">
+          Join the conversation
+        </h3>
+        <p className="mt-1.5 text-sm text-muted-foreground">
+          Log in or create an account to vote, comment, and more.
+        </p>
+        <div className="mt-4 flex gap-3">
+          <Button asChild className="flex-1">
+            <Link href="/login">Log in</Link>
+          </Button>
+          <Button variant="outline" asChild className="flex-1">
+            <Link href="/register">Sign up</Link>
+          </Button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 // ─── Sort tabs ────────────────────────────────────────────────────────────────
@@ -131,12 +166,62 @@ function SortTabs({
 function CommunityPostCard({
   post,
   communityName,
+  currentUserId,
+  onGuestAction,
 }: {
   post: CommunityPost;
   communityName: string;
+  currentUserId: string | null;
+  onGuestAction: () => void;
 }) {
-  const score = post.upvotes - post.downvotes;
+  const [myVote, setMyVote] = useState<1 | -1 | null>(post.myVote);
+  const [upvotes, setUpvotes] = useState(post.upvotes);
+  const [downvotes, setDownvotes] = useState(post.downvotes);
+  const [isVoting, startVoteTransition] = useTransition();
+
+  const score = upvotes - downvotes;
   const postUrl = `/communities/${communityName}/comments/${post.id}/${slugify(post.title)}`;
+
+  function handleVote(val: 1 | -1) {
+    if (!currentUserId) {
+      onGuestAction();
+      return;
+    }
+
+    const prevVote = myVote;
+    const prevUp = upvotes;
+    const prevDown = downvotes;
+
+    // Optimistic update
+    if (myVote === val) {
+      setMyVote(null);
+      if (val === 1) setUpvotes((v) => v - 1);
+      else setDownvotes((v) => v - 1);
+    } else {
+      if (myVote !== null) {
+        if (val === 1) {
+          setUpvotes((v) => v + 1);
+          setDownvotes((v) => v - 1);
+        } else {
+          setDownvotes((v) => v + 1);
+          setUpvotes((v) => v - 1);
+        }
+      } else {
+        if (val === 1) setUpvotes((v) => v + 1);
+        else setDownvotes((v) => v + 1);
+      }
+      setMyVote(val);
+    }
+
+    startVoteTransition(async () => {
+      const result = await votePostAction(post.id, val);
+      if (result.error) {
+        setMyVote(prevVote);
+        setUpvotes(prevUp);
+        setDownvotes(prevDown);
+      }
+    });
+  }
 
   return (
     <article
@@ -148,8 +233,16 @@ function CommunityPostCard({
       {/* Vote column */}
       <div className="flex w-10 shrink-0 flex-col items-center gap-0.5 bg-muted/30 py-3 px-1">
         <button
-          className="rounded p-0.5 text-muted-foreground transition-colors hover:bg-primary/10 hover:text-primary"
+          onClick={() => handleVote(1)}
+          disabled={isVoting}
           aria-label="Upvote"
+          className={cn(
+            "rounded p-0.5 transition-colors",
+            myVote === 1
+              ? "text-primary"
+              : "text-muted-foreground hover:bg-primary/10 hover:text-primary",
+            isVoting && "pointer-events-none opacity-40"
+          )}
         >
           <ChevronUp className="h-4 w-4" />
         </button>
@@ -166,8 +259,16 @@ function CommunityPostCard({
           {score}
         </span>
         <button
-          className="rounded p-0.5 text-muted-foreground transition-colors hover:bg-destructive/10 hover:text-destructive"
+          onClick={() => handleVote(-1)}
+          disabled={isVoting}
           aria-label="Downvote"
+          className={cn(
+            "rounded p-0.5 transition-colors",
+            myVote === -1
+              ? "text-destructive"
+              : "text-muted-foreground hover:bg-destructive/10 hover:text-destructive",
+            isVoting && "pointer-events-none opacity-40"
+          )}
         >
           <ChevronDown className="h-4 w-4" />
         </button>
@@ -351,10 +452,12 @@ export function CommunityPageClient({
   isMember,
   canManageSettings,
   currentSort,
+  currentUserId,
 }: CommunityPageClientProps) {
   const { data: session } = useSession();
   const [memberState, setMemberState] = useState(isMember);
   const [actionMessage, setActionMessage] = useState<string | null>(null);
+  const [showAuthModal, setShowAuthModal] = useState(false);
   const [isPending, startTransition] = useTransition();
 
   const isOwner = session?.user?.id === community.ownerId;
@@ -380,127 +483,137 @@ export function CommunityPageClient({
   const regularPosts = posts.filter((p) => !p.isPinned);
 
   return (
-    <div className="min-h-full">
-      {/* ── Community banner + header ── */}
-      <div className="h-24 bg-gradient-to-r from-primary/20 via-primary/10 to-transparent" />
+    <>
+      {showAuthModal && (
+        <AuthModal onClose={() => setShowAuthModal(false)} />
+      )}
 
-      <div className="border-b border-border bg-card/80 backdrop-blur-sm">
-        <div className="mx-auto max-w-screen-xl px-4 py-4 md:px-6">
-          <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-            {/* Community identity */}
-            <div className="flex flex-col gap-1">
-              <div className="flex items-center gap-2 flex-wrap">
-                <h1 className="text-2xl font-bold tracking-tight">
-                  c/{community.name}
-                </h1>
-                {community.isNsfw && (
-                  <span className="flex items-center gap-1 rounded border border-destructive/30 px-1.5 py-0.5 text-xs font-medium text-destructive">
-                    <ShieldAlert className="h-3 w-3" />
-                    NSFW
+      <div className="min-h-full">
+        {/* ── Community banner + header ── */}
+        <div className="h-24 bg-gradient-to-r from-primary/20 via-primary/10 to-transparent" />
+
+        <div className="border-b border-border bg-card/80 backdrop-blur-sm">
+          <div className="mx-auto max-w-screen-xl px-4 py-4 md:px-6">
+            <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+              {/* Community identity */}
+              <div className="flex flex-col gap-1">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <h1 className="text-2xl font-bold tracking-tight">
+                    c/{community.name}
+                  </h1>
+                  {community.isNsfw && (
+                    <span className="flex items-center gap-1 rounded border border-destructive/30 px-1.5 py-0.5 text-xs font-medium text-destructive">
+                      <ShieldAlert className="h-3 w-3" />
+                      NSFW
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-center gap-3 text-sm text-muted-foreground">
+                  <span className="flex items-center gap-1">
+                    <Users className="h-3.5 w-3.5" />
+                    {community.memberCount.toLocaleString()}{" "}
+                    {community.memberCount === 1 ? "member" : "members"}
                   </span>
+                </div>
+                {community.description && (
+                  <p className="mt-1 max-w-xl text-sm text-muted-foreground">
+                    {community.description}
+                  </p>
+                )}
+                {actionMessage && (
+                  <p className="text-sm text-destructive">{actionMessage}</p>
                 )}
               </div>
-              <div className="flex items-center gap-3 text-sm text-muted-foreground">
-                <span className="flex items-center gap-1">
-                  <Users className="h-3.5 w-3.5" />
-                  {community.memberCount.toLocaleString()}{" "}
-                  {community.memberCount === 1 ? "member" : "members"}
-                </span>
-              </div>
-              {community.description && (
-                <p className="mt-1 max-w-xl text-sm text-muted-foreground">
-                  {community.description}
-                </p>
-              )}
-              {actionMessage && (
-                <p className="text-sm text-destructive">{actionMessage}</p>
+
+              {/* Join / Leave */}
+              {session?.user ? (
+                !isOwner && (
+                  <Button
+                    variant={memberState ? "outline" : "default"}
+                    onClick={handleJoinLeave}
+                    disabled={isPending}
+                    className="shrink-0 self-start sm:self-auto"
+                  >
+                    {memberState ? "Leave" : "Join"}
+                  </Button>
+                )
+              ) : (
+                <Button asChild className="shrink-0 self-start sm:self-auto">
+                  <Link href="/login">Join</Link>
+                </Button>
               )}
             </div>
-
-            {/* Join / Leave */}
-            {session?.user ? (
-              !isOwner && (
-                <Button
-                  variant={memberState ? "outline" : "default"}
-                  onClick={handleJoinLeave}
-                  disabled={isPending}
-                  className="shrink-0 self-start sm:self-auto"
-                >
-                  {memberState ? "Leave" : "Join"}
-                </Button>
-              )
-            ) : (
-              <Button asChild className="shrink-0 self-start sm:self-auto">
-                <Link href="/login">Join</Link>
-              </Button>
-            )}
           </div>
         </div>
-      </div>
 
-      {/* ── Main content ── */}
-      <div className="mx-auto max-w-screen-xl px-4 py-6 md:px-6">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_320px]">
-          {/* ── Feed column ── */}
-          <div className="flex flex-col gap-4 min-w-0">
-            {/* Sort tabs */}
-            <SortTabs currentSort={currentSort} communityName={community.name} />
+        {/* ── Main content ── */}
+        <div className="mx-auto max-w-screen-xl px-4 py-6 md:px-6">
+          <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1fr_320px]">
+            {/* ── Feed column ── */}
+            <div className="flex flex-col gap-4 min-w-0">
+              {/* Sort tabs */}
+              <SortTabs currentSort={currentSort} communityName={community.name} />
 
-            {/* Pinned posts */}
-            {pinnedPosts.map((post) => (
-              <CommunityPostCard
-                key={post.id}
-                post={post}
-                communityName={community.name}
-              />
-            ))}
-
-            {/* Regular posts */}
-            {regularPosts.length > 0 ? (
-              regularPosts.map((post) => (
+              {/* Pinned posts */}
+              {pinnedPosts.map((post) => (
                 <CommunityPostCard
                   key={post.id}
                   post={post}
                   communityName={community.name}
+                  currentUserId={currentUserId}
+                  onGuestAction={() => setShowAuthModal(true)}
                 />
-              ))
-            ) : pinnedPosts.length === 0 ? (
-              <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border py-16 text-center text-muted-foreground gap-2">
-                <MessageSquare className="h-8 w-8 opacity-30" />
-                <p className="text-sm">No posts yet — be the first to share something.</p>
+              ))}
+
+              {/* Regular posts */}
+              {regularPosts.length > 0 ? (
+                regularPosts.map((post) => (
+                  <CommunityPostCard
+                    key={post.id}
+                    post={post}
+                    communityName={community.name}
+                    currentUserId={currentUserId}
+                    onGuestAction={() => setShowAuthModal(true)}
+                  />
+                ))
+              ) : pinnedPosts.length === 0 ? (
+                <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border py-16 text-center text-muted-foreground gap-2">
+                  <MessageSquare className="h-8 w-8 opacity-30" />
+                  <p className="text-sm">No posts yet — be the first to share something.</p>
+                </div>
+              ) : null}
+
+              {/* Invite form — members only */}
+              {session?.user && memberState && (
+                <InviteUserForm
+                  communityId={community.id}
+                  communityName={community.name}
+                />
+              )}
+            </div>
+
+            {/* ── Info panel ── */}
+            <aside className="hidden lg:block">
+              <div className="sticky top-6">
+                <InfoPanel
+                  community={community}
+                  moderators={moderators}
+                  canManageSettings={canManageSettings}
+                />
               </div>
-            ) : null}
+            </aside>
 
-            {/* Invite form — members only */}
-            {session?.user && memberState && (
-              <InviteUserForm
-                communityId={community.id}
-                communityName={community.name}
-              />
-            )}
-          </div>
-
-          {/* ── Info panel ── */}
-          <aside className="hidden lg:block">
-            <div className="sticky top-6">
+            {/* Mobile info panel (below feed) */}
+            <div className="lg:hidden">
               <InfoPanel
                 community={community}
                 moderators={moderators}
                 canManageSettings={canManageSettings}
               />
             </div>
-          </aside>
-
-          {/* Mobile info panel (below feed) */}
-          <div className="lg:hidden">
-            <InfoPanel
-              community={community}
-              moderators={moderators}
-              canManageSettings={canManageSettings}
-            />
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
