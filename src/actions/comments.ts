@@ -48,13 +48,27 @@ export async function createCommentAction(
   }
 
   try {
-    await prisma.comment.create({
-      data: {
-        postId,
-        userId: session.user.id,
-        body: validated.data.body,
-        parentCommentId: parentCommentId ?? null,
-      },
+    // Use interactive transaction so we can reference the new comment's id for self-vote.
+    // Self-vote does NOT count toward comment karma (see AC #58).
+    await prisma.$transaction(async (tx) => {
+      const comment = await tx.comment.create({
+        data: {
+          postId,
+          userId: session.user.id,
+          body: validated.data.body,
+          parentCommentId: parentCommentId ?? null,
+          upvotes: 1, // author self-vote
+        },
+        select: { id: true },
+      });
+
+      await tx.commentVote.create({
+        data: {
+          userId: session.user.id,
+          commentId: comment.id,
+          voteValue: 1,
+        },
+      });
     });
 
     revalidatePath(
@@ -157,11 +171,15 @@ export async function voteCommentAction(
     where: { id: commentId, isDeleted: false },
     select: {
       id: true,
+      userId: true,
       postId: true,
       post: { select: { title: true, community: { select: { name: true } } } },
     },
   });
   if (!comment) return { error: "Comment not found." };
+
+  // Self-votes never affect karma (AC #58)
+  const isSelfVote = comment.userId === session.user.id;
 
   const existing = await prisma.commentVote.findUnique({
     where: { userId_commentId: { userId: session.user.id, commentId } },
@@ -171,53 +189,122 @@ export async function voteCommentAction(
     if (existing) {
       if (existing.voteValue === voteValue) {
         // Toggle off — remove vote
+        if (isSelfVote) {
+          await prisma.$transaction([
+            prisma.commentVote.delete({
+              where: {
+                userId_commentId: { userId: session.user.id, commentId },
+              },
+            }),
+            prisma.comment.update({
+              where: { id: commentId },
+              data: {
+                upvotes: voteValue === 1 ? { decrement: 1 } : undefined,
+                downvotes: voteValue === -1 ? { decrement: 1 } : undefined,
+              },
+            }),
+          ]);
+        } else {
+          await prisma.$transaction([
+            prisma.commentVote.delete({
+              where: {
+                userId_commentId: { userId: session.user.id, commentId },
+              },
+            }),
+            prisma.comment.update({
+              where: { id: commentId },
+              data: {
+                upvotes: voteValue === 1 ? { decrement: 1 } : undefined,
+                downvotes: voteValue === -1 ? { decrement: 1 } : undefined,
+              },
+            }),
+            prisma.user.update({
+              where: { id: comment.userId },
+              data: {
+                commentKarma: voteValue === 1 ? { decrement: 1 } : { increment: 1 },
+              },
+            }),
+          ]);
+        }
+      } else {
+        // Change vote direction (e.g. upvote → downvote)
+        // Net karma delta = newValue - oldValue (±2)
+        if (isSelfVote) {
+          await prisma.$transaction([
+            prisma.commentVote.update({
+              where: {
+                userId_commentId: { userId: session.user.id, commentId },
+              },
+              data: { voteValue },
+            }),
+            prisma.comment.update({
+              where: { id: commentId },
+              data: {
+                upvotes: voteValue === 1 ? { increment: 1 } : { decrement: 1 },
+                downvotes: voteValue === -1 ? { increment: 1 } : { decrement: 1 },
+              },
+            }),
+          ]);
+        } else {
+          await prisma.$transaction([
+            prisma.commentVote.update({
+              where: {
+                userId_commentId: { userId: session.user.id, commentId },
+              },
+              data: { voteValue },
+            }),
+            prisma.comment.update({
+              where: { id: commentId },
+              data: {
+                upvotes: voteValue === 1 ? { increment: 1 } : { decrement: 1 },
+                downvotes: voteValue === -1 ? { increment: 1 } : { decrement: 1 },
+              },
+            }),
+            prisma.user.update({
+              where: { id: comment.userId },
+              data: {
+                // Was -1 → now +1: delta +2  |  Was +1 → now -1: delta -2
+                commentKarma: voteValue === 1 ? { increment: 2 } : { decrement: 2 },
+              },
+            }),
+          ]);
+        }
+      }
+    } else {
+      // New vote
+      if (isSelfVote) {
         await prisma.$transaction([
-          prisma.commentVote.delete({
-            where: {
-              userId_commentId: { userId: session.user.id, commentId },
-            },
+          prisma.commentVote.create({
+            data: { userId: session.user.id, commentId, voteValue },
           }),
           prisma.comment.update({
             where: { id: commentId },
             data: {
-              upvotes: voteValue === 1 ? { decrement: 1 } : undefined,
-              downvotes: voteValue === -1 ? { decrement: 1 } : undefined,
+              upvotes: voteValue === 1 ? { increment: 1 } : undefined,
+              downvotes: voteValue === -1 ? { increment: 1 } : undefined,
             },
           }),
         ]);
       } else {
-        // Change vote direction
         await prisma.$transaction([
-          prisma.commentVote.update({
-            where: {
-              userId_commentId: { userId: session.user.id, commentId },
-            },
-            data: { voteValue },
+          prisma.commentVote.create({
+            data: { userId: session.user.id, commentId, voteValue },
           }),
           prisma.comment.update({
             where: { id: commentId },
             data: {
-              upvotes: voteValue === 1 ? { increment: 1 } : { decrement: 1 },
-              downvotes:
-                voteValue === -1 ? { increment: 1 } : { decrement: 1 },
+              upvotes: voteValue === 1 ? { increment: 1 } : undefined,
+              downvotes: voteValue === -1 ? { increment: 1 } : undefined,
+            },
+          }),
+          prisma.user.update({
+            where: { id: comment.userId },
+            data: {
+              commentKarma: voteValue === 1 ? { increment: 1 } : { decrement: 1 },
             },
           }),
         ]);
       }
-    } else {
-      // New vote
-      await prisma.$transaction([
-        prisma.commentVote.create({
-          data: { userId: session.user.id, commentId, voteValue },
-        }),
-        prisma.comment.update({
-          where: { id: commentId },
-          data: {
-            upvotes: voteValue === 1 ? { increment: 1 } : undefined,
-            downvotes: voteValue === -1 ? { increment: 1 } : undefined,
-          },
-        }),
-      ]);
     }
 
     revalidatePath(
