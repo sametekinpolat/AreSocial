@@ -72,7 +72,9 @@ model User {
   emailVerified  DateTime?
   image          String?
   passwordHash   String?
-  karmaScore     Int       @default(0) // Requires Postgres Trigger or $transaction to sync
+  karmaScore     Int       @default(0) // Kept for legacy; use postKarma + commentKarma for display
+  postKarma      Int       @default(0)
+  commentKarma   Int       @default(0)
   bannerImageUrl String?
   createdAt      DateTime  @default(now())
 
