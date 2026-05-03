@@ -15,11 +15,16 @@ import {
   Flame,
   TrendingUp,
   Clock,
+  Calendar,
+  CalendarCheck,
+  Plus,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { InviteUserForm } from "@/components/communities/invite-user-form";
+import { CreateEventForm } from "@/components/communities/create-event-form";
 import { joinCommunityAction, leaveCommunityAction } from "@/actions/communities";
 import { votePostAction } from "@/actions/posts";
+import { rsvpEventAction } from "@/actions/events";
 import { cn, slugify } from "@/lib/utils";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
@@ -52,6 +57,17 @@ type Moderator = {
   image: string | null;
 };
 
+type CommunityEvent = {
+  id: string;
+  title: string;
+  description: string | null;
+  startTime: string;
+  endTime: string;
+  postId: string | null;
+  participantCount: number;
+  isParticipating: boolean;
+};
+
 type CommunityPageClientProps = {
   community: {
     id: string;
@@ -65,8 +81,10 @@ type CommunityPageClientProps = {
   };
   posts: CommunityPost[];
   moderators: Moderator[];
+  events: CommunityEvent[];
   isMember: boolean;
   canManageSettings: boolean;
+  canManagePosts: boolean;
   currentSort: string;
   currentUserId: string | null;
 };
@@ -334,16 +352,167 @@ function CommunityPostCard({
   );
 }
 
+// ─── Events card (sidebar) ────────────────────────────────────────────────────
+
+function EventsCard({
+  events: initialEvents,
+  canManagePosts,
+  communityId,
+  communityName,
+  currentUserId,
+  onGuestAction,
+}: {
+  events: CommunityEvent[];
+  canManagePosts: boolean;
+  communityId: string;
+  communityName: string;
+  currentUserId: string | null;
+  onGuestAction: () => void;
+}) {
+  const [events, setEvents] = useState(initialEvents);
+  const [showCreateForm, setShowCreateForm] = useState(false);
+  const [isPending, startTransition] = useTransition();
+
+  function handleRsvp(eventId: string) {
+    if (!currentUserId) {
+      onGuestAction();
+      return;
+    }
+
+    const prev = events;
+    setEvents((es) =>
+      es.map((e) =>
+        e.id === eventId
+          ? {
+              ...e,
+              isParticipating: !e.isParticipating,
+              participantCount: e.isParticipating
+                ? e.participantCount - 1
+                : e.participantCount + 1,
+            }
+          : e
+      )
+    );
+
+    startTransition(async () => {
+      const result = await rsvpEventAction(eventId, communityName);
+      if (result.error) setEvents(prev);
+    });
+  }
+
+  if (events.length === 0 && !canManagePosts) return null;
+
+  return (
+    <div className="rounded-xl border border-border bg-card overflow-hidden">
+      <div className="border-b bg-muted/30 px-4 py-3 flex items-center justify-between">
+        <h2 className="text-sm font-semibold flex items-center gap-1.5">
+          <Calendar className="h-3.5 w-3.5" />
+          Upcoming Events
+        </h2>
+        {canManagePosts && (
+          <button
+            onClick={() => setShowCreateForm((v) => !v)}
+            className="flex items-center gap-1 text-xs text-primary hover:underline"
+          >
+            <Plus className="h-3 w-3" />
+            {showCreateForm ? "Cancel" : "Schedule"}
+          </button>
+        )}
+      </div>
+
+      {showCreateForm && (
+        <div className="p-4 border-b border-border">
+          <CreateEventForm
+            communityId={communityId}
+            communityName={communityName}
+            onSuccess={() => setShowCreateForm(false)}
+          />
+        </div>
+      )}
+
+      {events.length === 0 ? (
+        <p className="p-4 text-xs text-muted-foreground text-center">
+          No upcoming events yet.
+        </p>
+      ) : (
+        <div className="divide-y divide-border">
+          {events.map((event) => {
+            const start = new Date(event.startTime);
+            const formattedDate = new Intl.DateTimeFormat("en", {
+              month: "short",
+              day: "numeric",
+            }).format(start);
+            const formattedTime = new Intl.DateTimeFormat("en", {
+              hour: "numeric",
+              minute: "2-digit",
+            }).format(start);
+
+            return (
+              <div key={event.id} className="p-3">
+                <div className="flex items-start justify-between gap-2">
+                  <div className="min-w-0">
+                    {event.postId ? (
+                      <Link
+                        href={`/communities/${communityName}/comments/${event.postId}/${slugify(event.title)}`}
+                        className="text-sm font-medium text-foreground hover:underline line-clamp-2"
+                      >
+                        {event.title}
+                      </Link>
+                    ) : (
+                      <p className="text-sm font-medium text-foreground line-clamp-2">
+                        {event.title}
+                      </p>
+                    )}
+                    <p className="mt-0.5 text-xs text-muted-foreground">
+                      {formattedDate} · {formattedTime}
+                    </p>
+                    <p className="mt-0.5 flex items-center gap-1 text-xs text-muted-foreground">
+                      <Users className="h-3 w-3" />
+                      {event.participantCount}{" "}
+                      {event.participantCount === 1 ? "going" : "going"}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => handleRsvp(event.id)}
+                    disabled={isPending}
+                    className={cn(
+                      "shrink-0 flex items-center gap-1 rounded-md px-2 py-1 text-xs font-medium transition-colors disabled:opacity-50",
+                      event.isParticipating
+                        ? "bg-primary text-primary-foreground hover:bg-primary/80"
+                        : "border border-border hover:bg-muted"
+                    )}
+                  >
+                    <CalendarCheck className="h-3 w-3" />
+                    {event.isParticipating ? "Going" : "RSVP"}
+                  </button>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      )}
+    </div>
+  );
+}
+
 // ─── Right info panel ─────────────────────────────────────────────────────────
 
 function InfoPanel({
   community,
   moderators,
+  events,
   canManageSettings,
+  canManagePosts,
+  currentUserId,
+  onGuestAction,
 }: {
   community: CommunityPageClientProps["community"];
   moderators: Moderator[];
+  events: CommunityEvent[];
   canManageSettings: boolean;
+  canManagePosts: boolean;
+  currentUserId: string | null;
+  onGuestAction: () => void;
 }) {
   const createdAt = new Intl.DateTimeFormat("en", {
     month: "long",
@@ -383,6 +552,16 @@ function InfoPanel({
           )}
         </div>
       </div>
+
+      {/* Events card */}
+      <EventsCard
+        events={events}
+        canManagePosts={canManagePosts}
+        communityId={community.id}
+        communityName={community.name}
+        currentUserId={currentUserId}
+        onGuestAction={onGuestAction}
+      />
 
       {/* Rules card */}
       {community.rules.length > 0 && (
@@ -449,8 +628,10 @@ export function CommunityPageClient({
   community,
   posts,
   moderators,
+  events,
   isMember,
   canManageSettings,
+  canManagePosts,
   currentSort,
   currentUserId,
 }: CommunityPageClientProps) {
@@ -597,6 +778,10 @@ export function CommunityPageClient({
               <div className="sticky top-6">
                 <InfoPanel
                   community={community}
+                  events={events}
+                  canManagePosts={canManagePosts}
+                  currentUserId={currentUserId}
+                  onGuestAction={() => setShowAuthModal(true)}
                   moderators={moderators}
                   canManageSettings={canManageSettings}
                 />
@@ -608,7 +793,11 @@ export function CommunityPageClient({
               <InfoPanel
                 community={community}
                 moderators={moderators}
+                events={events}
                 canManageSettings={canManageSettings}
+                canManagePosts={canManagePosts}
+                currentUserId={currentUserId}
+                onGuestAction={() => setShowAuthModal(true)}
               />
             </div>
           </div>
