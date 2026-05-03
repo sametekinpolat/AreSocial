@@ -3272,8 +3272,8 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
       "source_location": "L378",
       "weight": 1.0,
-      "_src": "community_page_client_handlersvp",
-      "_tgt": "post_page_client_onguestaction",
+      "_src": "post_page_client_onguestaction",
+      "_tgt": "community_page_client_handlersvp",
       "source": "post_page_client_onguestaction",
       "target": "community_page_client_handlersvp"
     },

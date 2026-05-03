@@ -1,7 +1,7 @@
 # Graph Report - C:\Users\samet\projects\arel_social  (2026-05-03)
 
 ## Corpus Check
-- 91 files · ~271,050 words
+- 91 files · ~271,595 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
