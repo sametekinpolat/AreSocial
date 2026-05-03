@@ -19,7 +19,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { InviteUserForm } from "@/components/communities/invite-user-form";
 import { joinCommunityAction, leaveCommunityAction } from "@/actions/communities";
-import { cn } from "@/lib/utils";
+import { cn, slugify } from "@/lib/utils";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -128,8 +128,15 @@ function SortTabs({
 
 // ─── Post card ────────────────────────────────────────────────────────────────
 
-function CommunityPostCard({ post }: { post: CommunityPost }) {
+function CommunityPostCard({
+  post,
+  communityName,
+}: {
+  post: CommunityPost;
+  communityName: string;
+}) {
   const score = post.upvotes - post.downvotes;
+  const postUrl = `/communities/${communityName}/comments/${post.id}/${slugify(post.title)}`;
 
   return (
     <article
@@ -198,7 +205,9 @@ function CommunityPostCard({ post }: { post: CommunityPost }) {
 
         {/* Title */}
         <h3 className="text-sm font-semibold leading-snug text-foreground">
-          {post.title}
+          <Link href={postUrl} className="hover:underline">
+            {post.title}
+          </Link>
         </h3>
 
         {/* Body preview */}
@@ -210,10 +219,14 @@ function CommunityPostCard({ post }: { post: CommunityPost }) {
 
         {/* Footer */}
         <div className="mt-1 flex items-center gap-3 text-xs text-muted-foreground">
-          <span className="flex items-center gap-1">
+          <Link
+            href={postUrl}
+            className="flex items-center gap-1 transition-colors hover:text-foreground"
+          >
             <MessageSquare className="h-3.5 w-3.5" />
-            {post.commentCount} {post.commentCount === 1 ? "comment" : "comments"}
-          </span>
+            {post.commentCount}{" "}
+            {post.commentCount === 1 ? "comment" : "comments"}
+          </Link>
         </div>
       </div>
     </article>
@@ -435,13 +448,21 @@ export function CommunityPageClient({
 
             {/* Pinned posts */}
             {pinnedPosts.map((post) => (
-              <CommunityPostCard key={post.id} post={post} />
+              <CommunityPostCard
+                key={post.id}
+                post={post}
+                communityName={community.name}
+              />
             ))}
 
             {/* Regular posts */}
             {regularPosts.length > 0 ? (
               regularPosts.map((post) => (
-                <CommunityPostCard key={post.id} post={post} />
+                <CommunityPostCard
+                  key={post.id}
+                  post={post}
+                  communityName={community.name}
+                />
               ))
             ) : pinnedPosts.length === 0 ? (
               <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border py-16 text-center text-muted-foreground gap-2">
