@@ -28,9 +28,22 @@ export default async function PostPage({ params }: { params: Params }) {
         createdAt: true,
         userId: true,
         user: {
-          select: { id: true, username: true, name: true, image: true },
+          select: {
+            id: true,
+            username: true,
+            name: true,
+            image: true,
+            postKarma: true,
+            commentKarma: true,
+          },
         },
         community: { select: { id: true, name: true } },
+        votes: {
+          where: {
+            userId: currentUserId || "00000000-0000-0000-0000-000000000000",
+          },
+          select: { voteValue: true },
+        },
         _count: {
           select: { comments: { where: { isDeleted: false } } },
         },
@@ -61,7 +74,14 @@ export default async function PostPage({ params }: { params: Params }) {
       parentCommentId: true,
       userId: true,
       user: {
-        select: { id: true, username: true, name: true, image: true },
+        select: {
+          id: true,
+          username: true,
+          name: true,
+          image: true,
+          postKarma: true,
+          commentKarma: true,
+        },
       },
       votes: {
         where: {
@@ -86,9 +106,11 @@ export default async function PostPage({ params }: { params: Params }) {
     isPinned: post.isPinned,
     upvotes: post.upvotes,
     downvotes: post.downvotes,
+    myVote: (post.votes[0]?.voteValue ?? null) as 1 | -1 | null,
     createdAt: post.createdAt.toISOString(),
     authorId: post.userId,
     authorHandle: post.user.username ?? post.user.name ?? "deleted",
+    authorKarma: post.user.postKarma + post.user.commentKarma,
     communityName: post.community.name,
     commentCount: post._count.comments,
   };
@@ -104,6 +126,7 @@ export default async function PostPage({ params }: { params: Params }) {
     parentCommentId: c.parentCommentId,
     authorId: c.userId,
     authorHandle: c.user.username ?? c.user.name ?? "deleted",
+    authorKarma: c.user.postKarma + c.user.commentKarma,
     myVote: c.votes[0]?.voteValue ?? null,
     isSaved: c.saves.length > 0,
     isHidden: blockedUserIds.includes(c.userId),
