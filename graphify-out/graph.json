@@ -99,7 +99,7 @@
       "source_file": "eslint.config.mjs",
       "source_location": "L1",
       "id": "eslint_config_mjs",
-      "community": 28,
+      "community": 30,
       "norm_label": "eslint.config.mjs"
     },
     {
@@ -108,7 +108,7 @@
       "source_file": "next.config.ts",
       "source_location": "L1",
       "id": "next_config_ts",
-      "community": 29,
+      "community": 31,
       "norm_label": "next.config.ts"
     },
     {
@@ -117,7 +117,7 @@
       "source_file": "postcss.config.mjs",
       "source_location": "L1",
       "id": "postcss_config_mjs",
-      "community": 30,
+      "community": 32,
       "norm_label": "postcss.config.mjs"
     },
     {
@@ -126,7 +126,7 @@
       "source_file": "prisma.config.ts",
       "source_location": "L1",
       "id": "prisma_config_ts",
-      "community": 31,
+      "community": 33,
       "norm_label": "prisma.config.ts"
     },
     {
@@ -135,7 +135,7 @@
       "source_file": "src\\auth.config.ts",
       "source_location": "L1",
       "id": "src_auth_config_ts",
-      "community": 32,
+      "community": 34,
       "norm_label": "auth.config.ts"
     },
     {
@@ -144,7 +144,7 @@
       "source_file": "src\\auth.ts",
       "source_location": "L1",
       "id": "src_auth_ts",
-      "community": 8,
+      "community": 9,
       "norm_label": "auth.ts"
     },
     {
@@ -153,7 +153,7 @@
       "source_file": "src\\auth.ts",
       "source_location": "L14",
       "id": "auth_githubipv4fetch",
-      "community": 8,
+      "community": 9,
       "norm_label": "githubipv4fetch()"
     },
     {
@@ -162,7 +162,7 @@
       "source_file": "src\\auth.ts",
       "source_location": "L83",
       "id": "auth_installgithubfetchpatch",
-      "community": 8,
+      "community": 9,
       "norm_label": "installgithubfetchpatch()"
     },
     {
@@ -171,7 +171,7 @@
       "source_file": "src\\proxy.ts",
       "source_location": "L1",
       "id": "src_proxy_ts",
-      "community": 33,
+      "community": 35,
       "norm_label": "proxy.ts"
     },
     {
@@ -180,7 +180,7 @@
       "source_file": "src\\actions\\auth.ts",
       "source_location": "L1",
       "id": "src_actions_auth_ts",
-      "community": 1,
+      "community": 2,
       "norm_label": "auth.ts"
     },
     {
@@ -189,7 +189,7 @@
       "source_file": "src\\actions\\auth.ts",
       "source_location": "L13",
       "id": "auth_getip",
-      "community": 1,
+      "community": 2,
       "norm_label": "getip()"
     },
     {
@@ -198,7 +198,7 @@
       "source_file": "src\\actions\\auth.ts",
       "source_location": "L22",
       "id": "auth_loginaction",
-      "community": 1,
+      "community": 2,
       "norm_label": "loginaction()"
     },
     {
@@ -207,7 +207,7 @@
       "source_file": "src\\actions\\auth.ts",
       "source_location": "L90",
       "id": "auth_loginwithgithub",
-      "community": 1,
+      "community": 2,
       "norm_label": "loginwithgithub()"
     },
     {
@@ -216,7 +216,7 @@
       "source_file": "src\\actions\\auth.ts",
       "source_location": "L94",
       "id": "auth_logoutaction",
-      "community": 1,
+      "community": 2,
       "norm_label": "logoutaction()"
     },
     {
@@ -225,7 +225,7 @@
       "source_file": "src\\actions\\auth.ts",
       "source_location": "L98",
       "id": "auth_checkusernameavailability",
-      "community": 1,
+      "community": 2,
       "norm_label": "checkusernameavailability()"
     },
     {
@@ -234,7 +234,7 @@
       "source_file": "src\\actions\\auth.ts",
       "source_location": "L106",
       "id": "auth_resendverificationemailaction",
-      "community": 1,
+      "community": 2,
       "norm_label": "resendverificationemailaction()"
     },
     {
@@ -243,7 +243,7 @@
       "source_file": "src\\actions\\auth.ts",
       "source_location": "L132",
       "id": "auth_registeraction",
-      "community": 1,
+      "community": 2,
       "norm_label": "registeraction()"
     },
     {
@@ -252,7 +252,7 @@
       "source_file": "src\\actions\\auth.ts",
       "source_location": "L190",
       "id": "auth_completeonboardingaction",
-      "community": 1,
+      "community": 2,
       "norm_label": "completeonboardingaction()"
     },
     {
@@ -261,7 +261,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_actions_comments_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "comments.ts"
     },
     {
@@ -270,7 +270,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
       "source_location": "L23",
       "id": "comments_createcommentaction",
-      "community": 2,
+      "community": 3,
       "norm_label": "createcommentaction()"
     },
     {
@@ -279,7 +279,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
       "source_location": "L83",
       "id": "comments_editcommentaction",
-      "community": 2,
+      "community": 3,
       "norm_label": "editcommentaction()"
     },
     {
@@ -288,7 +288,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
       "source_location": "L129",
       "id": "comments_deletecommentaction",
-      "community": 2,
+      "community": 3,
       "norm_label": "deletecommentaction()"
     },
     {
@@ -297,7 +297,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
       "source_location": "L163",
       "id": "comments_votecommentaction",
-      "community": 2,
+      "community": 3,
       "norm_label": "votecommentaction()"
     },
     {
@@ -306,7 +306,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
       "source_location": "L319",
       "id": "comments_savecommentaction",
-      "community": 2,
+      "community": 3,
       "norm_label": "savecommentaction()"
     },
     {
@@ -315,7 +315,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\comments.ts",
       "source_location": "L352",
       "id": "comments_reportcommentaction",
-      "community": 2,
+      "community": 3,
       "norm_label": "reportcommentaction()"
     },
     {
@@ -391,12 +391,39 @@
       "norm_label": "respondtoinviteaction()"
     },
     {
+      "label": "events.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\events.ts",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_actions_events_ts",
+      "community": 3,
+      "norm_label": "events.ts"
+    },
+    {
+      "label": "createEventAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\events.ts",
+      "source_location": "L18",
+      "id": "events_createeventaction",
+      "community": 3,
+      "norm_label": "createeventaction()"
+    },
+    {
+      "label": "rsvpEventAction()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\events.ts",
+      "source_location": "L129",
+      "id": "events_rsvpeventaction",
+      "community": 3,
+      "norm_label": "rsvpeventaction()"
+    },
+    {
       "label": "posts.ts",
       "file_type": "code",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_actions_posts_ts",
-      "community": 2,
+      "community": 5,
       "norm_label": "posts.ts"
     },
     {
@@ -405,7 +432,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
       "source_location": "L30",
       "id": "posts_getorcreatedemocommunity",
-      "community": 2,
+      "community": 5,
       "norm_label": "getorcreatedemocommunity()"
     },
     {
@@ -414,7 +441,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
       "source_location": "L51",
       "id": "posts_createpostaction",
-      "community": 2,
+      "community": 5,
       "norm_label": "createpostaction()"
     },
     {
@@ -423,7 +450,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
       "source_location": "L122",
       "id": "posts_updatepostaction",
-      "community": 2,
+      "community": 5,
       "norm_label": "updatepostaction()"
     },
     {
@@ -432,7 +459,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
       "source_location": "L176",
       "id": "posts_deletepostaction",
-      "community": 2,
+      "community": 5,
       "norm_label": "deletepostaction()"
     },
     {
@@ -441,7 +468,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
       "source_location": "L220",
       "id": "posts_votepostaction",
-      "community": 2,
+      "community": 5,
       "norm_label": "votepostaction()"
     },
     {
@@ -450,7 +477,7 @@
       "source_file": "src\\app\\layout.tsx",
       "source_location": "L1",
       "id": "src_app_layout_tsx",
-      "community": 16,
+      "community": 17,
       "norm_label": "layout.tsx"
     },
     {
@@ -459,7 +486,7 @@
       "source_file": "src\\app\\layout.tsx",
       "source_location": "L31",
       "id": "layout_rootlayout",
-      "community": 16,
+      "community": 17,
       "norm_label": "rootlayout()"
     },
     {
@@ -468,7 +495,7 @@
       "source_file": "src\\app\\(auth)\\login\\page.tsx",
       "source_location": "L1",
       "id": "src_app_auth_login_page_tsx",
-      "community": 5,
+      "community": 6,
       "norm_label": "page.tsx"
     },
     {
@@ -477,7 +504,7 @@
       "source_file": "src\\app\\(auth)\\register\\page.tsx",
       "source_location": "L82",
       "id": "page_handlesubmit",
-      "community": 5,
+      "community": 6,
       "norm_label": "handlesubmit()"
     },
     {
@@ -486,7 +513,7 @@
       "source_file": "src\\app\\(auth)\\onboarding\\page.tsx",
       "source_location": "L1",
       "id": "src_app_auth_onboarding_page_tsx",
-      "community": 5,
+      "community": 6,
       "norm_label": "page.tsx"
     },
     {
@@ -495,7 +522,7 @@
       "source_file": "src\\app\\(auth)\\register\\page.tsx",
       "source_location": "L41",
       "id": "page_handleusernamechange",
-      "community": 5,
+      "community": 6,
       "norm_label": "handleusernamechange()"
     },
     {
@@ -504,7 +531,7 @@
       "source_file": "src\\app\\(auth)\\register\\page.tsx",
       "source_location": "L1",
       "id": "src_app_auth_register_page_tsx",
-      "community": 5,
+      "community": 6,
       "norm_label": "page.tsx"
     },
     {
@@ -513,7 +540,7 @@
       "source_file": "src\\app\\(auth)\\verify\\page.tsx",
       "source_location": "L1",
       "id": "src_app_auth_verify_page_tsx",
-      "community": 9,
+      "community": 10,
       "norm_label": "page.tsx"
     },
     {
@@ -522,7 +549,7 @@
       "source_file": "src\\app\\(auth)\\verify\\page.tsx",
       "source_location": "L13",
       "id": "page_verifypage",
-      "community": 9,
+      "community": 10,
       "norm_label": "verifypage()"
     },
     {
@@ -531,7 +558,7 @@
       "source_file": "src\\app\\(auth)\\verify\\page.tsx",
       "source_location": "L61",
       "id": "page_statuscard",
-      "community": 9,
+      "community": 10,
       "norm_label": "statuscard()"
     },
     {
@@ -540,7 +567,7 @@
       "source_file": "src\\app\\(auth)\\verify-email\\page.tsx",
       "source_location": "L1",
       "id": "src_app_auth_verify_email_page_tsx",
-      "community": 1,
+      "community": 2,
       "norm_label": "page.tsx"
     },
     {
@@ -549,7 +576,7 @@
       "source_file": "src\\app\\(auth)\\verify-email\\page.tsx",
       "source_location": "L36",
       "id": "page_handleresend",
-      "community": 1,
+      "community": 2,
       "norm_label": "handleresend()"
     },
     {
@@ -558,7 +585,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\layout.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_app_main_layout_tsx",
-      "community": 17,
+      "community": 18,
       "norm_label": "layout.tsx"
     },
     {
@@ -567,7 +594,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\layout.tsx",
       "source_location": "L5",
       "id": "layout_mainlayout",
-      "community": 17,
+      "community": 18,
       "norm_label": "mainlayout()"
     },
     {
@@ -576,7 +603,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\page.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_app_main_page_tsx",
-      "community": 18,
+      "community": 19,
       "norm_label": "page.tsx"
     },
     {
@@ -585,7 +612,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\page.tsx",
       "source_location": "L7",
       "id": "page_homepage",
-      "community": 18,
+      "community": 19,
       "norm_label": "homepage()"
     },
     {
@@ -594,7 +621,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\page.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_app_main_communities_page_tsx",
-      "community": 19,
+      "community": 20,
       "norm_label": "page.tsx"
     },
     {
@@ -603,7 +630,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\page.tsx",
       "source_location": "L6",
       "id": "page_communitiespage",
-      "community": 19,
+      "community": 20,
       "norm_label": "communitiespage()"
     },
     {
@@ -612,7 +639,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\page.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_app_main_communities_name_page_tsx",
-      "community": 10,
+      "community": 11,
       "norm_label": "page.tsx"
     },
     {
@@ -621,7 +648,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\page.tsx",
       "source_location": "L12",
       "id": "page_getpostorderby",
-      "community": 10,
+      "community": 11,
       "norm_label": "getpostorderby()"
     },
     {
@@ -630,7 +657,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\page.tsx",
       "source_location": "L22",
       "id": "page_communitypage",
-      "community": 10,
+      "community": 11,
       "norm_label": "communitypage()"
     },
     {
@@ -639,7 +666,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\comments\\[id]\\[slug]\\page.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_app_main_communities_name_comments_id_slug_page_tsx",
-      "community": 20,
+      "community": 21,
       "norm_label": "page.tsx"
     },
     {
@@ -648,7 +675,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\comments\\[id]\\[slug]\\page.tsx",
       "source_location": "L11",
       "id": "page_postpage",
-      "community": 20,
+      "community": 21,
       "norm_label": "postpage()"
     },
     {
@@ -657,7 +684,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\settings\\page.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_app_main_communities_name_settings_page_tsx",
-      "community": 34,
+      "community": 36,
       "norm_label": "page.tsx"
     },
     {
@@ -666,7 +693,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\posts\\[id]\\page.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_app_main_posts_id_page_tsx",
-      "community": 2,
+      "community": 3,
       "norm_label": "page.tsx"
     },
     {
@@ -675,7 +702,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\posts\\[id]\\page.tsx",
       "source_location": "L12",
       "id": "page_postredirectpage",
-      "community": 2,
+      "community": 3,
       "norm_label": "postredirectpage()"
     },
     {
@@ -684,7 +711,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\u\\[username]\\page.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_app_main_u_username_page_tsx",
-      "community": 11,
+      "community": 12,
       "norm_label": "page.tsx"
     },
     {
@@ -693,7 +720,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\u\\[username]\\page.tsx",
       "source_location": "L9",
       "id": "page_generatemetadata",
-      "community": 11,
+      "community": 12,
       "norm_label": "generatemetadata()"
     },
     {
@@ -702,7 +729,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\u\\[username]\\page.tsx",
       "source_location": "L14",
       "id": "page_userprofilepage",
-      "community": 11,
+      "community": 12,
       "norm_label": "userprofilepage()"
     },
     {
@@ -711,7 +738,7 @@
       "source_file": "src\\app\\api\\auth\\[...nextauth]\\route.ts",
       "source_location": "L1",
       "id": "src_app_api_auth_nextauth_route_ts",
-      "community": 35,
+      "community": 37,
       "norm_label": "route.ts"
     },
     {
@@ -720,7 +747,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\app-shell.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_components_app_shell_tsx",
-      "community": 36,
+      "community": 38,
       "norm_label": "app-shell.tsx"
     },
     {
@@ -729,7 +756,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_components_home_page_client_tsx",
-      "community": 6,
+      "community": 7,
       "norm_label": "home-page-client.tsx"
     },
     {
@@ -738,7 +765,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
       "source_location": "L43",
       "id": "home_page_client_formatrelativedate",
-      "community": 6,
+      "community": 7,
       "norm_label": "formatrelativedate()"
     },
     {
@@ -747,7 +774,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
       "source_location": "L80",
       "id": "home_page_client_syncviewport",
-      "community": 6,
+      "community": 7,
       "norm_label": "syncviewport()"
     },
     {
@@ -756,7 +783,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
       "source_location": "L95",
       "id": "home_page_client_handlepointerdown",
-      "community": 6,
+      "community": 7,
       "norm_label": "handlepointerdown()"
     },
     {
@@ -765,7 +792,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\home-page-client.tsx",
       "source_location": "L105",
       "id": "home_page_client_submitpost",
-      "community": 6,
+      "community": 7,
       "norm_label": "submitpost()"
     },
     {
@@ -774,7 +801,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_components_post_page_client_tsx",
-      "community": 3,
+      "community": 1,
       "norm_label": "post-page-client.tsx"
     },
     {
@@ -783,7 +810,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L74",
       "id": "post_page_client_formatrelativedate",
-      "community": 3,
+      "community": 1,
       "norm_label": "formatrelativedate()"
     },
     {
@@ -792,7 +819,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L90",
       "id": "post_page_client_buildtree",
-      "community": 3,
+      "community": 1,
       "norm_label": "buildtree()"
     },
     {
@@ -801,7 +828,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L110",
       "id": "post_page_client_authmodal",
-      "community": 3,
+      "community": 1,
       "norm_label": "authmodal()"
     },
     {
@@ -810,7 +837,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L171",
       "id": "post_page_client_handlesubmit",
-      "community": 3,
+      "community": 1,
       "norm_label": "handlesubmit()"
     },
     {
@@ -819,7 +846,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L262",
       "id": "post_page_client_handlevote",
-      "community": 3,
+      "community": 1,
       "norm_label": "handlevote()"
     },
     {
@@ -828,7 +855,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L306",
       "id": "post_page_client_handlesave",
-      "community": 3,
+      "community": 1,
       "norm_label": "handlesave()"
     },
     {
@@ -837,7 +864,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L322",
       "id": "post_page_client_handleeditsubmit",
-      "community": 3,
+      "community": 1,
       "norm_label": "handleeditsubmit()"
     },
     {
@@ -846,7 +873,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L333",
       "id": "post_page_client_handledelete",
-      "community": 3,
+      "community": 1,
       "norm_label": "handledelete()"
     },
     {
@@ -855,7 +882,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L340",
       "id": "post_page_client_handlereport",
-      "community": 3,
+      "community": 1,
       "norm_label": "handlereport()"
     },
     {
@@ -864,7 +891,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L348",
       "id": "post_page_client_handlereportsubmit",
-      "community": 3,
+      "community": 1,
       "norm_label": "handlereportsubmit()"
     },
     {
@@ -873,7 +900,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L642",
       "id": "post_page_client_onguestaction",
-      "community": 3,
+      "community": 1,
       "norm_label": "onguestaction()"
     },
     {
@@ -882,7 +909,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\post-page-client.tsx",
       "source_location": "L646",
       "id": "post_page_client_handlepostvote",
-      "community": 3,
+      "community": 1,
       "norm_label": "handlepostvote()"
     },
     {
@@ -891,7 +918,7 @@
       "source_file": "src\\components\\session-provider.tsx",
       "source_location": "L1",
       "id": "src_components_session_provider_tsx",
-      "community": 21,
+      "community": 22,
       "norm_label": "session-provider.tsx"
     },
     {
@@ -900,7 +927,7 @@
       "source_file": "src\\components\\session-provider.tsx",
       "source_location": "L5",
       "id": "session_provider_sessionprovider",
-      "community": 21,
+      "community": 22,
       "norm_label": "sessionprovider()"
     },
     {
@@ -909,7 +936,7 @@
       "source_file": "src\\components\\theme-provider.tsx",
       "source_location": "L1",
       "id": "src_components_theme_provider_tsx",
-      "community": 22,
+      "community": 23,
       "norm_label": "theme-provider.tsx"
     },
     {
@@ -918,7 +945,7 @@
       "source_file": "src\\components\\theme-provider.tsx",
       "source_location": "L6",
       "id": "theme_provider_themeprovider",
-      "community": 22,
+      "community": 23,
       "norm_label": "themeprovider()"
     },
     {
@@ -927,7 +954,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\user-profile-client.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_components_user_profile_client_tsx",
-      "community": 37,
+      "community": 39,
       "norm_label": "user-profile-client.tsx"
     },
     {
@@ -936,7 +963,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\communities-page-client.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_components_communities_communities_page_client_tsx",
-      "community": 38,
+      "community": 40,
       "norm_label": "communities-page-client.tsx"
     },
     {
@@ -945,52 +972,61 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
-      "community": 3,
+      "community": 1,
       "norm_label": "community-page-client.tsx"
     },
     {
       "label": "formatRelativeDate()",
       "file_type": "code",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
-      "source_location": "L76",
+      "source_location": "L94",
       "id": "community_page_client_formatrelativedate",
-      "community": 3,
+      "community": 1,
       "norm_label": "formatrelativedate()"
     },
     {
       "label": "AuthModal()",
       "file_type": "code",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
-      "source_location": "L94",
+      "source_location": "L112",
       "id": "community_page_client_authmodal",
-      "community": 3,
+      "community": 1,
       "norm_label": "authmodal()"
     },
     {
       "label": "SortTabs()",
       "file_type": "code",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
-      "source_location": "L131",
+      "source_location": "L149",
       "id": "community_page_client_sorttabs",
-      "community": 3,
+      "community": 1,
       "norm_label": "sorttabs()"
     },
     {
       "label": "handleVote()",
       "file_type": "code",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
-      "source_location": "L185",
+      "source_location": "L203",
       "id": "community_page_client_handlevote",
-      "community": 3,
+      "community": 1,
       "norm_label": "handlevote()"
+    },
+    {
+      "label": "handleRsvp()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L376",
+      "id": "community_page_client_handlersvp",
+      "community": 1,
+      "norm_label": "handlersvp()"
     },
     {
       "label": "handleJoinLeave()",
       "file_type": "code",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
-      "source_location": "L465",
+      "source_location": "L646",
       "id": "community_page_client_handlejoinleave",
-      "community": 3,
+      "community": 1,
       "norm_label": "handlejoinleave()"
     },
     {
@@ -999,7 +1035,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\create-community-form.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_components_communities_create_community_form_tsx",
-      "community": 23,
+      "community": 24,
       "norm_label": "create-community-form.tsx"
     },
     {
@@ -1008,7 +1044,25 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\create-community-form.tsx",
       "source_location": "L18",
       "id": "create_community_form_handlesubmit",
-      "community": 23,
+      "community": 24,
+      "norm_label": "handlesubmit()"
+    },
+    {
+      "label": "create-event-form.tsx",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\create-event-form.tsx",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_components_communities_create_event_form_tsx",
+      "community": 25,
+      "norm_label": "create-event-form.tsx"
+    },
+    {
+      "label": "handleSubmit()",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\create-event-form.tsx",
+      "source_location": "L20",
+      "id": "create_event_form_handlesubmit",
+      "community": 25,
       "norm_label": "handlesubmit()"
     },
     {
@@ -1017,7 +1071,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\invite-user-form.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_components_communities_invite_user_form_tsx",
-      "community": 24,
+      "community": 26,
       "norm_label": "invite-user-form.tsx"
     },
     {
@@ -1026,7 +1080,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\invite-user-form.tsx",
       "source_location": "L18",
       "id": "invite_user_form_handlesubmit",
-      "community": 24,
+      "community": 26,
       "norm_label": "handlesubmit()"
     },
     {
@@ -1035,7 +1089,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\rules-settings-client.tsx",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_components_communities_rules_settings_client_tsx",
-      "community": 12,
+      "community": 13,
       "norm_label": "rules-settings-client.tsx"
     },
     {
@@ -1044,7 +1098,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\rules-settings-client.tsx",
       "source_location": "L30",
       "id": "rules_settings_client_handleaddrule",
-      "community": 12,
+      "community": 13,
       "norm_label": "handleaddrule()"
     },
     {
@@ -1053,7 +1107,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\rules-settings-client.tsx",
       "source_location": "L52",
       "id": "rules_settings_client_moverule",
-      "community": 12,
+      "community": 13,
       "norm_label": "moverule()"
     },
     {
@@ -1062,7 +1116,7 @@
       "source_file": "src\\components\\ui\\button.tsx",
       "source_location": "L1",
       "id": "src_components_ui_button_tsx",
-      "community": 25,
+      "community": 27,
       "norm_label": "button.tsx"
     },
     {
@@ -1071,7 +1125,7 @@
       "source_file": "src\\components\\ui\\button.tsx",
       "source_location": "L61",
       "id": "button_cn",
-      "community": 25,
+      "community": 27,
       "norm_label": "cn()"
     },
     {
@@ -1080,7 +1134,7 @@
       "source_file": "src\\components\\ui\\card.tsx",
       "source_location": "L1",
       "id": "src_components_ui_card_tsx",
-      "community": 13,
+      "community": 14,
       "norm_label": "card.tsx"
     },
     {
@@ -1089,7 +1143,7 @@
       "source_file": "src\\components\\ui\\card.tsx",
       "source_location": "L14",
       "id": "card_cn",
-      "community": 13,
+      "community": 14,
       "norm_label": "cn()"
     },
     {
@@ -1098,7 +1152,7 @@
       "source_file": "src\\components\\ui\\card.tsx",
       "source_location": "L59",
       "id": "card_cardaction",
-      "community": 13,
+      "community": 14,
       "norm_label": "cardaction()"
     },
     {
@@ -1107,7 +1161,7 @@
       "source_file": "src\\components\\ui\\dropdown-menu.tsx",
       "source_location": "L1",
       "id": "src_components_ui_dropdown_menu_tsx",
-      "community": 7,
+      "community": 8,
       "norm_label": "dropdown-menu.tsx"
     },
     {
@@ -1116,7 +1170,7 @@
       "source_file": "src\\components\\ui\\dropdown-menu.tsx",
       "source_location": "L15",
       "id": "dropdown_menu_dropdownmenuportal",
-      "community": 7,
+      "community": 8,
       "norm_label": "dropdownmenuportal()"
     },
     {
@@ -1125,7 +1179,7 @@
       "source_file": "src\\components\\ui\\dropdown-menu.tsx",
       "source_location": "L23",
       "id": "dropdown_menu_dropdownmenutrigger",
-      "community": 7,
+      "community": 8,
       "norm_label": "dropdownmenutrigger()"
     },
     {
@@ -1134,7 +1188,7 @@
       "source_file": "src\\components\\ui\\dropdown-menu.tsx",
       "source_location": "L201",
       "id": "dropdown_menu_cn",
-      "community": 7,
+      "community": 8,
       "norm_label": "cn()"
     },
     {
@@ -1143,7 +1197,7 @@
       "source_file": "src\\components\\ui\\input.tsx",
       "source_location": "L1",
       "id": "src_components_ui_input_tsx",
-      "community": 39,
+      "community": 41,
       "norm_label": "input.tsx"
     },
     {
@@ -1152,7 +1206,7 @@
       "source_file": "src\\components\\ui\\label.tsx",
       "source_location": "L1",
       "id": "src_components_ui_label_tsx",
-      "community": 26,
+      "community": 28,
       "norm_label": "label.tsx"
     },
     {
@@ -1161,7 +1215,7 @@
       "source_file": "src\\components\\ui\\label.tsx",
       "source_location": "L8",
       "id": "label_label",
-      "community": 26,
+      "community": 28,
       "norm_label": "label()"
     },
     {
@@ -1170,7 +1224,7 @@
       "source_file": "src\\components\\ui\\mode-toggle.tsx",
       "source_location": "L1",
       "id": "src_components_ui_mode_toggle_tsx",
-      "community": 27,
+      "community": 29,
       "norm_label": "mode-toggle.tsx"
     },
     {
@@ -1179,7 +1233,7 @@
       "source_file": "src\\components\\ui\\mode-toggle.tsx",
       "source_location": "L15",
       "id": "mode_toggle_modetoggle",
-      "community": 27,
+      "community": 29,
       "norm_label": "modetoggle()"
     },
     {
@@ -1188,7 +1242,7 @@
       "source_file": "src\\components\\ui\\scroll-area.tsx",
       "source_location": "L1",
       "id": "src_components_ui_scroll_area_tsx",
-      "community": 14,
+      "community": 15,
       "norm_label": "scroll-area.tsx"
     },
     {
@@ -1197,7 +1251,7 @@
       "source_file": "src\\components\\ui\\scroll-area.tsx",
       "source_location": "L8",
       "id": "scroll_area_scrollarea",
-      "community": 14,
+      "community": 15,
       "norm_label": "scrollarea()"
     },
     {
@@ -1206,7 +1260,7 @@
       "source_file": "src\\components\\ui\\scroll-area.tsx",
       "source_location": "L31",
       "id": "scroll_area_scrollbar",
-      "community": 14,
+      "community": 15,
       "norm_label": "scrollbar()"
     },
     {
@@ -1215,25 +1269,25 @@
       "source_file": "src\\components\\ui\\sheet.tsx",
       "source_location": "L1",
       "id": "src_components_ui_sheet_tsx",
-      "community": 40,
+      "community": 42,
       "norm_label": "sheet.tsx"
     },
     {
       "label": "browser.ts",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\browser.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\browser.ts",
       "source_location": "L1",
-      "id": "src_generated_prisma_browser_ts",
-      "community": 41,
+      "id": "c_users_samet_projects_arel_social_src_generated_prisma_browser_ts",
+      "community": 43,
       "norm_label": "browser.ts"
     },
     {
       "label": "client.ts",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\client.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\client.ts",
       "source_location": "L1",
-      "id": "src_generated_prisma_client_ts",
-      "community": 42,
+      "id": "c_users_samet_projects_arel_social_src_generated_prisma_client_ts",
+      "community": 44,
       "norm_label": "client.ts"
     },
     {
@@ -1242,25 +1296,25 @@
       "source_file": "src\\generated\\prisma\\commonInputTypes.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_commoninputtypes_ts",
-      "community": 43,
+      "community": 45,
       "norm_label": "commoninputtypes.ts"
     },
     {
       "label": "enums.ts",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\enums.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\enums.ts",
       "source_location": "L1",
-      "id": "src_generated_prisma_enums_ts",
-      "community": 44,
+      "id": "c_users_samet_projects_arel_social_src_generated_prisma_enums_ts",
+      "community": 46,
       "norm_label": "enums.ts"
     },
     {
       "label": "models.ts",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\models.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\models.ts",
       "source_location": "L1",
-      "id": "src_generated_prisma_models_ts",
-      "community": 45,
+      "id": "c_users_samet_projects_arel_social_src_generated_prisma_models_ts",
+      "community": 47,
       "norm_label": "models.ts"
     },
     {
@@ -1269,7 +1323,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\class.ts",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_generated_prisma_internal_class_ts",
-      "community": 15,
+      "community": 16,
       "norm_label": "class.ts"
     },
     {
@@ -1278,16 +1332,16 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\class.ts",
       "source_location": "L41",
       "id": "class_decodebase64aswasm",
-      "community": 15,
+      "community": 16,
       "norm_label": "decodebase64aswasm()"
     },
     {
       "label": "getPrismaClientClass()",
       "file_type": "code",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\class.ts",
-      "source_location": "L472",
+      "source_location": "L482",
       "id": "class_getprismaclientclass",
-      "community": 15,
+      "community": 16,
       "norm_label": "getprismaclientclass()"
     },
     {
@@ -1296,7 +1350,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\prismaNamespace.ts",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_generated_prisma_internal_prismanamespace_ts",
-      "community": 46,
+      "community": 48,
       "norm_label": "prismanamespace.ts"
     },
     {
@@ -1305,7 +1359,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\prismaNamespaceBrowser.ts",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_generated_prisma_internal_prismanamespacebrowser_ts",
-      "community": 47,
+      "community": 49,
       "norm_label": "prismanamespacebrowser.ts"
     },
     {
@@ -1314,7 +1368,7 @@
       "source_file": "src\\generated\\prisma\\models\\Account.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_account_ts",
-      "community": 48,
+      "community": 50,
       "norm_label": "account.ts"
     },
     {
@@ -1323,7 +1377,7 @@
       "source_file": "src\\generated\\prisma\\models\\Comment.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_comment_ts",
-      "community": 49,
+      "community": 51,
       "norm_label": "comment.ts"
     },
     {
@@ -1332,7 +1386,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommentEditHistory.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_commentedithistory_ts",
-      "community": 50,
+      "community": 52,
       "norm_label": "commentedithistory.ts"
     },
     {
@@ -1341,7 +1395,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommentVote.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_commentvote_ts",
-      "community": 51,
+      "community": 53,
       "norm_label": "commentvote.ts"
     },
     {
@@ -1350,7 +1404,7 @@
       "source_file": "src\\generated\\prisma\\models\\Community.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_community_ts",
-      "community": 52,
+      "community": 54,
       "norm_label": "community.ts"
     },
     {
@@ -1359,7 +1413,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommunityInvite.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_communityinvite_ts",
-      "community": 53,
+      "community": 55,
       "norm_label": "communityinvite.ts"
     },
     {
@@ -1368,7 +1422,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommunityMember.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_communitymember_ts",
-      "community": 54,
+      "community": 56,
       "norm_label": "communitymember.ts"
     },
     {
@@ -1377,7 +1431,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommunityModerator.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_communitymoderator_ts",
-      "community": 55,
+      "community": 57,
       "norm_label": "communitymoderator.ts"
     },
     {
@@ -1386,7 +1440,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommunityRestriction.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_communityrestriction_ts",
-      "community": 56,
+      "community": 58,
       "norm_label": "communityrestriction.ts"
     },
     {
@@ -1395,7 +1449,7 @@
       "source_file": "src\\generated\\prisma\\models\\CommunityRule.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_communityrule_ts",
-      "community": 57,
+      "community": 59,
       "norm_label": "communityrule.ts"
     },
     {
@@ -1404,17 +1458,26 @@
       "source_file": "src\\generated\\prisma\\models\\DirectMessage.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_directmessage_ts",
-      "community": 58,
+      "community": 60,
       "norm_label": "directmessage.ts"
     },
     {
       "label": "Event.ts",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\models\\Event.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\models\\Event.ts",
       "source_location": "L1",
-      "id": "src_generated_prisma_models_event_ts",
-      "community": 59,
+      "id": "c_users_samet_projects_arel_social_src_generated_prisma_models_event_ts",
+      "community": 61,
       "norm_label": "event.ts"
+    },
+    {
+      "label": "EventParticipant.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\models\\EventParticipant.ts",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_generated_prisma_models_eventparticipant_ts",
+      "community": 62,
+      "norm_label": "eventparticipant.ts"
     },
     {
       "label": "GlobalModerator.ts",
@@ -1422,7 +1485,7 @@
       "source_file": "src\\generated\\prisma\\models\\GlobalModerator.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_globalmoderator_ts",
-      "community": 60,
+      "community": 63,
       "norm_label": "globalmoderator.ts"
     },
     {
@@ -1431,7 +1494,7 @@
       "source_file": "src\\generated\\prisma\\models\\Media.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_media_ts",
-      "community": 61,
+      "community": 64,
       "norm_label": "media.ts"
     },
     {
@@ -1440,7 +1503,7 @@
       "source_file": "src\\generated\\prisma\\models\\ModLog.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_modlog_ts",
-      "community": 62,
+      "community": 65,
       "norm_label": "modlog.ts"
     },
     {
@@ -1449,16 +1512,16 @@
       "source_file": "src\\generated\\prisma\\models\\Notification.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_notification_ts",
-      "community": 63,
+      "community": 66,
       "norm_label": "notification.ts"
     },
     {
       "label": "Post.ts",
       "file_type": "code",
-      "source_file": "src\\generated\\prisma\\models\\Post.ts",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\models\\Post.ts",
       "source_location": "L1",
-      "id": "src_generated_prisma_models_post_ts",
-      "community": 64,
+      "id": "c_users_samet_projects_arel_social_src_generated_prisma_models_post_ts",
+      "community": 67,
       "norm_label": "post.ts"
     },
     {
@@ -1467,7 +1530,7 @@
       "source_file": "src\\generated\\prisma\\models\\PostEditHistory.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_postedithistory_ts",
-      "community": 65,
+      "community": 68,
       "norm_label": "postedithistory.ts"
     },
     {
@@ -1476,7 +1539,7 @@
       "source_file": "src\\generated\\prisma\\models\\PostFlair.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_postflair_ts",
-      "community": 66,
+      "community": 69,
       "norm_label": "postflair.ts"
     },
     {
@@ -1485,7 +1548,7 @@
       "source_file": "src\\generated\\prisma\\models\\PostVote.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_postvote_ts",
-      "community": 67,
+      "community": 70,
       "norm_label": "postvote.ts"
     },
     {
@@ -1494,7 +1557,7 @@
       "source_file": "src\\generated\\prisma\\models\\Report.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_report_ts",
-      "community": 68,
+      "community": 71,
       "norm_label": "report.ts"
     },
     {
@@ -1503,7 +1566,7 @@
       "source_file": "src\\generated\\prisma\\models\\SavedComment.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_savedcomment_ts",
-      "community": 69,
+      "community": 72,
       "norm_label": "savedcomment.ts"
     },
     {
@@ -1512,7 +1575,7 @@
       "source_file": "src\\generated\\prisma\\models\\SavedPost.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_savedpost_ts",
-      "community": 70,
+      "community": 73,
       "norm_label": "savedpost.ts"
     },
     {
@@ -1521,7 +1584,7 @@
       "source_file": "src\\generated\\prisma\\models\\Session.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_session_ts",
-      "community": 71,
+      "community": 74,
       "norm_label": "session.ts"
     },
     {
@@ -1530,7 +1593,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\models\\User.ts",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_generated_prisma_models_user_ts",
-      "community": 72,
+      "community": 75,
       "norm_label": "user.ts"
     },
     {
@@ -1539,7 +1602,7 @@
       "source_file": "src\\generated\\prisma\\models\\UserBlock.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_userblock_ts",
-      "community": 73,
+      "community": 76,
       "norm_label": "userblock.ts"
     },
     {
@@ -1548,7 +1611,7 @@
       "source_file": "src\\generated\\prisma\\models\\UserPreference.ts",
       "source_location": "L1",
       "id": "src_generated_prisma_models_userpreference_ts",
-      "community": 74,
+      "community": 77,
       "norm_label": "userpreference.ts"
     },
     {
@@ -1557,7 +1620,7 @@
       "source_file": "src\\lib\\mail.ts",
       "source_location": "L1",
       "id": "src_lib_mail_ts",
-      "community": 1,
+      "community": 2,
       "norm_label": "mail.ts"
     },
     {
@@ -1566,7 +1629,7 @@
       "source_file": "src\\lib\\mail.ts",
       "source_location": "L3",
       "id": "mail_sendverificationemail",
-      "community": 1,
+      "community": 2,
       "norm_label": "sendverificationemail()"
     },
     {
@@ -1575,7 +1638,7 @@
       "source_file": "src\\lib\\prisma.ts",
       "source_location": "L1",
       "id": "src_lib_prisma_ts",
-      "community": 75,
+      "community": 78,
       "norm_label": "prisma.ts"
     },
     {
@@ -1584,7 +1647,7 @@
       "source_file": "src\\lib\\rate-limit.ts",
       "source_location": "L1",
       "id": "src_lib_rate_limit_ts",
-      "community": 1,
+      "community": 2,
       "norm_label": "rate-limit.ts"
     },
     {
@@ -1593,7 +1656,7 @@
       "source_file": "src\\lib\\rate-limit.ts",
       "source_location": "L4",
       "id": "rate_limit_buildredisoptions",
-      "community": 1,
+      "community": 2,
       "norm_label": "buildredisoptions()"
     },
     {
@@ -1602,7 +1665,7 @@
       "source_file": "src\\lib\\rate-limit.ts",
       "source_location": "L47",
       "id": "rate_limit_geterrormessage",
-      "community": 1,
+      "community": 2,
       "norm_label": "geterrormessage()"
     },
     {
@@ -1611,7 +1674,7 @@
       "source_file": "src\\lib\\rate-limit.ts",
       "source_location": "L52",
       "id": "rate_limit_logredisunavailableonce",
-      "community": 1,
+      "community": 2,
       "norm_label": "logredisunavailableonce()"
     },
     {
@@ -1620,7 +1683,7 @@
       "source_file": "src\\lib\\rate-limit.ts",
       "source_location": "L73",
       "id": "rate_limit_ensureredisready",
-      "community": 1,
+      "community": 2,
       "norm_label": "ensureredisready()"
     },
     {
@@ -1629,7 +1692,7 @@
       "source_file": "src\\lib\\rate-limit.ts",
       "source_location": "L147",
       "id": "rate_limit_checkratelimit",
-      "community": 1,
+      "community": 2,
       "norm_label": "checkratelimit()"
     },
     {
@@ -1638,7 +1701,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\utils.ts",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_lib_utils_ts",
-      "community": 2,
+      "community": 3,
       "norm_label": "utils.ts"
     },
     {
@@ -1647,7 +1710,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\utils.ts",
       "source_location": "L4",
       "id": "utils_cn",
-      "community": 2,
+      "community": 3,
       "norm_label": "cn()"
     },
     {
@@ -1656,7 +1719,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\utils.ts",
       "source_location": "L12",
       "id": "utils_formatkarma",
-      "community": 2,
+      "community": 3,
       "norm_label": "formatkarma()"
     },
     {
@@ -1665,7 +1728,7 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\utils.ts",
       "source_location": "L20",
       "id": "utils_slugify",
-      "community": 2,
+      "community": 3,
       "norm_label": "slugify()"
     },
     {
@@ -1674,7 +1737,7 @@
       "source_file": "src\\lib\\validations\\auth.ts",
       "source_location": "L1",
       "id": "src_lib_validations_auth_ts",
-      "community": 76,
+      "community": 79,
       "norm_label": "auth.ts"
     },
     {
@@ -1683,8 +1746,17 @@
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\validations\\community.ts",
       "source_location": "L1",
       "id": "c_users_samet_projects_arel_social_src_lib_validations_community_ts",
-      "community": 77,
+      "community": 80,
       "norm_label": "community.ts"
+    },
+    {
+      "label": "events.ts",
+      "file_type": "code",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\lib\\validations\\events.ts",
+      "source_location": "L1",
+      "id": "c_users_samet_projects_arel_social_src_lib_validations_events_ts",
+      "community": 81,
+      "norm_label": "events.ts"
     },
     {
       "label": "next-auth.d.ts",
@@ -1692,7 +1764,7 @@
       "source_file": "src\\types\\next-auth.d.ts",
       "source_location": "L1",
       "id": "src_types_next_auth_d_ts",
-      "community": 78,
+      "community": 82,
       "norm_label": "next-auth.d.ts"
     },
     {
@@ -1704,7 +1776,7 @@
       "captured_at": null,
       "author": null,
       "contributor": null,
-      "community": 79,
+      "community": 83,
       "norm_label": "arel social (readme)",
       "id": "readme_arel_social"
     },
@@ -2584,6 +2656,42 @@
     {
       "relation": "contains",
       "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\events.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_events_ts",
+      "_tgt": "events_createeventaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_events_ts",
+      "target": "events_createeventaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\events.ts",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_actions_events_ts",
+      "_tgt": "events_rsvpeventaction",
+      "source": "c_users_samet_projects_arel_social_src_actions_events_ts",
+      "target": "events_rsvpeventaction",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\events.ts",
+      "source_location": "L166",
+      "weight": 1.0,
+      "_src": "events_rsvpeventaction",
+      "_tgt": "utils_slugify",
+      "source": "events_rsvpeventaction",
+      "target": "utils_slugify"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\actions\\posts.ts",
       "source_location": "L30",
       "weight": 1.0,
@@ -2837,7 +2945,7 @@
       "relation": "calls",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\app\\(main)\\communities\\[name]\\page.tsx",
-      "source_location": "L82",
+      "source_location": "L84",
       "weight": 1.0,
       "_src": "page_communitypage",
       "_tgt": "page_getpostorderby",
@@ -3158,6 +3266,18 @@
       "target": "community_page_client_handlevote"
     },
     {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L378",
+      "weight": 1.0,
+      "_src": "community_page_client_handlersvp",
+      "_tgt": "post_page_client_onguestaction",
+      "source": "post_page_client_onguestaction",
+      "target": "community_page_client_handlersvp"
+    },
+    {
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "src\\components\\session-provider.tsx",
@@ -3185,7 +3305,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
-      "source_location": "L76",
+      "source_location": "L94",
       "weight": 1.0,
       "_src": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
       "_tgt": "community_page_client_formatrelativedate",
@@ -3197,7 +3317,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
-      "source_location": "L94",
+      "source_location": "L112",
       "weight": 1.0,
       "_src": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
       "_tgt": "community_page_client_authmodal",
@@ -3209,7 +3329,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
-      "source_location": "L131",
+      "source_location": "L149",
       "weight": 1.0,
       "_src": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
       "_tgt": "community_page_client_sorttabs",
@@ -3221,7 +3341,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
-      "source_location": "L185",
+      "source_location": "L203",
       "weight": 1.0,
       "_src": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
       "_tgt": "community_page_client_handlevote",
@@ -3233,7 +3353,19 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
-      "source_location": "L465",
+      "source_location": "L376",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "_tgt": "community_page_client_handlersvp",
+      "source": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
+      "target": "community_page_client_handlersvp",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\community-page-client.tsx",
+      "source_location": "L646",
       "weight": 1.0,
       "_src": "c_users_samet_projects_arel_social_src_components_communities_community_page_client_tsx",
       "_tgt": "community_page_client_handlejoinleave",
@@ -3251,6 +3383,18 @@
       "_tgt": "create_community_form_handlesubmit",
       "source": "c_users_samet_projects_arel_social_src_components_communities_create_community_form_tsx",
       "target": "create_community_form_handlesubmit",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\components\\communities\\create-event-form.tsx",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "c_users_samet_projects_arel_social_src_components_communities_create_event_form_tsx",
+      "_tgt": "create_event_form_handlesubmit",
+      "source": "c_users_samet_projects_arel_social_src_components_communities_create_event_form_tsx",
+      "target": "create_event_form_handlesubmit",
       "confidence_score": 1.0
     },
     {
@@ -3425,7 +3569,7 @@
       "relation": "contains",
       "confidence": "EXTRACTED",
       "source_file": "C:\\Users\\samet\\projects\\arel_social\\src\\generated\\prisma\\internal\\class.ts",
-      "source_location": "L472",
+      "source_location": "L482",
       "weight": 1.0,
       "_src": "c_users_samet_projects_arel_social_src_generated_prisma_internal_class_ts",
       "_tgt": "class_getprismaclientclass",
