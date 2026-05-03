@@ -115,15 +115,17 @@ export function ModerationPanel({
 }: PanelProps) {
   const [activeTab, setActiveTab] = useState<Tab>("reports");
 
-  const tabs: { id: Tab; label: string; show: boolean }[] = [
-    { id: "reports", label: "Reports", show: true },
-    { id: "posts", label: "Posts", show: ctx.canManagePosts },
-    { id: "comments", label: "Comments", show: ctx.canManagePosts },
-    { id: "restrictions", label: "Restrictions", show: ctx.canRestrictUsers },
-    { id: "log", label: "Mod Log", show: true },
-    { id: "settings", label: "Settings", show: ctx.canManageSettings },
-    { id: "governance", label: "Governance", show: ctx.canGovernCommunity },
-  ].filter((t) => t.show);
+  const tabs = (
+    [
+      { id: "reports" as Tab, label: "Reports", show: true },
+      { id: "posts" as Tab, label: "Posts", show: ctx.canManagePosts },
+      { id: "comments" as Tab, label: "Comments", show: ctx.canManagePosts },
+      { id: "restrictions" as Tab, label: "Restrictions", show: ctx.canRestrictUsers },
+      { id: "log" as Tab, label: "Mod Log", show: true },
+      { id: "settings" as Tab, label: "Settings", show: ctx.canManageSettings },
+      { id: "governance" as Tab, label: "Governance", show: ctx.canGovernCommunity },
+    ] satisfies { id: Tab; label: string; show: boolean }[]
+  ).filter((t) => t.show);
 
   const pendingReports = reports.filter((r) => r.status === "PENDING").length;
 

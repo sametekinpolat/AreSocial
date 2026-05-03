@@ -11,7 +11,7 @@ import {
   PostStatus,
   CommunityStatus,
 } from "@/generated/prisma/client";
-import type { Prisma } from "@/generated/prisma/client";
+import { Prisma } from "@/generated/prisma/client";
 
 type ModerationResult = {
   error?: string;
@@ -40,7 +40,7 @@ async function writeModLog(
       targetUserId: data.targetUserId ?? null,
       targetPostId: data.targetPostId ?? null,
       targetCommentId: data.targetCommentId ?? null,
-      details: (data.details ?? null) as Prisma.InputJsonValue | null,
+      details: data.details ? (data.details as Prisma.InputJsonValue) : Prisma.DbNull,
     },
   });
 }
