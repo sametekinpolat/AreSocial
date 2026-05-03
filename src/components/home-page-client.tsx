@@ -24,7 +24,7 @@ import {
   deletePostAction,
   updatePostAction,
 } from "@/actions/posts";
-import { cn } from "@/lib/utils";
+import { cn, slugify } from "@/lib/utils";
 
 type FeedPost = {
   id: string;
@@ -419,7 +419,7 @@ function FeedPostCard({ post }: { post: FeedPost }) {
               <div className="space-y-2">
                 <CardTitle className="text-lg">
                   <Link
-                    href={`/posts/${post.id}`}
+                    href={`/communities/${post.communityName}/comments/${post.id}/${slugify(post.title)}`}
                     className="hover:underline"
                   >
                     {post.title}
@@ -481,7 +481,7 @@ function FeedPostCard({ post }: { post: FeedPost }) {
         <div className="flex items-center gap-3 text-sm text-muted-foreground">
           <span>{post.upvotes - post.downvotes} score</span>
           <Link
-            href={`/posts/${post.id}`}
+            href={`/communities/${post.communityName}/comments/${post.id}/${slugify(post.title)}`}
             className="flex items-center gap-1 transition-colors hover:text-foreground"
           >
             <MessageSquare className="h-4 w-4" />
