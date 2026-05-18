@@ -90,7 +90,8 @@ model User {
   email          String?   @unique
   emailVerified  DateTime?
   image          String?
-  passwordHash   String?
+  passwordHash      String?
+  mustSetPassword   Boolean   @default(false)
   karmaScore     Int       @default(0) // Kept for legacy; use postKarma + commentKarma for display
   postKarma      Int       @default(0)
   commentKarma   Int       @default(0)
