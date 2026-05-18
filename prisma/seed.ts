@@ -31,7 +31,7 @@ async function main() {
       permissions: {},
     },
   });
-
+  
   console.log("\n================================================");
   console.log("  Admin seeded successfully.");
   console.log("  Email   : sametpolat22@istanbularel.edu");
