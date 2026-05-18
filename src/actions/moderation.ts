@@ -267,7 +267,7 @@ export async function pinPostAction(
 // ─── User Restrictions ────────────────────────────────────────────────────────
 
 export async function muteUserAction(
-  targetUserId: string,
+  targetUsername: string, // Changed to username
   communityId: string,
   reason?: string,
   expiresAt?: string
@@ -278,8 +278,20 @@ export async function muteUserAction(
   const ctx = await getModerationContext(session.user.id, communityId);
   if (!ctx.canRestrictUsers)
     return { error: "Unauthorized: user restriction permission required." };
+
+  // 1. Resolve the username to a UUID
+  const targetUser = await prisma.user.findUnique({
+    where: { username: targetUsername },
+    select: { id: true },
+  });
+
+  if (!targetUser) return { error: "User not found." };
+  
+  const targetUserId = targetUser.id;
+
+  // 2. Check if restricting self
   if (targetUserId === session.user.id)
-    return { error: "You cannot restrict yourself." };
+    return { error: "You cannot restrict yourself." };;
 
   const existing = await prisma.communityRestriction.findFirst({
     where: {
@@ -324,7 +336,7 @@ export async function muteUserAction(
 }
 
 export async function banUserAction(
-  targetUserId: string,
+  targetUsername: string, // Changed to username
   communityId: string,
   reason?: string
 ): Promise<ModerationResult> {
@@ -333,9 +345,20 @@ export async function banUserAction(
 
   const ctx = await getModerationContext(session.user.id, communityId);
   if (!ctx.canRestrictUsers) return { error: "Unauthorized." };
-  if (targetUserId === session.user.id)
-    return { error: "You cannot restrict yourself." };
 
+  // 1. Resolve the username to a UUID
+  const targetUser = await prisma.user.findUnique({
+    where: { username: targetUsername },
+    select: { id: true },
+  });
+
+  if (!targetUser) return { error: "User not found." };
+  
+  const targetUserId = targetUser.id;
+
+  // 2. Check if restricting self
+  if (targetUserId === session.user.id)
+  return { error: "You cannot restrict yourself." };
   const existing = await prisma.communityRestriction.findFirst({
     where: {
       communityId,
